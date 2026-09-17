@@ -20,6 +20,9 @@
               600: '#4f46e5',
               700: '#4338ca',
             }
+          },
+          animation: {
+            'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
           }
         }
       }
@@ -28,15 +31,29 @@
 
   <!-- Lucide Icons -->
   <script src="https://unpkg.com/lucide@latest"></script>
+
+  <style>
+    /* Atmospheric subtle grid background */
+    .bg-grid {
+      background-size: 40px 40px;
+      background-image: 
+        linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    }
+  </style>
 </head>
-<body class="bg-slate-950 text-slate-100 font-sans antialiased selection:bg-brand-500 selection:text-white">
+<body class="bg-slate-950 text-slate-100 font-sans antialiased selection:bg-brand-500 selection:text-white bg-grid relative overflow-x-hidden">
+
+  <!-- Ambient Glow Orbs -->
+  <div class="fixed top-0 left-1/4 -translate-x-1/2 w-[550px] h-[550px] bg-brand-600/15 rounded-full blur-[140px] pointer-events-none -z-10"></div>
+  <div class="fixed top-1/2 right-10 w-[450px] h-[450px] bg-emerald-500/10 rounded-full blur-[140px] pointer-events-none -z-10"></div>
 
   <!-- ================= HEADER / NAVBAR ================= -->
-  <header class="fixed top-0 left-0 right-0 z-50 bg-slate-950/80 backdrop-blur-md border-b border-slate-800/80">
+  <header class="fixed top-0 left-0 right-0 z-50 bg-slate-950/80 backdrop-blur-xl border-b border-slate-800/80">
     <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
       <!-- Logo -->
-      <a href="#" class="flex items-center gap-3">
-        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-brand-600 to-indigo-400 flex items-center justify-center text-white font-black text-xl shadow-lg shadow-brand-500/20">
+      <a href="#" class="flex items-center gap-3 group">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-brand-600 via-indigo-500 to-brand-400 flex items-center justify-center text-white font-black text-xl shadow-lg shadow-brand-500/30 group-hover:scale-105 transition-transform">
           Z
         </div>
         <span class="text-xl font-bold tracking-tight text-white">Zion<span class="text-brand-400">Apps</span></span>
@@ -44,16 +61,17 @@
 
       <!-- Desktop Navigation -->
       <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-300">
-        <a href="#services" class="hover:text-brand-400 transition-colors">Services</a>
-        <a href="#demos" class="hover:text-brand-400 transition-colors">Live Demos</a>
-        <a href="#why-us" class="hover:text-brand-400 transition-colors">Why Zion</a>
-        <a href="#process" class="hover:text-brand-400 transition-colors">Process</a>
+        <a href="#demos" class="hover:text-brand-400 transition-colors">Prototypes</a>
+        <a href="#sandbox" class="hover:text-brand-400 transition-colors">Interactive Sandbox</a>
+        <a href="#services" class="hover:text-brand-400 transition-colors">Capabilities</a>
+        <a href="#why-us" class="hover:text-brand-400 transition-colors">The Zion Edge</a>
+        <a href="#estimator" class="hover:text-brand-400 transition-colors">Estimator</a>
       </nav>
 
       <!-- Desktop CTA -->
-      <div class="hidden md:flex items-center">
-        <a href="#contact" class="px-5 py-2.5 rounded-lg bg-brand-600 hover:bg-brand-500 text-white text-sm font-semibold transition-all shadow-md shadow-brand-600/30">
-          Start Your Project &rarr;
+      <div class="hidden md:flex items-center gap-4">
+        <a href="#estimator" class="px-5 py-2.5 rounded-xl bg-gradient-to-r from-brand-600 to-indigo-600 hover:from-brand-500 hover:to-indigo-500 text-white text-sm font-semibold transition-all shadow-lg shadow-brand-600/30 hover:shadow-brand-500/40 hover:-translate-y-0.5">
+          Estimate Project &rarr;
         </a>
       </div>
 
@@ -64,57 +82,316 @@
     </div>
 
     <!-- Mobile Navigation Drawer -->
-    <div id="mobile-menu" class="hidden md:hidden px-6 pt-2 pb-6 border-b border-slate-800 bg-slate-950/95">
+    <div id="mobile-menu" class="hidden md:hidden px-6 pt-2 pb-6 border-b border-slate-800 bg-slate-950/95 backdrop-blur-xl">
       <div class="flex flex-col gap-4 text-base font-medium text-slate-300">
-        <a href="#services" class="hover:text-brand-400 py-1" onclick="toggleMobileMenu()">Services</a>
-        <a href="#demos" class="hover:text-brand-400 py-1" onclick="toggleMobileMenu()">Live Demos</a>
-        <a href="#why-us" class="hover:text-brand-400 py-1" onclick="toggleMobileMenu()">Why Zion</a>
-        <a href="#process" class="hover:text-brand-400 py-1" onclick="toggleMobileMenu()">Process</a>
-        <a href="#contact" class="w-full mt-2 text-center px-5 py-3 rounded-lg bg-brand-600 text-white font-semibold" onclick="toggleMobileMenu()">Start Your Project</a>
+        <a href="#demos" class="hover:text-brand-400 py-1" onclick="toggleMobileMenu()">Prototypes</a>
+        <a href="#sandbox" class="hover:text-brand-400 py-1" onclick="toggleMobileMenu()">Interactive Sandbox</a>
+        <a href="#services" class="hover:text-brand-400 py-1" onclick="toggleMobileMenu()">Capabilities</a>
+        <a href="#why-us" class="hover:text-brand-400 py-1" onclick="toggleMobileMenu()">The Zion Edge</a>
+        <a href="#estimator" class="hover:text-brand-400 py-1" onclick="toggleMobileMenu()">Estimator</a>
+        <a href="#contact" class="w-full mt-2 text-center px-5 py-3 rounded-xl bg-brand-600 text-white font-semibold" onclick="toggleMobileMenu()">Start Your Project</a>
       </div>
     </div>
   </header>
 
   <main class="pt-20">
     <!-- ================= HERO SECTION ================= -->
-    <section class="relative pt-24 pb-20 md:pt-32 md:pb-28 overflow-hidden">
-      <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-brand-600/20 rounded-full blur-3xl pointer-events-none"></div>
-      
+    <section class="relative pt-20 pb-20 md:pt-28 md:pb-24 overflow-hidden">
       <div class="max-w-7xl mx-auto px-6 text-center relative z-10">
-        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-brand-500/30 bg-brand-500/10 text-brand-300 text-xs md:text-sm font-medium mb-8">
+        <div class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full border border-brand-500/30 bg-brand-500/10 text-brand-300 text-xs md:text-sm font-medium mb-8 backdrop-blur-md">
           <span class="inline-block w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-          Next-Generation Mobile & Web Engineering
+          Enterprise-Grade Cross-Platform Apps Built with AI Speed
         </div>
 
-        <h1 class="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-white max-w-4xl mx-auto leading-[1.15]">
-          Turn Your Vision into High-Performance Apps at <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-400 to-indigo-200">3x the Speed.</span>
+        <h1 class="text-4xl sm:text-6xl lg:text-7xl font-black tracking-tight text-white max-w-5xl mx-auto leading-[1.12]">
+          We Engineer High-Impact Software <br class="hidden sm:inline" />
+          <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-400 via-indigo-200 to-emerald-300">at 3x Velocity with Zero Bloat.</span>
         </h1>
 
-        <p class="mt-6 text-base sm:text-lg md:text-xl text-slate-400 max-w-2xl mx-auto leading-relaxed">
-          At Zion Apps, we engineer sleek cross-platform mobile apps and responsive web systems by combining modern software architecture with advanced AI workflows. Fast, scalable, and zero bloat.
+        <p class="mt-6 text-base sm:text-lg md:text-xl text-slate-400 max-w-3xl mx-auto leading-relaxed">
+          Zion Apps builds native-feel mobile and responsive web applications using a unified Flutter & modern serverless architecture. Explore 6 functional, deployed prototypes running live below.
         </p>
 
         <div class="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
-          <a href="#contact" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-brand-600 hover:bg-brand-500 text-white text-base font-semibold transition-all shadow-lg shadow-brand-600/30 flex items-center justify-center gap-2">
-            Request a Free Estimate
-            <i data-lucide="arrow-right" class="w-4 h-4"></i>
+          <a href="#sandbox" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-gradient-to-r from-brand-600 to-indigo-600 hover:from-brand-500 hover:to-indigo-500 text-white text-base font-semibold transition-all shadow-xl shadow-brand-600/30 hover:shadow-brand-500/40 hover:-translate-y-0.5 flex items-center justify-center gap-2">
+            <i data-lucide="play" class="w-4 h-4 fill-white"></i>
+            Test Live App Sandbox
           </a>
-          <a href="#demos" class="w-full sm:w-auto px-8 py-4 rounded-xl border border-slate-800 bg-slate-900/60 hover:bg-slate-800 text-slate-300 text-base font-semibold transition-all flex items-center justify-center gap-2">
-            Explore Live Demos
-            <i data-lucide="chevron-down" class="w-4 h-4"></i>
+          <a href="#demos" class="w-full sm:w-auto px-8 py-4 rounded-xl border border-slate-800 bg-slate-900/80 hover:bg-slate-800 text-slate-300 text-base font-semibold transition-all flex items-center justify-center gap-2">
+            Browse 6 Prototypes
+            <i data-lucide="layout-grid" class="w-4 h-4 text-brand-400"></i>
           </a>
         </div>
 
-        <div class="mt-16 pt-8 border-t border-slate-800/80 grid grid-cols-1 sm:grid-cols-3 gap-6 text-slate-400 text-xs sm:text-sm font-medium max-w-3xl mx-auto">
-          <div class="flex items-center justify-center gap-2">
-            <i data-lucide="check-circle" class="w-4 h-4 text-emerald-400"></i> Single Unified Codebase
+        <!-- Metric Badges -->
+        <div class="mt-16 pt-10 border-t border-slate-800/80 grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
+          <div class="p-4 rounded-xl bg-slate-900/40 border border-slate-800/80">
+            <div class="text-2xl sm:text-3xl font-black text-white">6 Demos</div>
+            <div class="text-xs text-slate-400 mt-1 font-medium">Production Deployed</div>
           </div>
-          <div class="flex items-center justify-center gap-2">
-            <i data-lucide="check-circle" class="w-4 h-4 text-emerald-400"></i> AI-Accelerated Delivery
+          <div class="p-4 rounded-xl bg-slate-900/40 border border-slate-800/80">
+            <div class="text-2xl sm:text-3xl font-black text-brand-400">48-72h</div>
+            <div class="text-xs text-slate-400 mt-1 font-medium">Rapid Draft Delivery</div>
           </div>
-          <div class="flex items-center justify-center gap-2">
-            <i data-lucide="check-circle" class="w-4 h-4 text-emerald-400"></i> Zero Server Maintenance
+          <div class="p-4 rounded-xl bg-slate-900/40 border border-slate-800/80">
+            <div class="text-2xl sm:text-3xl font-black text-emerald-400">1 Codebase</div>
+            <div class="text-xs text-slate-400 mt-1 font-medium">iOS, Android & Web</div>
           </div>
+          <div class="p-4 rounded-xl bg-slate-900/40 border border-slate-800/80">
+            <div class="text-2xl sm:text-3xl font-black text-amber-400">Zero Fee</div>
+            <div class="text-xs text-slate-400 mt-1 font-medium">Platform Independence</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= LIVE IN-PAGE DEVICE SANDBOX ================= -->
+    <section id="sandbox" class="py-20 bg-slate-900/50 border-y border-slate-800/80 relative">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center max-w-3xl mx-auto mb-10">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-semibold uppercase tracking-wider mb-3">
+            <i data-lucide="sparkles" class="w-3.5 h-3.5"></i> Interactive Simulator
+          </div>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-white">Test Real Applications Directly Inside This Page</h2>
+          <p class="mt-3 text-sm sm:text-base text-slate-400">Switch between our live Flutter builds below to experience fluidity, layouts, and responsiveness in real time.</p>
+        </div>
+
+        <!-- Sandbox App Switcher Tabs -->
+        <div class="flex flex-wrap items-center justify-center gap-2 mb-8">
+          <button onclick="loadSandboxApp('https://zionappsstudio.github.io/zion-booking-demo/', 'Booking Engine (Demo #1)', this)" class="sandbox-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold border transition-all bg-brand-600 text-white border-brand-500 shadow-md">
+            🗓️ Service Booking
+          </button>
+          <button onclick="loadSandboxApp('https://zionappsstudio.github.io/zion-ai-assistant-demo/', 'AI Knowledge Assistant (Demo #2)', this)" class="sandbox-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold border border-slate-800 bg-slate-900/80 text-slate-400 hover:text-white transition-all">
+            🤖 AI Knowledge Bot
+          </button>
+          <button onclick="loadSandboxApp('https://zionappsstudio.github.io/zion-church-hub/', 'Grace Community Hub (Demo #3)', this)" class="sandbox-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold border border-slate-800 bg-slate-900/80 text-slate-400 hover:text-white transition-all">
+            ⛪ Church Community Hub
+          </button>
+          <button onclick="loadSandboxApp('https://zionappsstudio.github.io/zion-estate-hub/', 'Luxury Real Estate Portal (Demo #4)', this)" class="sandbox-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold border border-slate-800 bg-slate-900/80 text-slate-400 hover:text-white transition-all">
+            🏡 Luxury PropTech
+          </button>
+          <button onclick="loadSandboxApp('https://zionappsstudio.github.io/zion-wedding-studio/', 'Lumière Wedding Studios (Demo #5)', this)" class="sandbox-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold border border-slate-800 bg-slate-900/80 text-slate-400 hover:text-white transition-all">
+            📸 Wedding Cinema
+          </button>
+          <button onclick="loadSandboxApp('https://zionappsstudio.github.io/zion-artisan-cafe/', 'Artisan Roast & Cloud Kitchen (Demo #6)', this)" class="sandbox-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold border border-slate-800 bg-slate-900/80 text-slate-400 hover:text-white transition-all">
+            ☕ Cloud Kitchen & Cafe
+          </button>
+        </div>
+
+        <!-- Mockup Device Frame Container -->
+        <div class="max-w-4xl mx-auto">
+          <div class="rounded-3xl border-2 border-slate-800 bg-slate-950 shadow-2xl shadow-brand-500/10 overflow-hidden">
+            <!-- Simulated Browser / App Header Bar -->
+            <div class="bg-slate-900/90 border-b border-slate-800 px-5 py-3 flex items-center justify-between gap-4">
+              <div class="flex items-center gap-2">
+                <span class="w-3 h-3 rounded-full bg-red-500/80 inline-block"></span>
+                <span class="w-3 h-3 rounded-full bg-amber-500/80 inline-block"></span>
+                <span class="w-3 h-3 rounded-full bg-emerald-500/80 inline-block"></span>
+                <span id="sandbox-title" class="ml-2 text-xs font-mono text-slate-400 font-semibold truncate max-w-[200px] sm:max-w-sm">Booking Engine (Demo #1)</span>
+              </div>
+              <!-- Device Size Toggles -->
+              <div class="flex items-center gap-2">
+                <button onclick="setSandboxWidth('mobile')" title="Mobile View" class="p-1.5 rounded-lg bg-slate-800 text-slate-300 hover:text-white transition-colors">
+                  <i data-lucide="smartphone" class="w-4 h-4"></i>
+                </button>
+                <button onclick="setSandboxWidth('tablet')" title="Tablet View" class="p-1.5 rounded-lg bg-slate-800 text-slate-300 hover:text-white transition-colors">
+                  <i data-lucide="tablet" class="w-4 h-4"></i>
+                </button>
+                <button onclick="setSandboxWidth('desktop')" title="Desktop View" class="p-1.5 rounded-lg bg-brand-600 text-white transition-colors">
+                  <i data-lucide="monitor" class="w-4 h-4"></i>
+                </button>
+                <a id="sandbox-external-link" href="https://zionappsstudio.github.io/zion-booking-demo/" target="_blank" rel="noopener noreferrer" title="Open in new window" class="p-1.5 rounded-lg bg-slate-800 text-slate-300 hover:text-white transition-colors">
+                  <i data-lucide="external-link" class="w-4 h-4"></i>
+                </a>
+              </div>
+            </div>
+
+            <!-- Frame Viewport -->
+            <div class="bg-slate-950 flex items-center justify-center p-2 sm:p-4 min-h-[550px] transition-all">
+              <div id="sandbox-frame-wrapper" class="w-full h-[620px] transition-all duration-300 rounded-2xl overflow-hidden border border-slate-800/80 shadow-inner">
+                <iframe id="sandbox-iframe" src="https://zionappsstudio.github.io/zion-booking-demo/" class="w-full h-full border-0 bg-slate-900" title="Zion Live Interactive Demo Frame"></iframe>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= BENTO-GRID PROTOTYPES SHOWCASE ================= -->
+    <section id="demos" class="py-24 relative">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center max-w-3xl mx-auto mb-12">
+          <h2 class="text-xs uppercase tracking-widest text-brand-400 font-bold mb-3">Portfolio Catalog</h2>
+          <p class="text-3xl sm:text-4xl font-extrabold text-white">Engineered for Direct Commercial Conversion</p>
+          <p class="mt-3 text-sm text-slate-400">Click any category tab to view functional prototypes tailored to specific business models.</p>
+        </div>
+
+        <!-- Filter Tabs -->
+        <div class="flex flex-wrap items-center justify-center gap-2 mb-12">
+          <button onclick="filterBento('all', this)" class="bento-tab px-4 py-2 rounded-full text-xs font-semibold bg-brand-600 text-white transition-all">
+            All (6)
+          </button>
+          <button onclick="filterBento('commerce', this)" class="bento-tab px-4 py-2 rounded-full text-xs font-semibold bg-slate-900 border border-slate-800 text-slate-400 hover:text-white transition-all">
+            Commerce & Services (2)
+          </button>
+          <button onclick="filterBento('proptech', this)" class="bento-tab px-4 py-2 rounded-full text-xs font-semibold bg-slate-900 border border-slate-800 text-slate-400 hover:text-white transition-all">
+            Luxury & Real Estate (2)
+          </button>
+          <button onclick="filterBento('ai', this)" class="bento-tab px-4 py-2 rounded-full text-xs font-semibold bg-slate-900 border border-slate-800 text-slate-400 hover:text-white transition-all">
+            AI & Automation (1)
+          </button>
+          <button onclick="filterBento('community', this)" class="bento-tab px-4 py-2 rounded-full text-xs font-semibold bg-slate-900 border border-slate-800 text-slate-400 hover:text-white transition-all">
+            Community & Faith (1)
+          </button>
+        </div>
+
+        <!-- Bento Grid Container -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
+          
+          <!-- Card 1: Booking Engine -->
+          <div data-category="commerce" class="bento-item rounded-3xl border border-slate-800/80 bg-slate-900/40 p-7 flex flex-col justify-between hover:border-brand-500/50 hover:bg-slate-900/70 transition-all group shadow-xl">
+            <div>
+              <div class="flex items-center justify-between gap-4 mb-4">
+                <span class="px-3 py-1 rounded-full text-xs font-semibold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
+                  Service Commerce
+                </span>
+                <span class="text-xs text-slate-500 font-mono font-bold">Demo #1</span>
+              </div>
+              <h3 class="text-xl font-bold text-white mb-2 group-hover:text-brand-300 transition-colors">Booking Engine & Scheduling</h3>
+              <p class="text-slate-400 text-sm leading-relaxed mb-6">
+                Interactive appointment scheduler featuring service selection, time-slot reservation, customer intake, and live admin calendar management.
+              </p>
+            </div>
+            <div class="pt-4 border-t border-slate-800/80 flex items-center justify-between">
+              <a href="https://zionappsstudio.github.io/zion-booking-demo/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-sm font-semibold text-brand-400 hover:text-brand-300">
+                Launch Live App <i data-lucide="external-link" class="w-4 h-4"></i>
+              </a>
+              <button onclick="loadSandboxApp('https://zionappsstudio.github.io/zion-booking-demo/', 'Booking Engine (Demo #1)')" class="text-xs text-slate-400 hover:text-white underline">
+                Simulate Above
+              </button>
+            </div>
+          </div>
+
+          <!-- Card 2: AI Knowledge Assistant -->
+          <div data-category="ai" class="bento-item rounded-3xl border border-slate-800/80 bg-slate-900/40 p-7 flex flex-col justify-between hover:border-indigo-500/50 hover:bg-slate-900/70 transition-all group shadow-xl">
+            <div>
+              <div class="flex items-center justify-between gap-4 mb-4">
+                <span class="px-3 py-1 rounded-full text-xs font-semibold bg-indigo-500/10 text-indigo-400 border border-indigo-500/20">
+                  Enterprise AI Agent
+                </span>
+                <span class="text-xs text-slate-500 font-mono font-bold">Demo #2</span>
+              </div>
+              <h3 class="text-xl font-bold text-white mb-2 group-hover:text-indigo-300 transition-colors">Intelligent Knowledge Assistant</h3>
+              <p class="text-slate-400 text-sm leading-relaxed mb-6">
+                Contextual AI agent strictly anchored to company documentation to answer client inquiries 24/7 with zero hallucinations and exact citations.
+              </p>
+            </div>
+            <div class="pt-4 border-t border-slate-800/80 flex items-center justify-between">
+              <a href="https://zionappsstudio.github.io/zion-ai-assistant-demo/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-sm font-semibold text-indigo-400 hover:text-indigo-300">
+                Launch Live App <i data-lucide="external-link" class="w-4 h-4"></i>
+              </a>
+              <button onclick="loadSandboxApp('https://zionappsstudio.github.io/zion-ai-assistant-demo/', 'AI Knowledge Assistant (Demo #2)')" class="text-xs text-slate-400 hover:text-white underline">
+                Simulate Above
+              </button>
+            </div>
+          </div>
+
+          <!-- Card 3: Church Community Portal -->
+          <div data-category="community" class="bento-item rounded-3xl border border-slate-800/80 bg-slate-900/40 p-7 flex flex-col justify-between hover:border-amber-500/50 hover:bg-slate-900/70 transition-all group shadow-xl">
+            <div>
+              <div class="flex items-center justify-between gap-4 mb-4">
+                <span class="px-3 py-1 rounded-full text-xs font-semibold bg-amber-500/10 text-amber-400 border border-amber-500/20">
+                  Non-Profit & Faith
+                </span>
+                <span class="text-xs text-slate-500 font-mono font-bold">Demo #3</span>
+              </div>
+              <h3 class="text-xl font-bold text-white mb-2 group-hover:text-amber-300 transition-colors">Grace Community Church Hub</h3>
+              <p class="text-slate-400 text-sm leading-relaxed mb-6">
+                Royal blue & gold portal offering 6-language scripture, video sermon streaming, digital offerings, member family registries, and prayer queues.
+              </p>
+            </div>
+            <div class="pt-4 border-t border-slate-800/80 flex items-center justify-between">
+              <a href="https://zionappsstudio.github.io/zion-church-hub/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-sm font-semibold text-amber-400 hover:text-amber-300">
+                Launch Live App <i data-lucide="external-link" class="w-4 h-4"></i>
+              </a>
+              <button onclick="loadSandboxApp('https://zionappsstudio.github.io/zion-church-hub/', 'Grace Community Hub (Demo #3)')" class="text-xs text-slate-400 hover:text-white underline">
+                Simulate Above
+              </button>
+            </div>
+          </div>
+
+          <!-- Card 4: Luxury PropTech Hub -->
+          <div data-category="proptech" class="bento-item rounded-3xl border border-slate-800/80 bg-slate-900/40 p-7 flex flex-col justify-between hover:border-emerald-500/50 hover:bg-slate-900/70 transition-all group shadow-xl">
+            <div>
+              <div class="flex items-center justify-between gap-4 mb-4">
+                <span class="px-3 py-1 rounded-full text-xs font-semibold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
+                  PropTech & Yields
+                </span>
+                <span class="text-xs text-slate-500 font-mono font-bold">Demo #4</span>
+              </div>
+              <h3 class="text-xl font-bold text-white mb-2 group-hover:text-emerald-300 transition-colors">Zion Luxury Real Estate</h3>
+              <p class="text-slate-400 text-sm leading-relaxed mb-6">
+                Electric emerald portal featuring a floating glass dock, mortgage & ROI yield calculator, 3D walkthrough hot-spots, and VIP showing booking.
+              </p>
+            </div>
+            <div class="pt-4 border-t border-slate-800/80 flex items-center justify-between">
+              <a href="https://zionappsstudio.github.io/zion-estate-hub/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-sm font-semibold text-emerald-400 hover:text-emerald-300">
+                Launch Live App <i data-lucide="external-link" class="w-4 h-4"></i>
+              </a>
+              <button onclick="loadSandboxApp('https://zionappsstudio.github.io/zion-estate-hub/', 'Luxury Real Estate Portal (Demo #4)')" class="text-xs text-slate-400 hover:text-white underline">
+                Simulate Above
+              </button>
+            </div>
+          </div>
+
+          <!-- Card 5: Wedding Studio -->
+          <div data-category="proptech" class="bento-item rounded-3xl border border-slate-800/80 bg-slate-900/40 p-7 flex flex-col justify-between hover:border-rose-500/50 hover:bg-slate-900/70 transition-all group shadow-xl">
+            <div>
+              <div class="flex items-center justify-between gap-4 mb-4">
+                <span class="px-3 py-1 rounded-full text-xs font-semibold bg-rose-500/10 text-rose-400 border border-rose-500/20">
+                  Creative Cinema
+                </span>
+                <span class="text-xs text-slate-500 font-mono font-bold">Demo #5</span>
+              </div>
+              <h3 class="text-xl font-bold text-white mb-2 group-hover:text-rose-300 transition-colors">Lumière Wedding Studios</h3>
+              <p class="text-slate-400 text-sm leading-relaxed mb-6">
+                Champagne rose editorial gallery with presentation-style timed slide transitions, live wedding package quote estimator, and PIN-protected proofing vault.
+              </p>
+            </div>
+            <div class="pt-4 border-t border-slate-800/80 flex items-center justify-between">
+              <a href="https://zionappsstudio.github.io/zion-wedding-studio/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-sm font-semibold text-rose-400 hover:text-rose-300">
+                Launch Live App <i data-lucide="external-link" class="w-4 h-4"></i>
+              </a>
+              <button onclick="loadSandboxApp('https://zionappsstudio.github.io/zion-wedding-studio/', 'Lumière Wedding Studios (Demo #5)')" class="text-xs text-slate-400 hover:text-white underline">
+                Simulate Above
+              </button>
+            </div>
+          </div>
+
+          <!-- Card 6: Artisan Cloud Kitchen -->
+          <div data-category="commerce" class="bento-item rounded-3xl border border-slate-800/80 bg-slate-900/40 p-7 flex flex-col justify-between hover:border-amber-500/50 hover:bg-slate-900/70 transition-all group shadow-xl">
+            <div>
+              <div class="flex items-center justify-between gap-4 mb-4">
+                <span class="px-3 py-1 rounded-full text-xs font-semibold bg-amber-500/10 text-amber-400 border border-amber-500/20">
+                  Direct F&B Ordering
+                </span>
+                <span class="text-xs text-slate-500 font-mono font-bold">Demo #6</span>
+              </div>
+              <h3 class="text-xl font-bold text-white mb-2 group-hover:text-amber-300 transition-colors">Artisan Roast & Cloud Kitchen</h3>
+              <p class="text-slate-400 text-sm leading-relaxed mb-6">
+                Direct zero-commission ordering platform with beverage & bakery customizers, floating cart capsule, and 4-stage real-time kitchen preparation tracker.
+              </p>
+            </div>
+            <div class="pt-4 border-t border-slate-800/80 flex items-center justify-between">
+              <a href="https://zionappsstudio.github.io/zion-artisan-cafe/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-sm font-semibold text-amber-400 hover:text-amber-300">
+                Launch Live App <i data-lucide="external-link" class="w-4 h-4"></i>
+              </a>
+              <button onclick="loadSandboxApp('https://zionappsstudio.github.io/zion-artisan-cafe/', 'Artisan Roast & Cloud Kitchen (Demo #6)')" class="text-xs text-slate-400 hover:text-white underline">
+                Simulate Above
+              </button>
+            </div>
+          </div>
+
         </div>
       </div>
     </section>
@@ -128,7 +405,7 @@
         </div>
 
         <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-          <div class="p-8 rounded-2xl bg-slate-950/60 border border-red-500/20 shadow-sm relative">
+          <div class="p-8 rounded-3xl bg-slate-950/60 border border-red-500/20 shadow-sm relative">
             <h3 class="text-xl font-bold text-red-400 mb-6 flex items-center gap-2">
               <i data-lucide="x-circle" class="w-5 h-5"></i> The Traditional Agency Model
             </h3>
@@ -148,7 +425,7 @@
             </ul>
           </div>
 
-          <div class="p-8 rounded-2xl bg-slate-950/90 border border-brand-500/40 shadow-xl shadow-brand-500/5 relative">
+          <div class="p-8 rounded-3xl bg-slate-950/90 border border-brand-500/40 shadow-xl shadow-brand-500/5 relative">
             <div class="absolute -top-3 right-6 px-3 py-0.5 rounded-full bg-brand-600 text-[11px] font-semibold text-white tracking-wider uppercase">
               The Modern Standard
             </div>
@@ -183,233 +460,123 @@
         </div>
 
         <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          <div class="p-6 rounded-2xl bg-slate-900/50 border border-slate-800 hover:border-brand-500/40 transition-all group">
-            <div class="w-12 h-12 rounded-xl bg-brand-500/10 text-brand-400 flex items-center justify-center mb-5 group-hover:scale-105 transition-transform">
+          <div class="p-7 rounded-3xl bg-slate-900/50 border border-slate-800 hover:border-brand-500/40 transition-all group">
+            <div class="w-12 h-12 rounded-2xl bg-brand-500/10 text-brand-400 flex items-center justify-center mb-5 group-hover:scale-110 transition-transform">
               <i data-lucide="smartphone" class="w-6 h-6"></i>
             </div>
             <h3 class="text-lg font-bold text-white mb-2">Cross-Platform Apps</h3>
             <p class="text-slate-400 text-sm leading-relaxed">
-              Native-feel applications for iOS and Android engineered with Flutter for fluid UI and consistent performance.
+              Native-feel applications for iOS and Android engineered with Flutter for fluid 60fps UI and unified performance.
             </p>
           </div>
 
-          <div class="p-6 rounded-2xl bg-slate-900/50 border border-slate-800 hover:border-brand-500/40 transition-all group">
-            <div class="w-12 h-12 rounded-xl bg-brand-500/10 text-brand-400 flex items-center justify-center mb-5 group-hover:scale-105 transition-transform">
+          <div class="p-7 rounded-3xl bg-slate-900/50 border border-slate-800 hover:border-brand-500/40 transition-all group">
+            <div class="w-12 h-12 rounded-2xl bg-brand-500/10 text-brand-400 flex items-center justify-center mb-5 group-hover:scale-110 transition-transform">
               <i data-lucide="globe" class="w-6 h-6"></i>
             </div>
             <h3 class="text-lg font-bold text-white mb-2">Web Platforms</h3>
             <p class="text-slate-400 text-sm leading-relaxed">
-              Responsive SaaS dashboards, client directories, and booking systems built for desktop and mobile web.
+              Responsive SaaS portals, booking engines, and custom back-office administrative dashboards.
             </p>
           </div>
 
-          <div class="p-6 rounded-2xl bg-slate-900/50 border border-slate-800 hover:border-brand-500/40 transition-all group">
-            <div class="w-12 h-12 rounded-xl bg-brand-500/10 text-brand-400 flex items-center justify-center mb-5 group-hover:scale-105 transition-transform">
+          <div class="p-7 rounded-3xl bg-slate-900/50 border border-slate-800 hover:border-brand-500/40 transition-all group">
+            <div class="w-12 h-12 rounded-2xl bg-brand-500/10 text-brand-400 flex items-center justify-center mb-5 group-hover:scale-110 transition-transform">
               <i data-lucide="bot" class="w-6 h-6"></i>
             </div>
-            <h3 class="text-lg font-bold text-white mb-2">AI Integration</h3>
+            <h3 class="text-lg font-bold text-white mb-2">AI Workflows</h3>
             <p class="text-slate-400 text-sm leading-relaxed">
-              Embed custom conversational assistants, document parsers, and automated workflows directly into your software.
+              Ground intelligent assistants strictly in your business rules, FAQ policies, and internal documentation.
             </p>
           </div>
 
-          <div class="p-6 rounded-2xl bg-slate-900/50 border border-slate-800 hover:border-brand-500/40 transition-all group">
-            <div class="w-12 h-12 rounded-xl bg-brand-500/10 text-brand-400 flex items-center justify-center mb-5 group-hover:scale-105 transition-transform">
+          <div class="p-7 rounded-3xl bg-slate-900/50 border border-slate-800 hover:border-brand-500/40 transition-all group">
+            <div class="w-12 h-12 rounded-2xl bg-brand-500/10 text-brand-400 flex items-center justify-center mb-5 group-hover:scale-110 transition-transform">
               <i data-lucide="database" class="w-6 h-6"></i>
             </div>
-            <h3 class="text-lg font-bold text-white mb-2">Serverless Backend</h3>
+            <h3 class="text-lg font-bold text-white mb-2">Serverless Cloud</h3>
             <p class="text-slate-400 text-sm leading-relaxed">
-              Real-time synchronization, user authentication, and autoscaling cloud data pipelines managed with zero overhead.
+              Real-time synchronization, role-based security, and autoscaling cloud data pipelines with zero maintenance.
             </p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ================= DEMOS (PORTFOLIO) ================= -->
-    <section id="demos" class="py-20 bg-slate-900/30 border-y border-slate-800/60">
-      <div class="max-w-7xl mx-auto px-6">
-        <div class="text-center max-w-3xl mx-auto mb-16">
-          <h2 class="text-xs uppercase tracking-widest text-brand-400 font-bold mb-3">Interactive Prototypes</h2>
-          <p class="text-3xl sm:text-4xl font-extrabold text-white">Experience Our Functional Demos</p>
+    <!-- ================= INTERACTIVE PROJECT ESTIMATOR ================= -->
+    <section id="estimator" class="py-20 bg-slate-900/50 border-t border-slate-800/80">
+      <div class="max-w-4xl mx-auto px-6">
+        <div class="text-center mb-12">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-500/10 border border-brand-500/20 text-brand-400 text-xs font-semibold uppercase tracking-wider mb-3">
+            <i data-lucide="calculator" class="w-3.5 h-3.5"></i> Interactive Scope Planner
+          </div>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-white">Estimate Your Build in 60 Seconds</h2>
+          <p class="mt-3 text-sm sm:text-base text-slate-400">Select your required architecture and modules to calculate an estimated delivery window.</p>
         </div>
 
-        <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-          <!-- Demo 1: Now connected to your live Flutter App -->
-          <div class="rounded-2xl border border-slate-800 bg-slate-950 p-6 sm:p-8 flex flex-col justify-between">
+        <div class="rounded-3xl border border-slate-800 bg-slate-950 p-6 sm:p-10 shadow-2xl space-y-8">
+          <!-- Step 1: Target Platform -->
+          <div>
+            <label class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-3">1. Select Target Platform</label>
+            <div class="grid grid-cols-2 sm:grid-cols-3 gap-3">
+              <button type="button" onclick="updateEstimator('platform', 'Mobile App (iOS & Android)', 4, this)" class="est-opt est-platform px-4 py-3 rounded-xl border border-brand-500 bg-brand-600/15 text-white text-xs sm:text-sm font-semibold text-left">
+                📱 Mobile (iOS & Android)
+              </button>
+              <button type="button" onclick="updateEstimator('platform', 'Responsive Web App', 3, this)" class="est-opt est-platform px-4 py-3 rounded-xl border border-slate-800 bg-slate-900/80 text-slate-400 text-xs sm:text-sm font-semibold text-left hover:text-white">
+                🌐 Responsive Web Portal
+              </button>
+              <button type="button" onclick="updateEstimator('platform', 'Unified Full-Stack (Mobile + Web)', 6, this)" class="est-opt est-platform col-span-2 sm:col-span-1 px-4 py-3 rounded-xl border border-slate-800 bg-slate-900/80 text-slate-400 text-xs sm:text-sm font-semibold text-left hover:text-white">
+                ⚡ Unified Full-Stack
+              </button>
+            </div>
+          </div>
+
+          <!-- Step 2: Core Capability -->
+          <div>
+            <label class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-3">2. Choose Core Architecture Module</label>
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+              <button type="button" onclick="updateEstimator('module', 'Booking & Calendar Engine', 2, this)" class="est-opt est-module px-3 py-2.5 rounded-xl border border-brand-500 bg-brand-600/15 text-white text-xs font-semibold text-left">
+                🗓️ Booking Engine
+              </button>
+              <button type="button" onclick="updateEstimator('module', 'Contextual AI Agent Integration', 2, this)" class="est-opt est-module px-3 py-2.5 rounded-xl border border-slate-800 bg-slate-900/80 text-slate-400 text-xs font-semibold text-left hover:text-white">
+                🤖 AI Knowledge Bot
+              </button>
+              <button type="button" onclick="updateEstimator('module', 'Real Estate / PropTech Listing', 3, this)" class="est-opt est-module px-3 py-2.5 rounded-xl border border-slate-800 bg-slate-900/80 text-slate-400 text-xs font-semibold text-left hover:text-white">
+                🏡 PropTech Portal
+              </button>
+              <button type="button" onclick="updateEstimator('module', 'Direct Ordering / Cloud Kitchen', 3, this)" class="est-opt est-module px-3 py-2.5 rounded-xl border border-slate-800 bg-slate-900/80 text-slate-400 text-xs font-semibold text-left hover:text-white">
+                ☕ Ordering Hub
+              </button>
+            </div>
+          </div>
+
+          <!-- Live Dynamic Outcome Summary -->
+          <div class="p-5 rounded-2xl bg-slate-900/90 border border-brand-500/30 flex flex-col sm:flex-row items-center justify-between gap-4">
             <div>
-              <div class="flex items-center justify-between gap-4 mb-4">
-                <span class="px-3 py-1 rounded-full text-xs font-semibold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
-                  Flutter Web & Mobile
-                </span>
-                <span class="text-xs text-slate-500 font-mono">Demo #1</span>
-              </div>
-              <h3 class="text-xl font-bold text-white mb-3">Service Marketplace & Booking Engine</h3>
-              <p class="text-slate-400 text-sm leading-relaxed mb-6">
-                A multi-tenant reservation system built in Flutter featuring real-time calendar scheduling, customer appointment flows, and an interactive admin dashboard.
-              </p>
+              <div class="text-xs font-bold text-brand-400 uppercase tracking-wider">Estimated Delivery Window</div>
+              <div id="est-time-display" class="text-2xl font-black text-white mt-1">4 – 6 Business Days</div>
+              <div id="est-summary-display" class="text-xs text-slate-400 mt-0.5">Mobile (iOS & Android) + Booking & Calendar Engine</div>
             </div>
-            <div class="pt-4 border-t border-slate-900 flex items-center gap-4">
-              <a href="https://zionappsstudio.github.io/zion-booking-demo/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-sm font-semibold text-brand-400 hover:text-brand-300">
-                Launch Live App <i data-lucide="external-link" class="w-4 h-4"></i>
-              </a>
-            </div>
-          </div>
-
-          <!-- Demo 2 -->
-         <!-- Demo 2 -->
-          <div class="rounded-2xl border border-slate-800 bg-slate-950 p-6 sm:p-8 flex flex-col justify-between">
-            <div>
-              <div class="flex items-center justify-between gap-4 mb-4">
-                <span class="px-3 py-1 rounded-full text-xs font-semibold bg-indigo-500/10 text-indigo-400 border border-indigo-500/20">
-                  AI Web Agent
-                </span>
-                <span class="text-xs text-slate-500 font-mono">Demo #2</span>
-              </div>
-              <h3 class="text-xl font-bold text-white mb-3">Intelligent Knowledge Assistant</h3>
-              <p class="text-slate-400 text-sm leading-relaxed mb-6">
-                A conversational knowledge portal that indexes custom business manuals and answers customer support queries using contextual AI retrieval.
-              </p>
-            </div>
-            <div class="pt-4 border-t border-slate-900 flex items-center gap-4">
-              <a href="https://zionappsstudio.github.io/zion-ai-assistant-demo/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-sm font-semibold text-brand-400 hover:text-brand-300">
-                Launch Live App <i data-lucide="external-link" class="w-4 h-4"></i>
-              </a>
-            </div>
-          </div>
-
-          <!-- Demo 3: Church Hub -->
-          <div class="rounded-2xl border border-slate-800 bg-slate-950 p-6 sm:p-8 flex flex-col justify-between">
-            <div>
-              <div class="flex items-center justify-between gap-4 mb-4">
-                <span class="px-3 py-1 rounded-full text-xs font-semibold bg-amber-500/10 text-amber-400 border border-amber-500/20">
-                  Community & Ministry Hub
-                </span>
-                <span class="text-xs text-slate-500 font-mono">Demo #3</span>
-              </div>
-              <h3 class="text-xl font-bold text-white mb-3">Zion Church Community Portal</h3>
-              <p class="text-slate-400 text-sm leading-relaxed mb-6">
-                A multi-lingual community portal featuring media-rich scripture verses, event calendars, video sermon streaming, digital offerings, member family registries, and pastoral prayer pipelines.
-              </p>
-            </div>
-            <div class="pt-4 border-t border-slate-900 flex items-center gap-4">
-              <a href="https://zionappsstudio.github.io/zion-church-hub/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-sm font-semibold text-amber-400 hover:text-amber-300">
-                Launch Live App <i data-lucide="external-link" class="w-4 h-4"></i>
-              </a>
-            </div>
-          </div>
-
-          <!-- Demo 4: Real Estate Portal -->
-          <div class="rounded-2xl border border-slate-800 bg-slate-950 p-6 sm:p-8 flex flex-col justify-between">
-            <div>
-              <div class="flex items-center justify-between gap-4 mb-4">
-                <span class="px-3 py-1 rounded-full text-xs font-semibold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
-                  Luxury PropTech Hub
-                </span>
-                <span class="text-xs text-slate-500 font-mono">Demo #4</span>
-              </div>
-              <h3 class="text-xl font-bold text-white mb-3">Zion Luxury Estates & Yield Engine</h3>
-              <p class="text-slate-400 text-sm leading-relaxed mb-6">
-                A high-converting real estate portal built with a floating glassmorphic navigation dock, real-time mortgage & ROI yield simulator, 3D spatial walkthrough viewer, and one-tap VIP tour reservations.
-              </p>
-            </div>
-            <div class="pt-4 border-t border-slate-900 flex items-center gap-4">
-              <a href="https://zionappsstudio.github.io/zion-estate-hub/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-sm font-semibold text-emerald-400 hover:text-emerald-300">
-                Launch Live App <i data-lucide="external-link" class="w-4 h-4"></i>
-              </a>
-            </div>
-          </div>
-
-          <!-- Demo 5: Luxury Wedding Studio -->
-          <div class="rounded-2xl border border-slate-800 bg-slate-950 p-6 sm:p-8 flex flex-col justify-between">
-            <div>
-              <div class="flex items-center justify-between gap-4 mb-4">
-                <span class="px-3 py-1 rounded-full text-xs font-semibold bg-rose-500/10 text-rose-400 border border-rose-500/20">
-                  Creative Studio & Cinema
-                </span>
-                <span class="text-xs text-slate-500 font-mono">Demo #5</span>
-              </div>
-              <h3 class="text-xl font-bold text-white mb-3">Lumière Wedding Cinema & Stills</h3>
-              <p class="text-slate-400 text-sm leading-relaxed mb-6">
-                An editorial photography showcase featuring presentation slide transitions, full-bleed visual story decks, a real-time custom wedding package cost estimator, and a PIN-secured private client proofing vault.
-              </p>
-            </div>
-            <div class="pt-4 border-t border-slate-900 flex items-center gap-4">
-              <a href="https://zionappsstudio.github.io/zion-wedding-studio/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-sm font-semibold text-rose-400 hover:text-rose-300">
-                Launch Live App <i data-lucide="external-link" class="w-4 h-4"></i>
-              </a>
-            </div>
-          </div>
-
-          <!-- Demo 6: Artisan Cloud Kitchen -->
-          <div class="rounded-2xl border border-slate-800 bg-slate-950 p-6 sm:p-8 flex flex-col justify-between">
-            <div>
-              <div class="flex items-center justify-between gap-4 mb-4">
-                <span class="px-3 py-1 rounded-full text-xs font-semibold bg-amber-500/10 text-amber-400 border border-amber-500/20">
-                  F&B Cloud Kitchen Hub
-                </span>
-                <span class="text-xs text-slate-500 font-mono">Demo #6</span>
-              </div>
-              <h3 class="text-xl font-bold text-white mb-3">Artisan Roast & Cloud Kitchen</h3>
-              <p class="text-slate-400 text-sm leading-relaxed mb-6">
-                A zero-commission direct ordering platform for specialty roasters and cloud kitchens featuring custom drink/food builders, floating cart capsules, real-time 4-stage preparation trackers, and an active kitchen dispatch console.
-              </p>
-            </div>
-            <div class="pt-4 border-t border-slate-900 flex items-center gap-4">
-              <a href="https://zionappsstudio.github.io/zion-artisan-cafe/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-sm font-semibold text-amber-400 hover:text-amber-300">
-                Launch Live App <i data-lucide="external-link" class="w-4 h-4"></i>
-              </a>
-            </div>
-          </div>
-
-          
-    </section>
-
-    <!-- ================= PROCESS SECTION ================= -->
-    <section id="process" class="py-24">
-      <div class="max-w-7xl mx-auto px-6">
-        <div class="text-center max-w-3xl mx-auto mb-16">
-          <h2 class="text-xs uppercase tracking-widest text-brand-400 font-bold mb-3">Workflow</h2>
-          <p class="text-3xl sm:text-4xl font-extrabold text-white">How We Bring Your Product to Life</p>
-        </div>
-
-        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          <div class="p-6 rounded-2xl bg-slate-900/30 border border-slate-800">
-            <span class="text-2xl font-black text-brand-500/40">01</span>
-            <h4 class="text-base font-bold text-white mt-2 mb-2">Scope & Blueprint</h4>
-            <p class="text-xs text-slate-400 leading-relaxed">Map core user stories, wireframes, and backend database schema in one structured kickoff call.</p>
-          </div>
-          <div class="p-6 rounded-2xl bg-slate-900/30 border border-slate-800">
-            <span class="text-2xl font-black text-brand-500/40">02</span>
-            <h4 class="text-base font-bold text-white mt-2 mb-2">AI Rapid Prototype</h4>
-            <p class="text-xs text-slate-400 leading-relaxed">Generate functional user interfaces and clickable flows within days for rapid stakeholder review.</p>
-          </div>
-          <div class="p-6 rounded-2xl bg-slate-900/30 border border-slate-800">
-            <span class="text-2xl font-black text-brand-500/40">03</span>
-            <h4 class="text-base font-bold text-white mt-2 mb-2">Engineering & Wiring</h4>
-            <p class="text-xs text-slate-400 leading-relaxed">Add production-ready security, API integrations, real-time database logic, and comprehensive QA testing.</p>
-          </div>
-          <div class="p-6 rounded-2xl bg-slate-900/30 border border-slate-800">
-            <span class="text-2xl font-black text-brand-500/40">04</span>
-            <h4 class="text-base font-bold text-white mt-2 mb-2">Deploy & Scale</h4>
-            <p class="text-xs text-slate-400 leading-relaxed">Live deployment to App Store, Google Play, or global edge cloud hosting with zero downtime.</p>
+            <a href="#contact" onclick="prefillContactForm()" class="px-5 py-2.5 rounded-xl bg-brand-600 hover:bg-brand-500 text-white text-xs sm:text-sm font-semibold transition-all shadow-md">
+              Lock in Estimate &rarr;
+            </a>
           </div>
         </div>
       </div>
     </section>
 
     <!-- ================= LEAD CAPTURE FORM SECTION ================= -->
-    <section id="contact" class="py-20 bg-slate-900/50 border-t border-slate-800/80">
+    <section id="contact" class="py-20 bg-slate-950 border-t border-slate-800/80">
       <div class="max-w-3xl mx-auto px-6">
         <div class="text-center mb-12">
-          <h2 class="text-xs uppercase tracking-widest text-brand-400 font-bold mb-3">Get in Touch</h2>
+          <h2 class="text-xs uppercase tracking-widest text-brand-400 font-bold mb-3">Direct Contact</h2>
           <p class="text-3xl sm:text-4xl font-extrabold text-white">Let’s Build Something Exceptional</p>
-          <p class="mt-3 text-sm sm:text-base text-slate-400">Share your requirements below and receive a detailed roadmap and estimate within 24 hours.</p>
+          <p class="mt-3 text-sm sm:text-base text-slate-400">Share your requirements below and receive a detailed roadmap and prototype draft within 24 hours.</p>
         </div>
 
-        <form id="contact-form" action="https://api.web3forms.com/submit" method="POST" class="bg-slate-950 border border-slate-800/80 rounded-2xl p-6 sm:p-10 shadow-2xl space-y-6">
+        <form id="contact-form" action="https://api.web3forms.com/submit" method="POST" class="bg-slate-900/60 border border-slate-800 rounded-3xl p-6 sm:p-10 shadow-2xl space-y-6">
           
-          <!-- Web3Forms Configuration: YOUR KEY REMAINS HERE -->
+          <!-- Web3Forms Configuration -->
           <input type="hidden" name="access_key" value="8be3eac5-5859-4bab-bf78-505a28c7710b" />
           <input type="hidden" name="subject" value="New Client Inquiry - Zion Apps" />
           <input type="hidden" name="from_name" value="Zion Apps Portal" />
@@ -418,40 +585,40 @@
           <div class="grid sm:grid-cols-2 gap-6">
             <div>
               <label for="name" class="block text-xs font-semibold uppercase tracking-wider text-slate-300 mb-2">Full Name *</label>
-              <input type="text" name="name" id="name" required placeholder="Jane Doe" class="w-full px-4 py-3 rounded-xl bg-slate-900 border border-slate-800 text-white placeholder-slate-500 focus:outline-none focus:border-brand-500 transition-colors text-sm" />
+              <input type="text" name="name" id="name" required placeholder="Jane Doe" class="w-full px-4 py-3 rounded-xl bg-slate-950 border border-slate-800 text-white placeholder-slate-500 focus:outline-none focus:border-brand-500 transition-colors text-sm" />
             </div>
             <div>
               <label for="email" class="block text-xs font-semibold uppercase tracking-wider text-slate-300 mb-2">Work Email *</label>
-              <input type="email" name="email" id="email" required placeholder="jane@company.com" class="w-full px-4 py-3 rounded-xl bg-slate-900 border border-slate-800 text-white placeholder-slate-500 focus:outline-none focus:border-brand-500 transition-colors text-sm" />
+              <input type="email" name="email" id="email" required placeholder="jane@company.com" class="w-full px-4 py-3 rounded-xl bg-slate-950 border border-slate-800 text-white placeholder-slate-500 focus:outline-none focus:border-brand-500 transition-colors text-sm" />
             </div>
           </div>
 
           <div class="grid sm:grid-cols-2 gap-6">
             <div>
-              <label for="project-type" class="block text-xs font-semibold uppercase tracking-wider text-slate-300 mb-2">Project Type</label>
-              <select name="project_type" id="project-type" class="w-full px-4 py-3 rounded-xl bg-slate-900 border border-slate-800 text-white focus:outline-none focus:border-brand-500 transition-colors text-sm">
+              <label for="project-type" class="block text-xs font-semibold uppercase tracking-wider text-slate-300 mb-2">Platform</label>
+              <select name="project_type" id="project-type" class="w-full px-4 py-3 rounded-xl bg-slate-950 border border-slate-800 text-white focus:outline-none focus:border-brand-500 transition-colors text-sm">
                 <option value="Mobile App">Mobile App (iOS & Android)</option>
-                <option value="Web Platform">Web Platform / Dashboard</option>
-                <option value="Full-Stack">Full-Stack (Mobile + Web)</option>
-                <option value="AI Integration">Custom AI Integration</option>
+                <option value="Web Platform">Web Platform / Portal</option>
+                <option value="Full-Stack">Unified Full-Stack (Mobile + Web)</option>
+                <option value="AI Integration">Custom AI Agent Integration</option>
               </select>
             </div>
             <div>
               <label for="timeline" class="block text-xs font-semibold uppercase tracking-wider text-slate-300 mb-2">Target Launch</label>
-              <select name="timeline" id="timeline" class="w-full px-4 py-3 rounded-xl bg-slate-900 border border-slate-800 text-white focus:outline-none focus:border-brand-500 transition-colors text-sm">
-                <option value="ASAP (< 1 month)">ASAP (&lt; 1 month)</option>
-                <option value="1-3 Months">1 – 3 Months</option>
-                <option value="Flexible">Flexible / Planning Phase</option>
+              <select name="timeline" id="timeline" class="w-full px-4 py-3 rounded-xl bg-slate-950 border border-slate-800 text-white focus:outline-none focus:border-brand-500 transition-colors text-sm">
+                <option value="ASAP (< 1-2 weeks)">ASAP (&lt; 1 – 2 Weeks)</option>
+                <option value="1 Month">Within 1 Month</option>
+                <option value="Flexible">Planning & Discovery Phase</option>
               </select>
             </div>
           </div>
 
           <div>
-            <label for="details" class="block text-xs font-semibold uppercase tracking-wider text-slate-300 mb-2">Project Overview *</label>
-            <textarea name="message" id="details" required rows="4" placeholder="Briefly describe what you want to build and the problem it solves..." class="w-full px-4 py-3 rounded-xl bg-slate-900 border border-slate-800 text-white placeholder-slate-500 focus:outline-none focus:border-brand-500 transition-colors text-sm"></textarea>
+            <label for="details" class="block text-xs font-semibold uppercase tracking-wider text-slate-300 mb-2">Project Scope & Notes *</label>
+            <textarea name="message" id="details" required rows="4" placeholder="Briefly describe what you want to build and the business problem it solves..." class="w-full px-4 py-3 rounded-xl bg-slate-950 border border-slate-800 text-white placeholder-slate-500 focus:outline-none focus:border-brand-500 transition-colors text-sm"></textarea>
           </div>
 
-          <button type="submit" id="submit-btn" class="w-full py-4 rounded-xl bg-brand-600 hover:bg-brand-500 text-white text-base font-semibold transition-all shadow-lg shadow-brand-600/30 flex items-center justify-center gap-2 cursor-pointer">
+          <button type="submit" id="submit-btn" class="w-full py-4 rounded-xl bg-gradient-to-r from-brand-600 to-indigo-600 hover:from-brand-500 hover:to-indigo-500 text-white text-base font-semibold transition-all shadow-xl shadow-brand-600/30 flex items-center justify-center gap-2 cursor-pointer">
             <span id="btn-text">Send Project Details</span>
             <i data-lucide="send" class="w-4 h-4"></i>
           </button>
@@ -490,6 +657,92 @@
     }
     if (menuBtn) {
       menuBtn.addEventListener('click', toggleMobileMenu);
+    }
+
+    // In-Page Sandbox Device Controls
+    function loadSandboxApp(url, title, btnElem) {
+      const iframe = document.getElementById('sandbox-iframe');
+      const titleSpan = document.getElementById('sandbox-title');
+      const extLink = document.getElementById('sandbox-external-link');
+      
+      iframe.src = url;
+      titleSpan.textContent = title;
+      extLink.href = url;
+
+      if (btnElem) {
+        document.querySelectorAll('.sandbox-btn').forEach(btn => {
+          btn.className = "sandbox-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold border border-slate-800 bg-slate-900/80 text-slate-400 hover:text-white transition-all";
+        });
+        btnElem.className = "sandbox-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold border transition-all bg-brand-600 text-white border-brand-500 shadow-md";
+      }
+
+      // Smooth scroll up to sandbox if user clicked a card from below
+      const sandboxSection = document.getElementById('sandbox');
+      if (window.scrollY > sandboxSection.offsetTop + 400) {
+        sandboxSection.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+
+    function setSandboxWidth(device) {
+      const wrapper = document.getElementById('sandbox-frame-wrapper');
+      if (device === 'mobile') {
+        wrapper.style.maxWidth = '390px';
+      } else if (device === 'tablet') {
+        wrapper.style.maxWidth = '680px';
+      } else {
+        wrapper.style.maxWidth = '100%';
+      }
+    }
+
+    // Bento Filter Tab Controller
+    function filterBento(cat, btn) {
+      document.querySelectorAll('.bento-tab').forEach(b => {
+        b.className = "bento-tab px-4 py-2 rounded-full text-xs font-semibold bg-slate-900 border border-slate-800 text-slate-400 hover:text-white transition-all";
+      });
+      btn.className = "bento-tab px-4 py-2 rounded-full text-xs font-semibold bg-brand-600 text-white transition-all";
+
+      const items = document.querySelectorAll('.bento-item');
+      items.forEach(item => {
+        if (cat === 'all' || item.getAttribute('data-category') === cat) {
+          item.style.display = 'flex';
+        } else {
+          item.style.display = 'none';
+        }
+      });
+    }
+
+    // Estimator Calculation Engine
+    let estState = {
+      platform: 'Mobile App (iOS & Android)',
+      platformDays: 4,
+      module: 'Booking & Calendar Engine',
+      moduleDays: 2
+    };
+
+    function updateEstimator(type, label, days, btn) {
+      if (type === 'platform') {
+        estState.platform = label;
+        estState.platformDays = days;
+        document.querySelectorAll('.est-platform').forEach(b => {
+          b.className = "est-opt est-platform px-4 py-3 rounded-xl border border-slate-800 bg-slate-900/80 text-slate-400 text-xs sm:text-sm font-semibold text-left hover:text-white";
+        });
+      } else {
+        estState.module = label;
+        estState.moduleDays = days;
+        document.querySelectorAll('.est-module').forEach(b => {
+          b.className = "est-opt est-module px-3 py-2.5 rounded-xl border border-slate-800 bg-slate-900/80 text-slate-400 text-xs font-semibold text-left hover:text-white";
+        });
+      }
+      btn.className = "est-opt px-4 py-3 rounded-xl border border-brand-500 bg-brand-600/15 text-white text-xs sm:text-sm font-semibold text-left shadow-sm";
+
+      const totalDays = estState.platformDays + estState.moduleDays;
+      document.getElementById('est-time-display').textContent = `${totalDays - 1} – ${totalDays + 1} Business Days`;
+      document.getElementById('est-summary-display').textContent = `${estState.platform} + ${estState.module}`;
+    }
+
+    function prefillContactForm() {
+      const detailsField = document.getElementById('details');
+      detailsField.value = `Hi Zion Apps team, I estimated a project for: \n- Target: ${estState.platform}\n- Core Feature: ${estState.module}\nLooking for a kickoff prototype review.`;
     }
 
     // AJAX Form Submission to Web3Forms
