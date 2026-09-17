@@ -65,12 +65,11 @@
         <span class="text-lg sm:text-xl font-bold tracking-tight text-white">Zion<span class="text-brand-400">Apps</span></span>
       </a>
 
-      <!-- Desktop Navigation -->
-      <nav class="hidden md:flex items-center gap-7 text-sm font-medium text-slate-300">
-        <a href="#demos" class="hover:text-brand-400 transition-colors">Prototypes</a>
-        <a href="#sandbox" class="hover:text-brand-400 transition-colors">Interactive Sandbox</a>
-        <a href="#why-us" class="hover:text-brand-400 transition-colors">The Zion Edge</a>
+      <!-- Desktop Navigation (Streamlined 5-Link Flow) -->
+      <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-300">
+        <a href="#sandbox" class="hover:text-brand-400 transition-colors">Live Demos</a>
         <a href="#services" class="hover:text-brand-400 transition-colors">Capabilities</a>
+        <a href="#why-us" class="hover:text-brand-400 transition-colors">The Zion Edge</a>
         <a href="#about" class="hover:text-brand-400 transition-colors">About Us</a>
         <a href="#estimator" class="hover:text-brand-400 transition-colors">Estimator</a>
       </nav>
@@ -91,20 +90,16 @@
     <!-- Mobile Navigation Drawer -->
     <div id="mobile-menu" class="hidden md:hidden px-6 pt-3 pb-6 border-b border-slate-800 bg-slate-950/98 backdrop-blur-2xl">
       <div class="flex flex-col gap-3.5 text-base font-medium text-slate-300">
-        <a href="#demos" class="hover:text-brand-400 py-1 flex items-center justify-between" onclick="toggleMobileMenu()">
-          <span>Browse 6 Prototypes</span>
-          <i data-lucide="chevron-right" class="w-4 h-4 text-slate-500"></i>
-        </a>
         <a href="#sandbox" class="hover:text-brand-400 py-1 flex items-center justify-between" onclick="toggleMobileMenu()">
-          <span>Interactive Sandbox</span>
-          <i data-lucide="chevron-right" class="w-4 h-4 text-slate-500"></i>
-        </a>
-        <a href="#why-us" class="hover:text-brand-400 py-1 flex items-center justify-between" onclick="toggleMobileMenu()">
-          <span>The Zion Edge</span>
+          <span>Live Demos & Simulator</span>
           <i data-lucide="chevron-right" class="w-4 h-4 text-slate-500"></i>
         </a>
         <a href="#services" class="hover:text-brand-400 py-1 flex items-center justify-between" onclick="toggleMobileMenu()">
           <span>Capabilities</span>
+          <i data-lucide="chevron-right" class="w-4 h-4 text-slate-500"></i>
+        </a>
+        <a href="#why-us" class="hover:text-brand-400 py-1 flex items-center justify-between" onclick="toggleMobileMenu()">
+          <span>The Zion Edge</span>
           <i data-lucide="chevron-right" class="w-4 h-4 text-slate-500"></i>
         </a>
         <a href="#about" class="hover:text-brand-400 py-1 flex items-center justify-between" onclick="toggleMobileMenu()">
@@ -438,6 +433,58 @@
       </div>
     </section>
 
+    <!-- ================= CAPABILITIES (SERVICES) ================= -->
+    <section id="services" class="py-16 sm:py-24">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6">
+        <div class="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
+          <h2 class="text-xs uppercase tracking-widest text-brand-400 font-bold mb-3">Capabilities</h2>
+          <p class="text-2xl sm:text-4xl font-extrabold text-white">Full-Spectrum Digital Engineering</p>
+        </div>
+
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+          <div class="p-6 sm:p-7 rounded-2xl sm:rounded-3xl bg-slate-900/50 border border-slate-800 hover:border-brand-500/40 transition-all group">
+            <div class="w-12 h-12 rounded-2xl bg-brand-500/10 text-brand-400 flex items-center justify-center mb-5 group-hover:scale-110 transition-transform">
+              <i data-lucide="smartphone" class="w-6 h-6"></i>
+            </div>
+            <h3 class="text-lg font-bold text-white mb-2">Cross-Platform Apps</h3>
+            <p class="text-slate-400 text-xs sm:text-sm leading-relaxed">
+              Native-feel applications for iOS and Android engineered with Flutter for fluid 60fps UI and unified performance.
+            </p>
+          </div>
+
+          <div class="p-6 sm:p-7 rounded-2xl sm:rounded-3xl bg-slate-900/50 border border-slate-800 hover:border-brand-500/40 transition-all group">
+            <div class="w-12 h-12 rounded-2xl bg-brand-500/10 text-brand-400 flex items-center justify-center mb-5 group-hover:scale-110 transition-transform">
+              <i data-lucide="globe" class="w-6 h-6"></i>
+            </div>
+            <h3 class="text-lg font-bold text-white mb-2">Web Platforms</h3>
+            <p class="text-slate-400 text-xs sm:text-sm leading-relaxed">
+              Responsive SaaS portals, booking engines, and custom back-office administrative dashboards.
+            </p>
+          </div>
+
+          <div class="p-6 sm:p-7 rounded-2xl sm:rounded-3xl bg-slate-900/50 border border-slate-800 hover:border-brand-500/40 transition-all group">
+            <div class="w-12 h-12 rounded-2xl bg-brand-500/10 text-brand-400 flex items-center justify-center mb-5 group-hover:scale-110 transition-transform">
+              <i data-lucide="bot" class="w-6 h-6"></i>
+            </div>
+            <h3 class="text-lg font-bold text-white mb-2">AI Workflows</h3>
+            <p class="text-slate-400 text-xs sm:text-sm leading-relaxed">
+              Ground intelligent assistants strictly in your business rules, FAQ policies, and internal documentation.
+            </p>
+          </div>
+
+          <div class="p-6 sm:p-7 rounded-2xl sm:rounded-3xl bg-slate-900/50 border border-slate-800 hover:border-brand-500/40 transition-all group">
+            <div class="w-12 h-12 rounded-2xl bg-brand-500/10 text-brand-400 flex items-center justify-center mb-5 group-hover:scale-110 transition-transform">
+              <i data-lucide="database" class="w-6 h-6"></i>
+            </div>
+            <h3 class="text-lg font-bold text-white mb-2">Serverless Cloud</h3>
+            <p class="text-slate-400 text-xs sm:text-sm leading-relaxed">
+              Real-time synchronization, role-based security, and autoscaling cloud data pipelines with zero maintenance.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- ================= THE ZION EDGE (WHY US) ================= -->
     <section id="why-us" class="py-16 sm:py-20 bg-slate-900/40 border-y border-slate-800/60">
       <div class="max-w-7xl mx-auto px-4 sm:px-6">
@@ -490,58 +537,6 @@
                 <span><strong>Cross-platform by default</strong> guaranteeing unified UX across smartphones, tablets, and desktop browsers.</span>
               </li>
             </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ================= CAPABILITIES (SERVICES) ================= -->
-    <section id="services" class="py-16 sm:py-24">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6">
-        <div class="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
-          <h2 class="text-xs uppercase tracking-widest text-brand-400 font-bold mb-3">Capabilities</h2>
-          <p class="text-2xl sm:text-4xl font-extrabold text-white">Full-Spectrum Digital Engineering</p>
-        </div>
-
-        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
-          <div class="p-6 sm:p-7 rounded-2xl sm:rounded-3xl bg-slate-900/50 border border-slate-800 hover:border-brand-500/40 transition-all group">
-            <div class="w-12 h-12 rounded-2xl bg-brand-500/10 text-brand-400 flex items-center justify-center mb-5 group-hover:scale-110 transition-transform">
-              <i data-lucide="smartphone" class="w-6 h-6"></i>
-            </div>
-            <h3 class="text-lg font-bold text-white mb-2">Cross-Platform Apps</h3>
-            <p class="text-slate-400 text-xs sm:text-sm leading-relaxed">
-              Native-feel applications for iOS and Android engineered with Flutter for fluid 60fps UI and unified performance.
-            </p>
-          </div>
-
-          <div class="p-6 sm:p-7 rounded-2xl sm:rounded-3xl bg-slate-900/50 border border-slate-800 hover:border-brand-500/40 transition-all group">
-            <div class="w-12 h-12 rounded-2xl bg-brand-500/10 text-brand-400 flex items-center justify-center mb-5 group-hover:scale-110 transition-transform">
-              <i data-lucide="globe" class="w-6 h-6"></i>
-            </div>
-            <h3 class="text-lg font-bold text-white mb-2">Web Platforms</h3>
-            <p class="text-slate-400 text-xs sm:text-sm leading-relaxed">
-              Responsive SaaS portals, booking engines, and custom back-office administrative dashboards.
-            </p>
-          </div>
-
-          <div class="p-6 sm:p-7 rounded-2xl sm:rounded-3xl bg-slate-900/50 border border-slate-800 hover:border-brand-500/40 transition-all group">
-            <div class="w-12 h-12 rounded-2xl bg-brand-500/10 text-brand-400 flex items-center justify-center mb-5 group-hover:scale-110 transition-transform">
-              <i data-lucide="bot" class="w-6 h-6"></i>
-            </div>
-            <h3 class="text-lg font-bold text-white mb-2">AI Workflows</h3>
-            <p class="text-slate-400 text-xs sm:text-sm leading-relaxed">
-              Ground intelligent assistants strictly in your business rules, FAQ policies, and internal documentation.
-            </p>
-          </div>
-
-          <div class="p-6 sm:p-7 rounded-2xl sm:rounded-3xl bg-slate-900/50 border border-slate-800 hover:border-brand-500/40 transition-all group">
-            <div class="w-12 h-12 rounded-2xl bg-brand-500/10 text-brand-400 flex items-center justify-center mb-5 group-hover:scale-110 transition-transform">
-              <i data-lucide="database" class="w-6 h-6"></i>
-            </div>
-            <h3 class="text-lg font-bold text-white mb-2">Serverless Cloud</h3>
-            <p class="text-slate-400 text-xs sm:text-sm leading-relaxed">
-              Real-time synchronization, role-based security, and autoscaling cloud data pipelines with zero maintenance.
-            </p>
           </div>
         </div>
       </div>
