@@ -36,7 +36,6 @@
         linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
         linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
     }
-    /* Hide scrollbars for swipeable pill rows */
     .no-scrollbar::-webkit-scrollbar {
       display: none;
     }
@@ -44,7 +43,6 @@
       -ms-overflow-style: none;
       scrollbar-width: none;
     }
-    /* Hardware acceleration for mobile scrolling */
     * {
       -webkit-tap-highlight-color: transparent;
     }
@@ -52,7 +50,7 @@
 </head>
 <body class="bg-slate-950 text-slate-100 font-sans antialiased selection:bg-brand-500 selection:text-white bg-grid relative overflow-x-hidden pb-16 md:pb-0">
 
-  <!-- Ambient Glow Orbs (Subdued for mobile battery & GPU) -->
+  <!-- Ambient Glow Orbs -->
   <div class="fixed top-0 left-1/2 -translate-x-1/2 w-[320px] md:w-[550px] h-[320px] md:h-[550px] bg-brand-600/15 rounded-full blur-[100px] pointer-events-none -z-10"></div>
   <div class="fixed top-2/3 right-0 w-[240px] md:w-[450px] h-[240px] md:h-[450px] bg-emerald-500/10 rounded-full blur-[100px] pointer-events-none -z-10"></div>
 
@@ -68,11 +66,12 @@
       </a>
 
       <!-- Desktop Navigation -->
-      <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-300">
+      <nav class="hidden md:flex items-center gap-7 text-sm font-medium text-slate-300">
         <a href="#demos" class="hover:text-brand-400 transition-colors">Prototypes</a>
         <a href="#sandbox" class="hover:text-brand-400 transition-colors">Interactive Sandbox</a>
-        <a href="#services" class="hover:text-brand-400 transition-colors">Capabilities</a>
         <a href="#why-us" class="hover:text-brand-400 transition-colors">The Zion Edge</a>
+        <a href="#services" class="hover:text-brand-400 transition-colors">Capabilities</a>
+        <a href="#about" class="hover:text-brand-400 transition-colors">About Us</a>
         <a href="#estimator" class="hover:text-brand-400 transition-colors">Estimator</a>
       </nav>
 
@@ -100,12 +99,20 @@
           <span>Interactive Sandbox</span>
           <i data-lucide="chevron-right" class="w-4 h-4 text-slate-500"></i>
         </a>
-        <a href="#estimator" class="hover:text-brand-400 py-1 flex items-center justify-between" onclick="toggleMobileMenu()">
-          <span>Scope & Cost Estimator</span>
+        <a href="#why-us" class="hover:text-brand-400 py-1 flex items-center justify-between" onclick="toggleMobileMenu()">
+          <span>The Zion Edge</span>
           <i data-lucide="chevron-right" class="w-4 h-4 text-slate-500"></i>
         </a>
-        <a href="#why-us" class="hover:text-brand-400 py-1 flex items-center justify-between" onclick="toggleMobileMenu()">
-          <span>Why Zion Apps</span>
+        <a href="#services" class="hover:text-brand-400 py-1 flex items-center justify-between" onclick="toggleMobileMenu()">
+          <span>Capabilities</span>
+          <i data-lucide="chevron-right" class="w-4 h-4 text-slate-500"></i>
+        </a>
+        <a href="#about" class="hover:text-brand-400 py-1 flex items-center justify-between" onclick="toggleMobileMenu()">
+          <span>About Us</span>
+          <i data-lucide="chevron-right" class="w-4 h-4 text-slate-500"></i>
+        </a>
+        <a href="#estimator" class="hover:text-brand-400 py-1 flex items-center justify-between" onclick="toggleMobileMenu()">
+          <span>Scope & Cost Estimator</span>
           <i data-lucide="chevron-right" class="w-4 h-4 text-slate-500"></i>
         </a>
         <a href="#contact" class="w-full mt-2 text-center px-5 py-3 rounded-xl bg-brand-600 text-white font-semibold shadow-lg shadow-brand-600/30" onclick="toggleMobileMenu()">Start Your Project</a>
@@ -234,7 +241,6 @@
               </div>
             </div>
           </div>
-          <!-- Mobile Touch Guidance Note -->
           <p class="text-center text-[11px] text-slate-500 mt-2 block sm:hidden">
             💡 Tip: Scroll outside the black box or tap "Open Fullscreen" for complete immersive navigation.
           </p>
@@ -274,7 +280,6 @@
           
           <!-- Card 1: Booking Engine (Emerald Glow) -->
           <div data-category="commerce" class="bento-item relative overflow-hidden rounded-2xl sm:rounded-3xl border border-emerald-500/20 bg-slate-900/40 p-5 sm:p-7 flex flex-col justify-between hover:border-emerald-500/60 hover:bg-slate-900/70 hover:shadow-xl hover:shadow-emerald-500/10 transition-all group">
-            <!-- Subtle Radial Gradient Glow -->
             <div class="absolute -top-12 -right-12 w-48 h-48 bg-emerald-500/15 group-hover:bg-emerald-500/30 rounded-full blur-2xl pointer-events-none transition-all duration-500"></div>
             
             <div class="relative z-10">
@@ -301,7 +306,6 @@
 
           <!-- Card 2: AI Knowledge Assistant (Indigo Glow) -->
           <div data-category="ai" class="bento-item relative overflow-hidden rounded-2xl sm:rounded-3xl border border-indigo-500/20 bg-slate-900/40 p-5 sm:p-7 flex flex-col justify-between hover:border-indigo-500/60 hover:bg-slate-900/70 hover:shadow-xl hover:shadow-indigo-500/10 transition-all group">
-            <!-- Subtle Radial Gradient Glow -->
             <div class="absolute -top-12 -right-12 w-48 h-48 bg-indigo-500/15 group-hover:bg-indigo-500/30 rounded-full blur-2xl pointer-events-none transition-all duration-500"></div>
 
             <div class="relative z-10">
@@ -328,7 +332,6 @@
 
           <!-- Card 3: Church Hub (Amber Glow) -->
           <div data-category="community" class="bento-item relative overflow-hidden rounded-2xl sm:rounded-3xl border border-amber-500/20 bg-slate-900/40 p-5 sm:p-7 flex flex-col justify-between hover:border-amber-500/60 hover:bg-slate-900/70 hover:shadow-xl hover:shadow-amber-500/10 transition-all group">
-            <!-- Subtle Radial Gradient Glow -->
             <div class="absolute -top-12 -right-12 w-48 h-48 bg-amber-500/15 group-hover:bg-amber-500/30 rounded-full blur-2xl pointer-events-none transition-all duration-500"></div>
 
             <div class="relative z-10">
@@ -355,7 +358,6 @@
 
           <!-- Card 4: Luxury PropTech Hub (Cyan Glow) -->
           <div data-category="proptech" class="bento-item relative overflow-hidden rounded-2xl sm:rounded-3xl border border-cyan-500/20 bg-slate-900/40 p-5 sm:p-7 flex flex-col justify-between hover:border-cyan-500/60 hover:bg-slate-900/70 hover:shadow-xl hover:shadow-cyan-500/10 transition-all group">
-            <!-- Subtle Radial Gradient Glow -->
             <div class="absolute -top-12 -right-12 w-48 h-48 bg-cyan-500/15 group-hover:bg-cyan-500/30 rounded-full blur-2xl pointer-events-none transition-all duration-500"></div>
 
             <div class="relative z-10">
@@ -382,7 +384,6 @@
 
           <!-- Card 5: Wedding Studio (Rose Glow) -->
           <div data-category="proptech" class="bento-item relative overflow-hidden rounded-2xl sm:rounded-3xl border border-rose-500/20 bg-slate-900/40 p-5 sm:p-7 flex flex-col justify-between hover:border-rose-500/60 hover:bg-slate-900/70 hover:shadow-xl hover:shadow-rose-500/10 transition-all group">
-            <!-- Subtle Radial Gradient Glow -->
             <div class="absolute -top-12 -right-12 w-48 h-48 bg-rose-500/15 group-hover:bg-rose-500/30 rounded-full blur-2xl pointer-events-none transition-all duration-500"></div>
 
             <div class="relative z-10">
@@ -409,7 +410,6 @@
 
           <!-- Card 6: Artisan Cloud Kitchen (Orange Glow) -->
           <div data-category="commerce" class="bento-item relative overflow-hidden rounded-2xl sm:rounded-3xl border border-orange-500/20 bg-slate-900/40 p-5 sm:p-7 flex flex-col justify-between hover:border-orange-500/60 hover:bg-slate-900/70 hover:shadow-xl hover:shadow-orange-500/10 transition-all group">
-            <!-- Subtle Radial Gradient Glow -->
             <div class="absolute -top-12 -right-12 w-48 h-48 bg-orange-500/15 group-hover:bg-orange-500/30 rounded-full blur-2xl pointer-events-none transition-all duration-500"></div>
 
             <div class="relative z-10">
@@ -434,6 +434,150 @@
             </div>
           </div>
 
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= THE ZION EDGE (WHY US) ================= -->
+    <section id="why-us" class="py-16 sm:py-20 bg-slate-900/40 border-y border-slate-800/60">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6">
+        <div class="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
+          <h2 class="text-xs uppercase tracking-widest text-brand-400 font-bold mb-3">The Zion Edge</h2>
+          <p class="text-2xl sm:text-4xl font-extrabold text-white">Why Zion Apps Outperforms Traditional Agencies</p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-6 sm:gap-8 max-w-5xl mx-auto">
+          <!-- Traditional Agency Model -->
+          <div class="p-6 sm:p-8 rounded-2xl sm:rounded-3xl bg-slate-950/60 border border-red-500/20 shadow-sm relative">
+            <h3 class="text-lg sm:text-xl font-bold text-red-400 mb-5 flex items-center gap-2">
+              <i data-lucide="x-circle" class="w-5 h-5"></i> The Traditional Agency Model
+            </h3>
+            <ul class="space-y-4 text-slate-400 text-xs sm:text-sm">
+              <li class="flex items-start gap-3">
+                <i data-lucide="minus" class="w-4 h-4 text-red-400 mt-0.5 shrink-0"></i>
+                <span><strong>Months of waiting</strong> before delivering your first functional interactive build.</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <i data-lucide="minus" class="w-4 h-4 text-red-400 mt-0.5 shrink-0"></i>
+                <span><strong>Inflated engineering fees</strong> billing hourly for boilerplate, repetitive code.</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <i data-lucide="minus" class="w-4 h-4 text-red-400 mt-0.5 shrink-0"></i>
+                <span><strong>Fractured tech stacks</strong> requiring separate engineers for iOS, Android, and Web.</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- The Zion Apps Way -->
+          <div class="p-6 sm:p-8 rounded-2xl sm:rounded-3xl bg-slate-950/90 border border-brand-500/40 shadow-xl shadow-brand-500/5 relative">
+            <div class="absolute -top-3 right-6 px-3 py-0.5 rounded-full bg-brand-600 text-[10px] sm:text-[11px] font-semibold text-white tracking-wider uppercase">
+              The Modern Standard
+            </div>
+            <h3 class="text-lg sm:text-xl font-bold text-brand-300 mb-5 flex items-center gap-2">
+              <i data-lucide="zap" class="w-5 h-5 text-brand-400"></i> The Zion Apps Way
+            </h3>
+            <ul class="space-y-4 text-slate-300 text-xs sm:text-sm">
+              <li class="flex items-start gap-3">
+                <i data-lucide="check" class="w-4 h-4 text-emerald-400 mt-0.5 shrink-0"></i>
+                <span><strong>Rapid interactive drafts</strong> ready for review in days using AI scaffolding tools.</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <i data-lucide="check" class="w-4 h-4 text-emerald-400 mt-0.5 shrink-0"></i>
+                <span><strong>Value-focused pricing</strong> where you pay strictly for custom logic, not boilerplate.</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <i data-lucide="check" class="w-4 h-4 text-emerald-400 mt-0.5 shrink-0"></i>
+                <span><strong>Cross-platform by default</strong> guaranteeing unified UX across smartphones, tablets, and desktop browsers.</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= CAPABILITIES (SERVICES) ================= -->
+    <section id="services" class="py-16 sm:py-24">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6">
+        <div class="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
+          <h2 class="text-xs uppercase tracking-widest text-brand-400 font-bold mb-3">Capabilities</h2>
+          <p class="text-2xl sm:text-4xl font-extrabold text-white">Full-Spectrum Digital Engineering</p>
+        </div>
+
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+          <div class="p-6 sm:p-7 rounded-2xl sm:rounded-3xl bg-slate-900/50 border border-slate-800 hover:border-brand-500/40 transition-all group">
+            <div class="w-12 h-12 rounded-2xl bg-brand-500/10 text-brand-400 flex items-center justify-center mb-5 group-hover:scale-110 transition-transform">
+              <i data-lucide="smartphone" class="w-6 h-6"></i>
+            </div>
+            <h3 class="text-lg font-bold text-white mb-2">Cross-Platform Apps</h3>
+            <p class="text-slate-400 text-xs sm:text-sm leading-relaxed">
+              Native-feel applications for iOS and Android engineered with Flutter for fluid 60fps UI and unified performance.
+            </p>
+          </div>
+
+          <div class="p-6 sm:p-7 rounded-2xl sm:rounded-3xl bg-slate-900/50 border border-slate-800 hover:border-brand-500/40 transition-all group">
+            <div class="w-12 h-12 rounded-2xl bg-brand-500/10 text-brand-400 flex items-center justify-center mb-5 group-hover:scale-110 transition-transform">
+              <i data-lucide="globe" class="w-6 h-6"></i>
+            </div>
+            <h3 class="text-lg font-bold text-white mb-2">Web Platforms</h3>
+            <p class="text-slate-400 text-xs sm:text-sm leading-relaxed">
+              Responsive SaaS portals, booking engines, and custom back-office administrative dashboards.
+            </p>
+          </div>
+
+          <div class="p-6 sm:p-7 rounded-2xl sm:rounded-3xl bg-slate-900/50 border border-slate-800 hover:border-brand-500/40 transition-all group">
+            <div class="w-12 h-12 rounded-2xl bg-brand-500/10 text-brand-400 flex items-center justify-center mb-5 group-hover:scale-110 transition-transform">
+              <i data-lucide="bot" class="w-6 h-6"></i>
+            </div>
+            <h3 class="text-lg font-bold text-white mb-2">AI Workflows</h3>
+            <p class="text-slate-400 text-xs sm:text-sm leading-relaxed">
+              Ground intelligent assistants strictly in your business rules, FAQ policies, and internal documentation.
+            </p>
+          </div>
+
+          <div class="p-6 sm:p-7 rounded-2xl sm:rounded-3xl bg-slate-900/50 border border-slate-800 hover:border-brand-500/40 transition-all group">
+            <div class="w-12 h-12 rounded-2xl bg-brand-500/10 text-brand-400 flex items-center justify-center mb-5 group-hover:scale-110 transition-transform">
+              <i data-lucide="database" class="w-6 h-6"></i>
+            </div>
+            <h3 class="text-lg font-bold text-white mb-2">Serverless Cloud</h3>
+            <p class="text-slate-400 text-xs sm:text-sm leading-relaxed">
+              Real-time synchronization, role-based security, and autoscaling cloud data pipelines with zero maintenance.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= ABOUT US (FOUNDER & MISSION) ================= -->
+    <section id="about" class="py-16 sm:py-20 bg-slate-900/30 border-t border-slate-800/80">
+      <div class="max-w-5xl mx-auto px-4 sm:px-6">
+        <div class="rounded-3xl border border-slate-800 bg-slate-950/80 p-6 sm:p-10 shadow-xl relative overflow-hidden">
+          <div class="absolute -top-16 -right-16 w-48 h-48 bg-brand-600/10 rounded-full blur-3xl pointer-events-none"></div>
+
+          <div class="grid md:grid-cols-12 gap-8 items-center">
+            <div class="md:col-span-4 flex flex-col items-center text-center md:items-start md:text-left border-b md:border-b-0 md:border-r border-slate-800 pb-6 md:pb-0 md:pr-8">
+              <div class="w-16 h-16 rounded-2xl bg-gradient-to-tr from-brand-600 to-indigo-400 flex items-center justify-center text-white text-2xl font-black shadow-lg shadow-brand-500/20 mb-4">
+                Z
+              </div>
+              <h3 class="text-xl font-bold text-white">About Zion Apps</h3>
+              <p class="text-xs text-brand-400 font-semibold tracking-wide uppercase mt-1">Founder-Led Engineering</p>
+              <div class="mt-4 flex items-center gap-2 text-xs text-slate-400">
+                <span class="w-2 h-2 rounded-full bg-emerald-400 inline-block"></span>
+                Direct Engineer Access (No Middlemen)
+              </div>
+            </div>
+
+            <div class="md:col-span-8 space-y-4 text-slate-300 text-xs sm:text-sm leading-relaxed">
+              <p>
+                Zion Apps was founded on a simple principle: <strong>cutting through the bureaucratic bloat of conventional software agencies</strong>. Traditional shops take months and charge high hourly rates just to produce standard boilerplate code.
+              </p>
+              <p>
+                We build differently. By combining production-grade <strong>Flutter architecture</strong> with modern AI engineering tools, we translate complex business workflows into functional, cross-platform software in days rather than quarters.
+              </p>
+              <p class="text-slate-400">
+                When you partner with Zion Apps, you work directly with hands-on engineers who design the system, write clean code, and deploy to production—guaranteeing complete transparency from kickoff to scale.
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -649,7 +793,7 @@
       items.forEach(item => {
         if (cat === 'all' || item.getAttribute('data-category') === cat) {
           item.classList.remove('hidden');
-          item.style.display = ''; // Clear inline styles so standard CSS Grid applies properly
+          item.style.display = '';
         } else {
           item.classList.add('hidden');
         }
