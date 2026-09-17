@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Zion Apps | High-Performance Mobile & Web Apps Built with AI Speed</title>
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: '#eef2ff',
+              400: '#818cf8',
+              500: '#6366f1',
+              600: '#4f46e5',
+              700: '#4338ca',
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="bg-slate-950 text-slate-100 font-sans antialiased selection:bg-brand-500 selection:text-white">
+
+  <!-- ================= HEADER / NAVBAR ================= -->
+  <header class="fixed top-0 left-0 right-0 z-50 bg-slate-950/80 backdrop-blur-md border-b border-slate-800/80">
+    <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+      <!-- Logo -->
+      <a href="#" class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-brand-600 to-indigo-400 flex items-center justify-center text-white font-black text-xl shadow-lg shadow-brand-500/20">
+          Z
+        </div>
+        <span class="text-xl font-bold tracking-tight text-white">Zion<span class="text-brand-400">Apps</span></span>
+      </a>
+
+      <!-- Desktop Navigation -->
+      <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-300">
+        <a href="#services" class="hover:text-brand-400 transition-colors">Services</a>
+        <a href="#demos" class="hover:text-brand-400 transition-colors">Live Demos</a>
+        <a href="#why-us" class="hover:text-brand-400 transition-colors">Why Zion</a>
+        <a href="#process" class="hover:text-brand-400 transition-colors">Process</a>
+      </nav>
+
+      <!-- Desktop CTA -->
+      <div class="hidden md:flex items-center">
+        <a href="#contact" class="px-5 py-2.5 rounded-lg bg-brand-600 hover:bg-brand-500 text-white text-sm font-semibold transition-all shadow-md shadow-brand-600/30">
+          Start Your Project &rarr;
+        </a>
+      </div>
+
+      <!-- Mobile Menu Toggle Button -->
+      <button id="menu-btn" class="md:hidden text-slate-400 hover:text-white focus:outline-none" aria-label="Toggle Menu">
+        <i data-lucide="menu" class="w-6 h-6"></i>
+      </button>
+    </div>
+
+    <!-- Mobile Navigation Drawer -->
+    <div id="mobile-menu" class="hidden md:hidden px-6 pt-2 pb-6 border-b border-slate-800 bg-slate-950/95">
+      <div class="flex flex-col gap-4 text-base font-medium text-slate-300">
+        <a href="#services" class="hover:text-brand-400 py-1" onclick="toggleMobileMenu()">Services</a>
+        <a href="#demos" class="hover:text-brand-400 py-1" onclick="toggleMobileMenu()">Live Demos</a>
+        <a href="#why-us" class="hover:text-brand-400 py-1" onclick="toggleMobileMenu()">Why Zion</a>
+        <a href="#process" class="hover:text-brand-400 py-1" onclick="toggleMobileMenu()">Process</a>
+        <a href="#contact" class="w-full mt-2 text-center px-5 py-3 rounded-lg bg-brand-600 text-white font-semibold" onclick="toggleMobileMenu()">Start Your Project</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="pt-20">
+    <!-- ================= HERO SECTION ================= -->
+    <section class="relative pt-24 pb-20 md:pt-32 md:pb-28 overflow-hidden">
+      <!-- Glow Background Elements -->
+      <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-brand-600/20 rounded-full blur-3xl pointer-events-none"></div>
+      
+      <div class="max-w-7xl mx-auto px-6 text-center relative z-10">
+        <!-- Eyebrow Badge -->
+        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-brand-500/30 bg-brand-500/10 text-brand-300 text-xs md:text-sm font-medium mb-8">
+          <span class="inline-block w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+          Next-Generation Mobile & Web Engineering
+        </div>
+
+        <!-- Headline -->
+        <h1 class="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-white max-w-4xl mx-auto leading-[1.15]">
+          Turn Your Vision into High-Performance Apps at <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-400 to-indigo-200">3x the Speed.</span>
+        </h1>
+
+        <!-- Subheading -->
+        <p class="mt-6 text-base sm:text-lg md:text-xl text-slate-400 max-w-2xl mx-auto leading-relaxed">
+          At Zion Apps, we engineer sleek cross-platform mobile apps and responsive web systems by combining modern software architecture with advanced AI workflows. Fast, scalable, and zero bloat.
+        </p>
+
+        <!-- CTA Action Buttons -->
+        <div class="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
+          <a href="#contact" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-brand-600 hover:bg-brand-500 text-white text-base font-semibold transition-all shadow-lg shadow-brand-600/30 flex items-center justify-center gap-2">
+            Request a Free Estimate
+            <i data-lucide="arrow-right" class="w-4 h-4"></i>
+          </a>
+          <a href="#demos" class="w-full sm:w-auto px-8 py-4 rounded-xl border border-slate-800 bg-slate-900/60 hover:bg-slate-800 text-slate-300 text-base font-semibold transition-all flex items-center justify-center gap-2">
+            Explore Live Demos
+            <i data-lucide="chevron-down" class="w-4 h-4"></i>
+          </a>
+        </div>
+
+        <!-- Trust Badges -->
+        <div class="mt-16 pt-8 border-t border-slate-800/80 grid grid-cols-1 sm:grid-cols-3 gap-6 text-slate-400 text-xs sm:text-sm font-medium max-w-3xl mx-auto">
+          <div class="flex items-center justify-center gap-2">
+            <i data-lucide="check-circle" class="w-4 h-4 text-emerald-400"></i> Single Unified Codebase
+          </div>
+          <div class="flex items-center justify-center gap-2">
+            <i data-lucide="check-circle" class="w-4 h-4 text-emerald-400"></i> AI-Accelerated Delivery
+          </div>
+          <div class="flex items-center justify-center gap-2">
+            <i data-lucide="check-circle" class="w-4 h-4 text-emerald-400"></i> Zero Server Maintenance
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= WHY ZION APPS (PROBLEM VS SOLUTION) ================= -->
+    <section id="why-us" class="py-20 bg-slate-900/40 border-y border-slate-800/60">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <h2 class="text-xs uppercase tracking-widest text-brand-400 font-bold mb-3">Comparison</h2>
+          <p class="text-3xl sm:text-4xl font-extrabold text-white">Why Zion Apps Outperforms Traditional Agencies</p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+          <!-- Traditional Agency Box -->
+          <div class="p-8 rounded-2xl bg-slate-950/60 border border-red-500/20 shadow-sm relative">
+            <h3 class="text-xl font-bold text-red-400 mb-6 flex items-center gap-2">
+              <i data-lucide="x-circle" class="w-5 h-5"></i> The Traditional Agency Model
+            </h3>
+            <ul class="space-y-4 text-slate-400 text-sm">
+              <li class="flex items-start gap-3">
+                <i data-lucide="minus" class="w-4 h-4 text-red-400 mt-1 shrink-0"></i>
+                <span><strong>Months of waiting</strong> before delivering your first functional interactive build.</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <i data-lucide="minus" class="w-4 h-4 text-red-400 mt-1 shrink-0"></i>
+                <span><strong>Inflated engineering fees</strong> billing hourly for standard boilerplate code.</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <i data-lucide="minus" class="w-4 h-4 text-red-400 mt-1 shrink-0"></i>
+                <span><strong>Fractured tech stacks</strong> requiring separate engineers for iOS, Android, and Web.</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Zion Apps Box -->
+          <div class="p-8 rounded-2xl bg-slate-950/90 border border-brand-500/40 shadow-xl shadow-brand-500/5 relative">
+            <div class="absolute -top-3 right-6 px-3 py-0.5 rounded-full bg-brand-600 text-[11px] font-semibold text-white tracking-wider uppercase">
+              The Modern Standard
+            </div>
+            <h3 class="text-xl font-bold text-brand-300 mb-6 flex items-center gap-2">
+              <i data-lucide="zap" class="w-5 h-5 text-brand-400"></i> The Zion Apps Way
+            </h3>
+            <ul class="space-y-4 text-slate-300 text-sm">
+              <li class="flex items-start gap-3">
+                <i data-lucide="check" class="w-4 h-4 text-emerald-400 mt-1 shrink-0"></i>
+                <span><strong>Rapid interactive drafts</strong> ready for review in days using AI scaffolding tools.</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <i data-lucide="check" class="w-4 h-4 text-emerald-400 mt-1 shrink-0"></i>
+                <span><strong>Value-focused pricing</strong> where you pay strictly for custom logic, not boilerplate.</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <i data-lucide="check" class="w-4 h-4 text-emerald-400 mt-1 shrink-0"></i>
+                <span><strong>Cross-platform by default</strong> guaranteeing unified UX across smartphones, tablets, and desktop browsers.</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= SERVICES SECTION ================= -->
+    <section id="services" class="py-24">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <h2 class="text-xs uppercase tracking-widest text-brand-400 font-bold mb-3">Capabilities</h2>
+          <p class="text-3xl sm:text-4xl font-extrabold text-white">Full-Spectrum Digital Engineering</p>
+        </div>
+
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <!-- Card 1 -->
+          <div class="p-6 rounded-2xl bg-slate-900/50 border border-slate-800 hover:border-brand-500/40 transition-all group">
+            <div class="w-12 h-12 rounded-xl bg-brand-500/10 text-brand-400 flex items-center justify-center mb-5 group-hover:scale-105 transition-transform">
+              <i data-lucide="smartphone" class="w-6 h-6"></i>
+            </div>
+            <h3 class="text-lg font-bold text-white mb-2">Cross-Platform Apps</h3>
+            <p class="text-slate-400 text-sm leading-relaxed">
+              Native-feel applications for iOS and Android engineered with Flutter for fluid UI and consistent performance.
+            </p>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="p-6 rounded-2xl bg-slate-900/50 border border-slate-800 hover:border-brand-500/40 transition-all group">
+            <div class="w-12 h-12 rounded-xl bg-brand-500/10 text-brand-400 flex items-center justify-center mb-5 group-hover:scale-105 transition-transform">
+              <i data-lucide="globe" class="w-6 h-6"></i>
+            </div>
+            <h3 class="text-lg font-bold text-white mb-2">Web Platforms</h3>
+            <p class="text-slate-400 text-sm leading-relaxed">
+              Responsive SaaS dashboards, client directories, and booking systems built for desktop and mobile web.
+            </p>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="p-6 rounded-2xl bg-slate-900/50 border border-slate-800 hover:border-brand-500/40 transition-all group">
+            <div class="w-12 h-12 rounded-xl bg-brand-500/10 text-brand-400 flex items-center justify-center mb-5 group-hover:scale-105 transition-transform">
+              <i data-lucide="bot" class="w-6 h-6"></i>
+            </div>
+            <h3 class="text-lg font-bold text-white mb-2">AI Integration</h3>
+            <p class="text-slate-400 text-sm leading-relaxed">
+              Embed custom conversational assistants, document parsers, and automated workflows directly into your software.
+            </p>
+          </div>
+
+          <!-- Card 4 -->
+          <div class="p-6 rounded-2xl bg-slate-900/50 border border-slate-800 hover:border-brand-500/40 transition-all group">
+            <div class="w-12 h-12 rounded-xl bg-brand-500/10 text-brand-400 flex items-center justify-center mb-5 group-hover:scale-105 transition-transform">
+              <i data-lucide="database" class="w-6 h-6"></i>
+            </div>
+            <h3 class="text-lg font-bold text-white mb-2">Serverless Backend</h3>
+            <p class="text-slate-400 text-sm leading-relaxed">
+              Real-time synchronization, user authentication, and autoscaling cloud data pipelines managed with zero overhead.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= DEMOS (PORTFOLIO) ================= -->
+    <section id="demos" class="py-20 bg-slate-900/30 border-y border-slate-800/60">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <h2 class="text-xs uppercase tracking-widest text-brand-400 font-bold mb-3">Interactive Prototypes</h2>
+          <p class="text-3xl sm:text-4xl font-extrabold text-white">Experience Our Functional Demos</p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+          <!-- Demo 1 Card -->
+          <div class="rounded-2xl border border-slate-800 bg-slate-950 p-6 sm:p-8 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between gap-4 mb-4">
+                <span class="px-3 py-1 rounded-full text-xs font-semibold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
+                  Mobile & Web App
+                </span>
+                <span class="text-xs text-slate-500 font-mono">Demo #1</span>
+              </div>
+              <h3 class="text-xl font-bold text-white mb-3">Service Marketplace & Booking Engine</h3>
+              <p class="text-slate-400 text-sm leading-relaxed mb-6">
+                A multi-tenant reservation system featuring real-time calendar scheduling, customer authentication, and an administrative control panel.
+              </p>
+            </div>
+            <div class="pt-4 border-t border-slate-900 flex items-center gap-4">
+              <a href="#" class="inline-flex items-center gap-2 text-sm font-semibold text-brand-400 hover:text-brand-300">
+                Launch Live App <i data-lucide="external-link" class="w-4 h-4"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Demo 2 Card -->
+          <div class="rounded-2xl border border-slate-800 bg-slate-950 p-6 sm:p-8 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between gap-4 mb-4">
+                <span class="px-3 py-1 rounded-full text-xs font-semibold bg-indigo-500/10 text-indigo-400 border border-indigo-500/20">
+                  AI Web Agent
+                </span>
+                <span class="text-xs text-slate-500 font-mono">Demo #2</span>
+              </div>
+              <h3 class="text-xl font-bold text-white mb-3">Intelligent Knowledge Assistant</h3>
+              <p class="text-slate-400 text-sm leading-relaxed mb-6">
+                A conversational knowledge portal that indexes custom business manuals and answers customer support queries using contextual AI retrieval.
+              </p>
+            </div>
+            <div class="pt-4 border-t border-slate-900 flex items-center gap-4">
+              <a href="#" class="inline-flex items-center gap-2 text-sm font-semibold text-brand-400 hover:text-brand-300">
+                Launch Live App <i data-lucide="external-link" class="w-4 h-4"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= PROCESS SECTION ================= -->
+    <section id="process" class="py-24">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <h2 class="text-xs uppercase tracking-widest text-brand-400 font-bold mb-3">Workflow</h2>
+          <p class="text-3xl sm:text-4xl font-extrabold text-white">How We Bring Your Product to Life</p>
+        </div>
+
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div class="p-6 rounded-2xl bg-slate-900/30 border border-slate-800">
+            <span class="text-2xl font-black text-brand-500/40">01</span>
+            <h4 class="text-base font-bold text-white mt-2 mb-2">Scope & Blueprint</h4>
+            <p class="text-xs text-slate-400 leading-relaxed">Map core user stories, wireframes, and backend database schema in one structured kickoff call.</p>
+          </div>
+          <div class="p-6 rounded-2xl bg-slate-900/30 border border-slate-800">
+            <span class="text-2xl font-black text-brand-500/40">02</span>
+            <h4 class="text-base font-bold text-white mt-2 mb-2">AI Rapid Prototype</h4>
+            <p class="text-xs text-slate-400 leading-relaxed">Generate functional user interfaces and clickable flows within days for rapid stakeholder review.</p>
+          </div>
+          <div class="p-6 rounded-2xl bg-slate-900/30 border border-slate-800">
+            <span class="text-2xl font-black text-brand-500/40">03</span>
+            <h4 class="text-base font-bold text-white mt-2 mb-2">Engineering & Wiring</h4>
+            <p class="text-xs text-slate-400 leading-relaxed">Add production-ready security, API integrations, real-time database logic, and comprehensive QA testing.</p>
+          </div>
+          <div class="p-6 rounded-2xl bg-slate-900/30 border border-slate-800">
+            <span class="text-2xl font-black text-brand-500/40">04</span>
+            <h4 class="text-base font-bold text-white mt-2 mb-2">Deploy & Scale</h4>
+            <p class="text-xs text-slate-400 leading-relaxed">Live deployment to App Store, Google Play, or global edge cloud hosting with zero downtime.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= LEAD CAPTURE FORM SECTION ================= -->
+    <section id="contact" class="py-20 bg-slate-900/50 border-t border-slate-800/80">
+      <div class="max-w-3xl mx-auto px-6">
+        <div class="text-center mb-12">
+          <h2 class="text-xs uppercase tracking-widest text-brand-400 font-bold mb-3">Get in Touch</h2>
+          <p class="text-3xl sm:text-4xl font-extrabold text-white">Let’s Build Something Exceptional</p>
+          <p class="mt-3 text-sm sm:text-base text-slate-400">Share your requirements below and receive a detailed roadmap and estimate within 24 hours.</p>
+        </div>
+
+        <form id="contact-form" class="bg-slate-950 border border-slate-800/80 rounded-2xl p-6 sm:p-10 shadow-2xl space-y-6">
+          <div class="grid sm:grid-cols-2 gap-6">
+            <div>
+              <label for="name" class="block text-xs font-semibold uppercase tracking-wider text-slate-300 mb-2">Full Name *</label>
+              <input type="text" id="name" required placeholder="Jane Doe" class="w-full px-4 py-3 rounded-xl bg-slate-900 border border-slate-800 text-white placeholder-slate-500 focus:outline-none focus:border-brand-500 transition-colors text-sm" />
+            </div>
+            <div>
+              <label for="email" class="block text-xs font-semibold uppercase tracking-wider text-slate-300 mb-2">Work Email *</label>
+              <input type="email" id="email" required placeholder="jane@company.com" class="w-full px-4 py-3 rounded-xl bg-slate-900 border border-slate-800 text-white placeholder-slate-500 focus:outline-none focus:border-brand-500 transition-colors text-sm" />
+            </div>
+          </div>
+
+          <div class="grid sm:grid-cols-2 gap-6">
+            <div>
+              <label for="project-type" class="block text-xs font-semibold uppercase tracking-wider text-slate-300 mb-2">Project Type</label>
+              <select id="project-type" class="w-full px-4 py-3 rounded-xl bg-slate-900 border border-slate-800 text-white focus:outline-none focus:border-brand-500 transition-colors text-sm">
+                <option>Mobile App (iOS & Android)</option>
+                <option>Web Platform / Dashboard</option>
+                <option>Full-Stack (Mobile + Web)</option>
+                <option>Custom AI Integration</option>
+              </select>
+            </div>
+            <div>
+              <label for="timeline" class="block text-xs font-semibold uppercase tracking-wider text-slate-300 mb-2">Target Launch</label>
+              <select id="timeline" class="w-full px-4 py-3 rounded-xl bg-slate-900 border border-slate-800 text-white focus:outline-none focus:border-brand-500 transition-colors text-sm">
+                <option>ASAP (&lt; 1 month)</option>
+                <option>1 – 3 Months</option>
+                <option>Flexible / Planning Phase</option>
+              </select>
+            </div>
+          </div>
+
+          <div>
+            <label for="details" class="block text-xs font-semibold uppercase tracking-wider text-slate-300 mb-2">Project Overview *</label>
+            <textarea id="details" required rows="4" placeholder="Briefly describe what you want to build and the problem it solves..." class="w-full px-4 py-3 rounded-xl bg-slate-900 border border-slate-800 text-white placeholder-slate-500 focus:outline-none focus:border-brand-500 transition-colors text-sm"></textarea>
+          </div>
+
+          <button type="submit" class="w-full py-4 rounded-xl bg-brand-600 hover:bg-brand-500 text-white text-base font-semibold transition-all shadow-lg shadow-brand-600/30 flex items-center justify-center gap-2">
+            <span>Send Project Details</span>
+            <i data-lucide="send" class="w-4 h-4"></i>
+          </button>
+          
+          <p id="form-feedback" class="hidden text-center text-sm font-medium text-emerald-400"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="border-t border-slate-800 py-12 bg-slate-950">
+    <div class="max-w-7xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-6">
+      <div class="flex items-center gap-3">
+        <div class="w-8 h-8 rounded-lg bg-brand-600 flex items-center justify-center text-white font-bold text-sm">
+          Z
+        </div>
+        <span class="text-sm font-semibold text-white">Zion Apps</span>
+      </div>
+      <p class="text-xs text-slate-500 text-center sm:text-right">
+        &copy; 2026 Zion Apps. Engineered with precision and speed. All rights reserved.
+      </p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script>
+    // Initialize Lucide Icons
+    lucide.createIcons();
+
+    // Mobile Menu Toggle
+    const menuBtn = document.getElementById('menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    function toggleMobileMenu() {
+      mobileMenu.classList.toggle('hidden');
+    }
+
+    if (menuBtn) {
+      menuBtn.addEventListener('click', toggleMobileMenu);
+    }
+
+    // Basic Client-Side Form Submission Handler
+    const form = document.getElementById('contact-form');
+    const feedback = document.getElementById('form-feedback');
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      // Placeholder interaction (can be replaced with Firebase Firestore write)
+      feedback.textContent = "Thank you! Your project details have been received. We will respond within 24 hours.";
+      feedback.classList.remove('hidden');
+      form.reset();
+    });
+  </script>
+</body>
+</html>
