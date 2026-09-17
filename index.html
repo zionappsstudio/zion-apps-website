@@ -269,10 +269,8 @@
           </button>
         </div>
 
-        <!-- Bento Grid Container -->
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 max-w-7xl mx-auto">
          <!-- Bento Grid Container with Coordinated Unique Accents & Radial Glows -->
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 max-w-7xl mx-auto">
+      <div class="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
           
           <!-- Card 1: Booking Engine (Emerald Glow) -->
           <div data-category="commerce" class="bento-item relative overflow-hidden rounded-2xl sm:rounded-3xl border border-emerald-500/20 bg-slate-900/40 p-5 sm:p-7 flex flex-col justify-between hover:border-emerald-500/60 hover:bg-slate-900/70 hover:shadow-xl hover:shadow-emerald-500/10 transition-all group">
@@ -635,18 +633,19 @@
       }
     }
 
-    function filterBento(cat, btn) {
+ function filterBento(cat, btn) {
       document.querySelectorAll('.bento-tab').forEach(b => {
-        b.className = "bento-tab shrink-0 px-3.5 py-1.5 rounded-full text-xs font-semibold bg-slate-900 border border-slate-800 text-slate-400 hover:text-white";
+        b.className = "bento-tab shrink-0 px-3.5 py-1.5 rounded-full text-xs font-semibold bg-slate-900 border border-slate-800 text-slate-400 hover:text-white transition-all";
       });
-      btn.className = "bento-tab shrink-0 px-3.5 py-1.5 rounded-full text-xs font-semibold bg-brand-600 text-white";
+      btn.className = "bento-tab shrink-0 px-3.5 py-1.5 rounded-full text-xs font-semibold bg-brand-600 text-white transition-all";
 
       const items = document.querySelectorAll('.bento-item');
       items.forEach(item => {
         if (cat === 'all' || item.getAttribute('data-category') === cat) {
-          item.style.display = 'flex';
+          item.classList.remove('hidden');
+          item.style.display = ''; // Clear inline styles so standard CSS Grid applies properly
         } else {
-          item.style.display = 'none';
+          item.classList.add('hidden');
         }
       });
     }
