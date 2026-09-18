@@ -46,6 +46,27 @@
     * {
       -webkit-tap-highlight-color: transparent;
     }
+    
+    /* Elegant Section Reveal Transitions */
+    .reveal-on-scroll {
+      opacity: 0;
+      transform: translateY(22px);
+      transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+      will-change: opacity, transform;
+    }
+    .reveal-on-scroll.is-revealed {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Floating WhatsApp Pulse */
+    @keyframes subtle-glow {
+      0%, 100% { box-shadow: 0 0 15px rgba(16, 185, 129, 0.35); }
+      50% { box-shadow: 0 0 28px rgba(16, 185, 129, 0.65); }
+    }
+    .wa-float {
+      animation: subtle-glow 3s infinite ease-in-out;
+    }
   </style>
 </head>
 <body class="bg-slate-950 text-slate-100 font-sans antialiased selection:bg-brand-500 selection:text-white bg-grid relative overflow-x-hidden pb-16 md:pb-0">
@@ -59,7 +80,7 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 h-16 sm:h-20 flex items-center justify-between">
       <!-- Logo -->
       <a href="#" class="flex items-center gap-2.5 group">
-        <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-gradient-to-tr from-brand-600 via-indigo-500 to-brand-400 flex items-center justify-center text-white font-black text-lg sm:text-xl shadow-lg shadow-brand-500/30">
+        <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-gradient-to-tr from-brand-600 via-indigo-500 to-brand-400 flex items-center justify-center text-white font-black text-lg sm:text-xl shadow-lg shadow-brand-500/30 group-hover:scale-105 transition-transform">
           Z
         </div>
         <span class="text-lg sm:text-xl font-bold tracking-tight text-white">Zion<span class="text-brand-400">Apps</span></span>
@@ -69,14 +90,14 @@
       <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-300">
         <a href="#sandbox" class="hover:text-brand-400 transition-colors">Live Demos</a>
         <a href="#services" class="hover:text-brand-400 transition-colors">Capabilities</a>
+        <a href="#process" class="hover:text-brand-400 transition-colors">How It Works</a>
         <a href="#why-us" class="hover:text-brand-400 transition-colors">The Zion Edge</a>
-        <a href="#about" class="hover:text-brand-400 transition-colors">About Us</a>
         <a href="#estimator" class="hover:text-brand-400 transition-colors">Estimator</a>
       </nav>
 
       <!-- Desktop CTA -->
       <div class="hidden md:flex items-center gap-4">
-        <a href="#estimator" class="px-5 py-2.5 rounded-xl bg-gradient-to-r from-brand-600 to-indigo-600 hover:from-brand-500 hover:to-indigo-500 text-white text-sm font-semibold transition-all shadow-lg shadow-brand-600/30">
+        <a href="#estimator" class="px-5 py-2.5 rounded-xl bg-gradient-to-r from-brand-600 to-indigo-600 hover:from-brand-500 hover:to-indigo-500 text-white text-sm font-semibold transition-all shadow-lg shadow-brand-600/30 hover:scale-[1.02]">
           Estimate Project &rarr;
         </a>
       </div>
@@ -102,12 +123,12 @@
           <span>Capabilities</span>
           <i data-lucide="chevron-right" class="w-4 h-4 text-slate-500"></i>
         </a>
-        <a href="#why-us" class="hover:text-brand-400 py-1 flex items-center justify-between" onclick="toggleMobileMenu()">
-          <span>The Zion Edge</span>
+        <a href="#process" class="hover:text-brand-400 py-1 flex items-center justify-between" onclick="toggleMobileMenu()">
+          <span>How It Works</span>
           <i data-lucide="chevron-right" class="w-4 h-4 text-slate-500"></i>
         </a>
-        <a href="#about" class="hover:text-brand-400 py-1 flex items-center justify-between" onclick="toggleMobileMenu()">
-          <span>About Us</span>
+        <a href="#why-us" class="hover:text-brand-400 py-1 flex items-center justify-between" onclick="toggleMobileMenu()">
+          <span>The Zion Edge</span>
           <i data-lucide="chevron-right" class="w-4 h-4 text-slate-500"></i>
         </a>
         <a href="#estimator" class="hover:text-brand-400 py-1 flex items-center justify-between" onclick="toggleMobileMenu()">
@@ -121,7 +142,7 @@
 
   <main class="pt-16 sm:pt-20">
     <!-- ================= HERO SECTION ================= -->
-    <section class="relative pt-12 pb-16 sm:pt-24 sm:pb-24 overflow-hidden">
+    <section class="relative pt-12 pb-16 sm:pt-24 sm:pb-24 overflow-hidden reveal-on-scroll">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 text-center relative z-10">
         <div class="inline-flex items-center gap-2 px-3 py-1 sm:px-4 sm:py-1.5 rounded-full border border-brand-500/30 bg-brand-500/10 text-brand-300 text-[11px] sm:text-xs md:text-sm font-medium mb-6">
           <span class="inline-block w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
@@ -139,11 +160,11 @@
 
         <!-- CTA Buttons -->
         <div class="mt-8 sm:mt-10 flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3 max-w-sm sm:max-w-none mx-auto">
-          <a href="#sandbox" class="px-6 py-3.5 sm:py-4 rounded-xl bg-gradient-to-r from-brand-600 to-indigo-600 hover:from-brand-500 hover:to-indigo-500 text-white text-sm sm:text-base font-semibold shadow-lg shadow-brand-600/30 flex items-center justify-center gap-2">
+          <a href="#sandbox" class="px-6 py-3.5 sm:py-4 rounded-xl bg-gradient-to-r from-brand-600 to-indigo-600 hover:from-brand-500 hover:to-indigo-500 text-white text-sm sm:text-base font-semibold shadow-lg shadow-brand-600/30 flex items-center justify-center gap-2 hover:scale-[1.02] transition-transform">
             <i data-lucide="play" class="w-4 h-4 fill-white"></i>
             Try App Simulator
           </a>
-          <a href="#demos" class="px-6 py-3.5 sm:py-4 rounded-xl border border-slate-800 bg-slate-900/80 hover:bg-slate-800 text-slate-300 text-sm sm:text-base font-semibold flex items-center justify-center gap-2">
+          <a href="#demos" class="px-6 py-3.5 sm:py-4 rounded-xl border border-slate-800 bg-slate-900/80 hover:bg-slate-800 text-slate-300 text-sm sm:text-base font-semibold flex items-center justify-center gap-2 transition-colors">
             View All 8 Demos
             <i data-lucide="layout-grid" class="w-4 h-4 text-brand-400"></i>
           </a>
@@ -172,7 +193,7 @@
     </section>
 
     <!-- ================= LIVE IN-PAGE DEVICE SANDBOX ================= -->
-    <section id="sandbox" class="py-16 sm:py-20 bg-slate-900/50 border-y border-slate-800/80">
+    <section id="sandbox" class="py-16 sm:py-20 bg-slate-900/50 border-y border-slate-800/80 reveal-on-scroll">
       <div class="max-w-7xl mx-auto px-4 sm:px-6">
         <div class="text-center max-w-3xl mx-auto mb-8">
           <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-[11px] font-semibold uppercase tracking-wider mb-2">
@@ -232,7 +253,7 @@
                     <i data-lucide="monitor" class="w-3.5 h-3.5"></i>
                   </button>
                 </div>
-                <a id="sandbox-external-link" href="https://zionappsstudio.github.io/zion-booking-demo/" target="_blank" rel="noopener noreferrer" class="px-2.5 py-1 rounded-lg bg-brand-600/20 text-brand-300 border border-brand-500/40 text-[11px] font-bold flex items-center gap-1">
+                <a id="sandbox-external-link" href="https://zionappsstudio.github.io/zion-booking-demo/" target="_blank" rel="noopener noreferrer" class="px-2.5 py-1 rounded-lg bg-brand-600/20 text-brand-300 border border-brand-500/40 text-[11px] font-bold flex items-center gap-1 hover:bg-brand-600/30 transition-all">
                   <span>Open Fullscreen</span>
                   <i data-lucide="external-link" class="w-3 h-3"></i>
                 </a>
@@ -254,7 +275,7 @@
     </section>
 
     <!-- ================= BENTO-GRID PROTOTYPES ================= -->
-    <section id="demos" class="py-16 sm:py-24">
+    <section id="demos" class="py-16 sm:py-24 reveal-on-scroll">
       <div class="max-w-7xl mx-auto px-4 sm:px-6">
         <div class="text-center max-w-3xl mx-auto mb-8 sm:mb-12">
           <h2 class="text-xs uppercase tracking-widest text-brand-400 font-bold mb-2">Interactive Showcase</h2>
@@ -499,7 +520,7 @@
     </section>
 
     <!-- ================= CAPABILITIES (SERVICES) ================= -->
-    <section id="services" class="py-16 sm:py-24">
+    <section id="services" class="py-16 sm:py-24 reveal-on-scroll">
       <div class="max-w-7xl mx-auto px-4 sm:px-6">
         <div class="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
           <h2 class="text-xs uppercase tracking-widest text-brand-400 font-bold mb-3">Capabilities</h2>
@@ -550,8 +571,86 @@
       </div>
     </section>
 
+    <!-- ================= HOW IT WORKS (3-STEP TIMELINE) ================= -->
+    <section id="process" class="py-16 sm:py-24 bg-slate-900/40 border-y border-slate-800/80 reveal-on-scroll">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6">
+        <div class="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-500/10 border border-brand-500/20 text-brand-400 text-[11px] font-semibold uppercase tracking-wider mb-2">
+            <i data-lucide="clock" class="w-3.5 h-3.5"></i> Streamlined Workflow
+          </div>
+          <h2 class="text-2xl sm:text-4xl font-extrabold text-white">How We Build in Days, Not Quarters</h2>
+          <p class="mt-2 text-xs sm:text-sm text-slate-400">Zero corporate bloat. Direct access to founding engineers from kickoff to production launch.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 relative">
+          <!-- Step 1 -->
+          <div class="p-6 sm:p-8 rounded-2xl sm:rounded-3xl bg-slate-950/80 border border-slate-800 relative hover:border-brand-500/40 transition-all group">
+            <div class="w-10 h-10 rounded-xl bg-brand-600/20 border border-brand-500/30 text-brand-300 font-mono font-black text-sm flex items-center justify-center mb-5 group-hover:scale-110 transition-transform">
+              01
+            </div>
+            <h3 class="text-lg font-bold text-white mb-2">48h Interactive Draft</h3>
+            <p class="text-slate-400 text-xs sm:text-sm leading-relaxed">
+              We ingest your brand assets, catalogs, and workflows to deploy an interactive, clickable staging prototype to your phone in 48 to 72 hours.
+            </p>
+          </div>
+
+          <!-- Step 2 -->
+          <div class="p-6 sm:p-8 rounded-2xl sm:rounded-3xl bg-slate-950/80 border border-slate-800 relative hover:border-brand-500/40 transition-all group">
+            <div class="w-10 h-10 rounded-xl bg-indigo-600/20 border border-indigo-500/30 text-indigo-300 font-mono font-black text-sm flex items-center justify-center mb-5 group-hover:scale-110 transition-transform">
+              02
+            </div>
+            <h3 class="text-lg font-bold text-white mb-2">Custom Logic & Wiring</h3>
+            <p class="text-slate-400 text-xs sm:text-sm leading-relaxed">
+              We connect your real-time database, role-based access consoles, custom payment pipelines, and automated lead notifications.
+            </p>
+          </div>
+
+          <!-- Step 3 -->
+          <div class="p-6 sm:p-8 rounded-2xl sm:rounded-3xl bg-slate-950/80 border border-slate-800 relative hover:border-brand-500/40 transition-all group">
+            <div class="w-10 h-10 rounded-xl bg-emerald-600/20 border border-emerald-500/30 text-emerald-300 font-mono font-black text-sm flex items-center justify-center mb-5 group-hover:scale-110 transition-transform">
+              03
+            </div>
+            <h3 class="text-lg font-bold text-white mb-2">Handover & Launch</h3>
+            <p class="text-slate-400 text-xs sm:text-sm leading-relaxed">
+              Zero-downtime DNS deployment, app store compilation, and full transfer of 100% intellectual property and source code ownership.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= FINANCIAL IMPACT / ROI METRICS ================= -->
+    <section class="py-16 sm:py-20 reveal-on-scroll">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6">
+        <div class="text-center max-w-3xl mx-auto mb-10 sm:mb-14">
+          <h2 class="text-xs uppercase tracking-widest text-emerald-400 font-bold mb-2">Tangible Return on Investment</h2>
+          <p class="text-2xl sm:text-4xl font-extrabold text-white">Engineered for Direct Bottom-Line Growth</p>
+        </div>
+
+        <div class="grid sm:grid-cols-3 gap-4 sm:gap-6 max-w-5xl mx-auto">
+          <div class="p-6 rounded-2xl sm:rounded-3xl bg-slate-900/40 border border-slate-800 text-center">
+            <div class="text-3xl sm:text-4xl font-black text-emerald-400">0% Cuts</div>
+            <div class="text-sm font-bold text-white mt-2">Zero Aggregator Commission</div>
+            <p class="text-slate-400 text-xs mt-1">Keep 25%–30% of each ticket by owning direct customer ordering and checkout channels.</p>
+          </div>
+
+          <div class="p-6 rounded-2xl sm:rounded-3xl bg-slate-900/40 border border-slate-800 text-center">
+            <div class="text-3xl sm:text-4xl font-black text-brand-400">2-Tap Booking</div>
+            <div class="text-sm font-bold text-white mt-2">Recover Lost Night Leaks</div>
+            <p class="text-slate-400 text-xs mt-1">Stop losing 20% of potential appointments stuck in delayed WhatsApp or Instagram DM responses.</p>
+          </div>
+
+          <div class="p-6 rounded-2xl sm:rounded-3xl bg-slate-900/40 border border-slate-800 text-center">
+            <div class="text-3xl sm:text-4xl font-black text-indigo-400">15+ Hours</div>
+            <div class="text-sm font-bold text-white mt-2">Reclaimed Partner Time</div>
+            <p class="text-slate-400 text-xs mt-1">Automate routine client qualification, document intake, and FAQs with strictly bounded AI models.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- ================= THE ZION EDGE (WHY US) ================= -->
-    <section id="why-us" class="py-16 sm:py-20 bg-slate-900/40 border-y border-slate-800/60">
+    <section id="why-us" class="py-16 sm:py-20 bg-slate-900/40 border-y border-slate-800/60 reveal-on-scroll">
       <div class="max-w-7xl mx-auto px-4 sm:px-6">
         <div class="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
           <h2 class="text-xs uppercase tracking-widest text-brand-400 font-bold mb-3">The Zion Edge</h2>
@@ -608,7 +707,7 @@
     </section>
 
     <!-- ================= ABOUT US (FOUNDER & MISSION) ================= -->
-    <section id="about" class="py-16 sm:py-20 bg-slate-900/30 border-t border-slate-800/80">
+    <section id="about" class="py-16 sm:py-20 bg-slate-900/30 border-t border-slate-800/80 reveal-on-scroll">
       <div class="max-w-5xl mx-auto px-4 sm:px-6">
         <div class="rounded-3xl border border-slate-800 bg-slate-950/80 p-6 sm:p-10 shadow-xl relative overflow-hidden">
           <div class="absolute -top-16 -right-16 w-48 h-48 bg-brand-600/10 rounded-full blur-3xl pointer-events-none"></div>
@@ -643,7 +742,7 @@
     </section>
 
     <!-- ================= INTERACTIVE PROJECT ESTIMATOR ================= -->
-    <section id="estimator" class="py-16 sm:py-20 bg-slate-900/40 border-t border-slate-800/80">
+    <section id="estimator" class="py-16 sm:py-20 bg-slate-900/40 border-t border-slate-800/80 reveal-on-scroll">
       <div class="max-w-4xl mx-auto px-4 sm:px-6">
         <div class="text-center mb-8 sm:mb-12">
           <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-500/10 border border-brand-500/20 text-brand-400 text-[11px] font-semibold uppercase tracking-wider mb-2">
@@ -710,13 +809,77 @@
       </div>
     </section>
 
-    <!-- ================= LEAD CAPTURE FORM ================= -->
-    <section id="contact" class="py-16 sm:py-20 bg-slate-950 border-t border-slate-800/80">
+    <!-- ================= INTERACTIVE FAQ SECTION ================= -->
+    <section id="faq" class="py-16 sm:py-24 reveal-on-scroll">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6">
+        <div class="text-center mb-10 sm:mb-14">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-800/80 border border-slate-700 text-slate-300 text-[11px] font-semibold uppercase tracking-wider mb-2">
+            <i data-lucide="help-circle" class="w-3.5 h-3.5 text-brand-400"></i> Clear Answers
+          </div>
+          <h2 class="text-2xl sm:text-4xl font-extrabold text-white">Frequently Asked Questions</h2>
+          <p class="mt-2 text-xs sm:text-sm text-slate-400">Everything you need to know about code ownership, hosting, and timeline guarantees.</p>
+        </div>
+
+        <div class="space-y-3">
+          <!-- FAQ Item 1 -->
+          <div class="rounded-2xl bg-slate-900/50 border border-slate-800 overflow-hidden">
+            <button onclick="toggleFAQ('faq-1', this)" class="w-full p-4 sm:p-5 flex items-center justify-between text-left text-sm font-bold text-white hover:text-brand-300 transition-colors">
+              <span>Do I own 100% of the source code and intellectual property?</span>
+              <i data-lucide="chevron-down" class="w-4 h-4 text-slate-400 transition-transform duration-300"></i>
+            </button>
+            <div id="faq-1" class="hidden px-4 sm:px-5 pb-5 text-xs sm:text-sm text-slate-400 leading-relaxed border-t border-slate-800/60 pt-3">
+              Yes, absolutely. Upon final project settlement, complete repository rights, cloud configurations, and assets are transferred entirely to your control. We believe in zero proprietary lock-in.
+            </div>
+          </div>
+
+          <!-- FAQ Item 2 -->
+          <div class="rounded-2xl bg-slate-900/50 border border-slate-800 overflow-hidden">
+            <button onclick="toggleFAQ('faq-2', this)" class="w-full p-4 sm:p-5 flex items-center justify-between text-left text-sm font-bold text-white hover:text-brand-300 transition-colors">
+              <span>Will I be locked into a compulsory monthly maintenance retainer?</span>
+              <i data-lucide="chevron-down" class="w-4 h-4 text-slate-400 transition-transform duration-300"></i>
+            </button>
+            <div id="faq-2" class="hidden px-4 sm:px-5 pb-5 text-xs sm:text-sm text-slate-400 leading-relaxed border-t border-slate-800/60 pt-3">
+              Never. We architect platforms using modern serverless cloud infrastructure with near-zero ongoing maintenance overhead. If you ever require new custom features, you can hire us on an ad-hoc milestone basis.
+            </div>
+          </div>
+
+          <!-- FAQ Item 3 -->
+          <div class="rounded-2xl bg-slate-900/50 border border-slate-800 overflow-hidden">
+            <button onclick="toggleFAQ('faq-3', this)" class="w-full p-4 sm:p-5 flex items-center justify-between text-left text-sm font-bold text-white hover:text-brand-300 transition-colors">
+              <span>Can our mobile applications be published to both the Apple App Store & Google Play?</span>
+              <i data-lucide="chevron-down" class="w-4 h-4 text-slate-400 transition-transform duration-300"></i>
+            </button>
+            <div id="faq-3" class="hidden px-4 sm:px-5 pb-5 text-xs sm:text-sm text-slate-400 leading-relaxed border-t border-slate-800/60 pt-3">
+              Yes. Because we build with Flutter, your codebase generates production-ready native iOS and Android packages compliant with App Store and Google Play guidelines, alongside responsive web builds.
+            </div>
+          </div>
+
+          <!-- FAQ Item 4 -->
+          <div class="rounded-2xl bg-slate-900/50 border border-slate-800 overflow-hidden">
+            <button onclick="toggleFAQ('faq-4', this)" class="w-full p-4 sm:p-5 flex items-center justify-between text-left text-sm font-bold text-white hover:text-brand-300 transition-colors">
+              <span>How are you able to ship working prototypes in just 48 to 72 hours?</span>
+              <i data-lucide="chevron-down" class="w-4 h-4 text-slate-400 transition-transform duration-300"></i>
+            </button>
+            <div id="faq-4" class="hidden px-4 sm:px-5 pb-5 text-xs sm:text-sm text-slate-400 leading-relaxed border-t border-slate-800/60 pt-3">
+              We eliminate traditional agency bureaucracy. Instead of billing hours for boilerplate login boxes or basic layouts, we utilize proprietary modular scaffolds and AI developer tooling to build your specific custom logic immediately.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= LEAD CAPTURE FORM WITH PROTOTYPE HOOK ================= -->
+    <section id="contact" class="py-16 sm:py-20 bg-slate-950 border-t border-slate-800/80 reveal-on-scroll">
       <div class="max-w-3xl mx-auto px-4 sm:px-6">
         <div class="text-center mb-8 sm:mb-12">
-          <h2 class="text-xs uppercase tracking-widest text-brand-400 font-bold mb-2">Direct Contact</h2>
-          <p class="text-2xl sm:text-4xl font-extrabold text-white">Let’s Build Something Great</p>
-          <p class="mt-2 text-xs sm:text-sm text-slate-400">Share your requirements to receive a direct roadmap within 24 hours.</p>
+          <!-- High-Converting Lead Magnet Badge -->
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-[11px] font-semibold uppercase tracking-wider mb-2">
+            <i data-lucide="shield-check" class="w-3.5 h-3.5"></i> Zero-Risk Offer
+          </div>
+          <h2 class="text-2xl sm:text-4xl font-extrabold text-white">Claim a Free 48-Hour Prototype Draft</h2>
+          <p class="mt-2 text-xs sm:text-sm text-slate-400 max-w-lg mx-auto">
+            Drop your website or service details below. We'll assemble a live interactive preview using your brand assets before you commit a single dollar.
+          </p>
         </div>
 
         <form id="contact-form" action="https://api.web3forms.com/submit" method="POST" class="bg-slate-900/60 border border-slate-800 rounded-2xl sm:rounded-3xl p-5 sm:p-8 shadow-2xl space-y-4 sm:space-y-6">
@@ -758,11 +921,11 @@
 
           <div>
             <label for="details" class="block text-xs font-semibold uppercase tracking-wider text-slate-300 mb-1.5">Project Scope & Notes *</label>
-            <textarea name="message" id="details" required rows="3" placeholder="Briefly describe what you want to build and the business problem it solves..." class="w-full px-3.5 py-2.5 sm:py-3 rounded-xl bg-slate-950 border border-slate-800 text-white placeholder-slate-500 focus:outline-none focus:border-brand-500 text-sm"></textarea>
+            <textarea name="message" id="details" required rows="3" placeholder="Briefly describe what you want to build or share your website/Instagram link..." class="w-full px-3.5 py-2.5 sm:py-3 rounded-xl bg-slate-950 border border-slate-800 text-white placeholder-slate-500 focus:outline-none focus:border-brand-500 text-sm"></textarea>
           </div>
 
-          <button type="submit" id="submit-btn" class="w-full py-3.5 rounded-xl bg-gradient-to-r from-brand-600 to-indigo-600 hover:from-brand-500 hover:to-indigo-500 text-white text-sm sm:text-base font-semibold transition-all shadow-xl shadow-brand-600/30 flex items-center justify-center gap-2 cursor-pointer">
-            <span id="btn-text">Send Project Details</span>
+          <button type="submit" id="submit-btn" class="w-full py-3.5 rounded-xl bg-gradient-to-r from-brand-600 to-indigo-600 hover:from-brand-500 hover:to-indigo-500 text-white text-sm sm:text-base font-semibold transition-all shadow-xl shadow-brand-600/30 flex items-center justify-center gap-2 cursor-pointer hover:scale-[1.01]">
+            <span id="btn-text">Request 48-Hour Prototype Draft</span>
             <i data-lucide="send" class="w-4 h-4"></i>
           </button>
           
@@ -771,6 +934,12 @@
       </div>
     </section>
   </main>
+
+  <!-- ================= FLOATING WHATSAPP QUICK-CHAT HOOK ================= -->
+  <a href="https://wa.me/919999999999?text=Hi%20Zion%20Apps%20team,%20I'd%20like%20to%20review%20a%20prototype%20for%20my%20business." target="_blank" rel="noopener noreferrer" class="wa-float fixed bottom-16 sm:bottom-6 right-4 sm:right-6 z-40 px-3.5 py-2.5 rounded-full bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold flex items-center gap-2 shadow-2xl transition-transform hover:scale-105" title="Chat on WhatsApp">
+    <i data-lucide="message-circle" class="w-4 h-4 fill-white"></i>
+    <span class="hidden sm:inline">Fast Track Chat</span>
+  </a>
 
   <!-- ================= MOBILE PERSISTENT BOTTOM BAR ================= -->
   <aside aria-label="Quick Actions" class="fixed bottom-0 left-0 right-0 z-40 bg-slate-950/95 backdrop-blur-xl border-t border-slate-800/90 py-2.5 px-4 flex sm:hidden items-center justify-between gap-3">
@@ -802,6 +971,19 @@
   <!-- ================= SCRIPTS ================= -->
   <script>
     lucide.createIcons();
+
+    // Subtle Section Reveal on Scroll
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-revealed');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.reveal-on-scroll').forEach(section => {
+      observer.observe(section);
+    });
 
     const menuBtn = document.getElementById('menu-btn');
     const mobileMenu = document.getElementById('mobile-menu');
@@ -858,6 +1040,21 @@
           item.classList.add('hidden');
         }
       });
+    }
+
+    function toggleFAQ(id, btn) {
+      const panel = document.getElementById(id);
+      const icon = btn.querySelector('svg');
+      const isHidden = panel.classList.contains('hidden');
+
+      // Close other open panels
+      document.querySelectorAll('[id^="faq-"]').forEach(p => p.classList.add('hidden'));
+      document.querySelectorAll('#faq svg').forEach(i => i.style.transform = 'rotate(0deg)');
+
+      if (isHidden) {
+        panel.classList.remove('hidden');
+        if (icon) icon.style.transform = 'rotate(180deg)';
+      }
     }
 
     // Estimator State (Single Platform, Multi-Module)
@@ -963,7 +1160,7 @@
         feedback.className = "text-center text-xs sm:text-sm font-medium text-red-400";
       } finally {
         feedback.classList.remove('hidden');
-        btnText.textContent = "Send Project Details";
+        btnText.textContent = "Request 48-Hour Prototype Draft";
         submitBtn.disabled = false;
       }
     });
