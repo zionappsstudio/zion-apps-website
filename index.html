@@ -90,8 +90,12 @@
     <!-- Mobile Navigation Drawer -->
     <div id="mobile-menu" class="hidden md:hidden px-6 pt-3 pb-6 border-b border-slate-800 bg-slate-950/98 backdrop-blur-2xl">
       <div class="flex flex-col gap-3.5 text-base font-medium text-slate-300">
+        <a href="#demos" class="hover:text-brand-400 py-1 flex items-center justify-between" onclick="toggleMobileMenu()">
+          <span>Browse 8 Prototypes</span>
+          <i data-lucide="chevron-right" class="w-4 h-4 text-slate-500"></i>
+        </a>
         <a href="#sandbox" class="hover:text-brand-400 py-1 flex items-center justify-between" onclick="toggleMobileMenu()">
-          <span>Live Demos & Simulator</span>
+          <span>Interactive Sandbox</span>
           <i data-lucide="chevron-right" class="w-4 h-4 text-slate-500"></i>
         </a>
         <a href="#services" class="hover:text-brand-400 py-1 flex items-center justify-between" onclick="toggleMobileMenu()">
@@ -130,7 +134,7 @@
         </h1>
 
         <p class="mt-4 sm:mt-6 text-sm sm:text-lg md:text-xl text-slate-400 max-w-3xl mx-auto leading-relaxed px-2">
-          Sleek iOS, Android, and responsive web platforms engineered using Flutter and serverless cloud architectures. Test all 6 live client prototypes below.
+          Sleek iOS, Android, and responsive web platforms engineered using Flutter and serverless cloud architectures. Test all 8 live client prototypes below.
         </p>
 
         <!-- CTA Buttons -->
@@ -140,7 +144,7 @@
             Try App Simulator
           </a>
           <a href="#demos" class="px-6 py-3.5 sm:py-4 rounded-xl border border-slate-800 bg-slate-900/80 hover:bg-slate-800 text-slate-300 text-sm sm:text-base font-semibold flex items-center justify-center gap-2">
-            View All 6 Demos
+            View All 8 Demos
             <i data-lucide="layout-grid" class="w-4 h-4 text-brand-400"></i>
           </a>
         </div>
@@ -148,7 +152,7 @@
         <!-- Metric Badges Grid -->
         <div class="mt-12 sm:mt-16 pt-8 border-t border-slate-800/80 grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-6 max-w-4xl mx-auto">
           <div class="p-3.5 sm:p-4 rounded-2xl bg-slate-900/40 border border-slate-800/80 text-center">
-            <div class="text-xl sm:text-3xl font-black text-white">6 Live Demos</div>
+            <div class="text-xl sm:text-3xl font-black text-white">8 Live Demos</div>
             <div class="text-[11px] sm:text-xs text-slate-400 mt-0.5 font-medium">Production Deployed</div>
           </div>
           <div class="p-3.5 sm:p-4 rounded-2xl bg-slate-900/40 border border-slate-800/80 text-center">
@@ -178,7 +182,7 @@
           <p class="mt-2 text-xs sm:text-sm text-slate-400">Swipe horizontally through the apps below to launch them in our simulator frame.</p>
         </div>
 
-        <!-- Swipeable Tab Row for Mobile -->
+        <!-- Swipeable Tab Row for Mobile (Expanded to 8 Demos) -->
         <div class="flex items-center gap-2 overflow-x-auto no-scrollbar pb-3 mb-4 -mx-4 px-4 sm:mx-0 sm:px-0 sm:justify-center">
           <button onclick="loadSandboxApp('https://zionappsstudio.github.io/zion-booking-demo/', 'Booking Engine (Demo #1)', this)" class="sandbox-btn shrink-0 px-3.5 py-2 rounded-xl text-xs font-semibold border transition-all bg-brand-600 text-white border-brand-500 shadow-md">
             🗓️ Service Booking
@@ -197,6 +201,12 @@
           </button>
           <button onclick="loadSandboxApp('https://zionappsstudio.github.io/zion-artisan-cafe/', 'Artisan Roast & Cloud Kitchen (Demo #6)', this)" class="sandbox-btn shrink-0 px-3.5 py-2 rounded-xl text-xs font-semibold border border-slate-800 bg-slate-900 text-slate-400 hover:text-white transition-all">
             ☕ Cloud Kitchen
+          </button>
+          <button onclick="loadSandboxApp('https://zionappsstudio.github.io/zion-school-app/', 'School Management Mobile System (Demo #7)', this)" class="sandbox-btn shrink-0 px-3.5 py-2 rounded-xl text-xs font-semibold border border-slate-800 bg-slate-900 text-slate-400 hover:text-white transition-all">
+            🏫 School App
+          </button>
+          <button onclick="loadSandboxApp('https://zionappsstudio.github.io/zion-academy-hub/', 'Collegiate Institutional Portal (Demo #8)', this)" class="sandbox-btn shrink-0 px-3.5 py-2 rounded-xl text-xs font-semibold border border-slate-800 bg-slate-900 text-slate-400 hover:text-white transition-all">
+            🎓 Campus Portal
           </button>
         </div>
 
@@ -254,7 +264,10 @@
         <!-- Swipeable Filter Tabs for Mobile -->
         <div class="flex items-center gap-2 overflow-x-auto no-scrollbar pb-3 mb-8 -mx-4 px-4 sm:mx-0 sm:px-0 sm:justify-center">
           <button onclick="filterBento('all', this)" class="bento-tab shrink-0 px-3.5 py-1.5 rounded-full text-xs font-semibold bg-brand-600 text-white">
-            All (6)
+            All (8)
+          </button>
+          <button onclick="filterBento('education', this)" class="bento-tab shrink-0 px-3.5 py-1.5 rounded-full text-xs font-semibold bg-slate-900 border border-slate-800 text-slate-400 hover:text-white">
+            Education & Campus (2)
           </button>
           <button onclick="filterBento('commerce', this)" class="bento-tab shrink-0 px-3.5 py-1.5 rounded-full text-xs font-semibold bg-slate-900 border border-slate-800 text-slate-400 hover:text-white">
             Commerce & Ordering (2)
@@ -270,7 +283,7 @@
           </button>
         </div>
 
-        <!-- Bento Grid Container with Coordinated Unique Accents & Radial Glows -->
+        <!-- Bento Grid Container (8 Coordinated Prototypes) -->
         <div class="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
           
           <!-- Card 1: Booking Engine (Emerald Glow) -->
@@ -424,6 +437,58 @@
                 Launch Live App <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
               </a>
               <button onclick="loadSandboxApp('https://zionappsstudio.github.io/zion-artisan-cafe/', 'Artisan Roast & Cloud Kitchen (Demo #6)')" class="text-xs text-slate-400 hover:text-white underline">
+                Simulate Above
+              </button>
+            </div>
+          </div>
+
+          <!-- Card 7: School Management Mobile System (Indigo Glow) -->
+          <div data-category="education" class="bento-item relative overflow-hidden rounded-2xl sm:rounded-3xl border border-indigo-500/20 bg-slate-900/40 p-5 sm:p-7 flex flex-col justify-between hover:border-indigo-500/60 hover:bg-slate-900/70 hover:shadow-xl hover:shadow-indigo-500/10 transition-all group">
+            <div class="absolute -top-12 -right-12 w-48 h-48 bg-indigo-500/15 group-hover:bg-indigo-500/30 rounded-full blur-2xl pointer-events-none transition-all duration-500"></div>
+
+            <div class="relative z-10">
+              <div class="flex items-center justify-between gap-4 mb-3">
+                <span class="px-2.5 py-0.5 rounded-full text-[11px] font-semibold bg-indigo-500/10 text-indigo-400 border border-indigo-500/20">
+                  School Operations App
+                </span>
+                <span class="text-xs text-slate-500 font-mono font-bold">Demo #7</span>
+              </div>
+              <h3 class="text-lg sm:text-xl font-bold text-white mb-2 group-hover:text-indigo-300 transition-colors">School Management Mobile System</h3>
+              <p class="text-slate-400 text-xs sm:text-sm leading-relaxed mb-4">
+                Class-wise student & teacher rosters, dual attendance registers, fee dues tracking, and quick payment reconciliations.
+              </p>
+            </div>
+            <div class="relative z-10 pt-4 border-t border-slate-800/80 flex items-center justify-between">
+              <a href="https://zionappsstudio.github.io/zion-school-app/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-xs sm:text-sm font-semibold text-indigo-400 hover:text-indigo-300 transition-colors">
+                Launch Live App <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+              </a>
+              <button onclick="loadSandboxApp('https://zionappsstudio.github.io/zion-school-app/', 'School Management Mobile System (Demo #7)')" class="text-xs text-slate-400 hover:text-white underline">
+                Simulate Above
+              </button>
+            </div>
+          </div>
+
+          <!-- Card 8: Collegiate Institutional Web Portal (Violet Glow) -->
+          <div data-category="education" class="bento-item relative overflow-hidden rounded-2xl sm:rounded-3xl border border-violet-500/20 bg-slate-900/40 p-5 sm:p-7 flex flex-col justify-between hover:border-violet-500/60 hover:bg-slate-900/70 hover:shadow-xl hover:shadow-violet-500/10 transition-all group">
+            <div class="absolute -top-12 -right-12 w-48 h-48 bg-violet-500/15 group-hover:bg-violet-500/30 rounded-full blur-2xl pointer-events-none transition-all duration-500"></div>
+
+            <div class="relative z-10">
+              <div class="flex items-center justify-between gap-4 mb-3">
+                <span class="px-2.5 py-0.5 rounded-full text-[11px] font-semibold bg-violet-500/10 text-violet-400 border border-violet-500/20">
+                  Collegiate Web Portal
+                </span>
+                <span class="text-xs text-slate-500 font-mono font-bold">Demo #8</span>
+              </div>
+              <h3 class="text-lg sm:text-xl font-bold text-white mb-2 group-hover:text-violet-300 transition-colors">Collegiate Institutional Portal</h3>
+              <p class="text-slate-400 text-xs sm:text-sm leading-relaxed mb-4">
+                Live course seat availability matrix, annual fee structures, faculty leadership profiles, and official parent event circulars.
+              </p>
+            </div>
+            <div class="relative z-10 pt-4 border-t border-slate-800/80 flex items-center justify-between">
+              <a href="https://zionappsstudio.github.io/zion-academy-hub/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-xs sm:text-sm font-semibold text-violet-400 hover:text-violet-300 transition-colors">
+                Launch Live App <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+              </a>
+              <button onclick="loadSandboxApp('https://zionappsstudio.github.io/zion-academy-hub/', 'Collegiate Institutional Portal (Demo #8)')" class="text-xs text-slate-400 hover:text-white underline">
                 Simulate Above
               </button>
             </div>
@@ -711,7 +776,7 @@
   <aside aria-label="Quick Actions" class="fixed bottom-0 left-0 right-0 z-40 bg-slate-950/95 backdrop-blur-xl border-t border-slate-800/90 py-2.5 px-4 flex sm:hidden items-center justify-between gap-3">
     <a href="#demos" class="flex-1 py-2 rounded-xl bg-slate-900 border border-slate-800 text-slate-300 text-xs font-bold text-center flex items-center justify-center gap-1.5">
       <i data-lucide="layout-grid" class="w-3.5 h-3.5 text-brand-400"></i>
-      <span>6 Demos</span>
+      <span>8 Demos</span>
     </a>
     <a href="#estimator" class="flex-1 py-2 rounded-xl bg-brand-600 text-white text-xs font-bold text-center flex items-center justify-center gap-1.5 shadow-md shadow-brand-600/30">
       <i data-lucide="calculator" class="w-3.5 h-3.5"></i>
