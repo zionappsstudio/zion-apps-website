@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-  <title>JayaTekton | Master-Crafted Mobile & Web Apps at Production Speed</title>
+  <title>JayTekton | Custom Mobile & Web Apps Built with AI Speed</title>
   
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -37,7 +37,7 @@
   <script src="https://unpkg.com/lucide@latest"></script>
 
   <style>
-    /* Modern Micro-Grid Background with Radial Vignette */
+    /* Modern Micro-Grid Background */
     .bg-grid-modern {
       background-size: 40px 40px;
       background-image: 
@@ -46,7 +46,7 @@
     }
     
     .radial-vignette {
-      background: radial-gradient(circle at 50% 15%, rgba(99, 102, 241, 0.08) 0%, rgba(9, 9, 11, 0) 70%);
+      background: radial-gradient(circle at 50% 15%, rgba(99, 102, 241, 0.09) 0%, rgba(9, 9, 11, 0) 70%);
     }
 
     .no-scrollbar::-webkit-scrollbar {
@@ -72,7 +72,7 @@
       transition: width 0.1s ease-out;
     }
 
-    /* Modern Fluid Section Transitions */
+    /* Fluid Section Transitions */
     .reveal-on-scroll {
       opacity: 0;
       transform: translateY(28px) scale(0.99);
@@ -93,7 +93,7 @@
       animation: subtle-glow 3.5s infinite ease-in-out;
     }
 
-    /* Linear Gradient Heading Animation */
+    /* Dynamic Linear Gradient Heading Animation */
     @keyframes gradient-flow {
       0% { background-position: 0% 50%; }
       50% { background-position: 100% 50%; }
@@ -123,23 +123,23 @@
         <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-gradient-to-tr from-brand-600 via-indigo-500 to-brand-400 flex items-center justify-center text-white font-black text-lg sm:text-xl shadow-lg shadow-brand-500/25 group-hover:scale-105 transition-transform duration-300 border border-white/10">
           J
         </div>
-        <span class="text-lg sm:text-xl font-bold tracking-tight text-white">Jaya<span class="text-brand-400">Tekton</span></span>
+        <span class="text-lg sm:text-xl font-bold tracking-tight text-white">Jay<span class="text-brand-400">Tekton</span></span>
       </a>
 
       <!-- Desktop Navigation with Active ScrollSpy Highlighting -->
       <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-zinc-400">
-        <a href="#sandbox" class="nav-link hover:text-brand-400 transition-colors duration-200">Live Demos</a>
-        <a href="#services" class="nav-link hover:text-brand-400 transition-colors duration-200">Capabilities</a>
-        <a href="#process" class="nav-link hover:text-brand-400 transition-colors duration-200">How It Works</a>
-        <a href="#why-us" class="nav-link hover:text-brand-400 transition-colors duration-200">The Tekton Edge</a>
-        <a href="#about" class="nav-link hover:text-brand-400 transition-colors duration-200">Our Heritage</a>
-        <a href="#estimator" class="nav-link hover:text-brand-400 transition-colors duration-200">Estimator</a>
+        <a href="#sandbox" class="nav-link hover:text-brand-400 transition-colors duration-200">Test Live Demos</a>
+        <a href="#services" class="nav-link hover:text-brand-400 transition-colors duration-200">What We Build</a>
+        <a href="#process" class="nav-link hover:text-brand-400 transition-colors duration-200">3-Step Delivery</a>
+        <a href="#why-us" class="nav-link hover:text-brand-400 transition-colors duration-200">Why JayTekton</a>
+        <a href="#about" class="nav-link hover:text-brand-400 transition-colors duration-200">About</a>
+        <a href="#estimator" class="nav-link hover:text-brand-400 transition-colors duration-200">Scope Planner</a>
       </nav>
 
       <!-- Desktop CTA -->
       <div class="hidden md:flex items-center gap-4">
         <a href="#estimator" class="px-5 py-2.5 rounded-xl bg-gradient-to-r from-brand-600 via-indigo-600 to-indigo-500 hover:from-brand-500 hover:to-indigo-400 text-white text-sm font-semibold transition-all duration-200 shadow-lg shadow-brand-600/25 hover:shadow-brand-600/40 hover:scale-[1.02] border border-white/10">
-          Estimate Project &rarr;
+          Get Instant Quote &rarr;
         </a>
       </div>
 
@@ -161,56 +161,59 @@
           <i data-lucide="chevron-right" class="w-4 h-4 text-zinc-600"></i>
         </a>
         <a href="#services" class="hover:text-brand-400 py-1 flex items-center justify-between" onclick="toggleMobileMenu()">
-          <span>Capabilities</span>
+          <span>What We Build</span>
           <i data-lucide="chevron-right" class="w-4 h-4 text-zinc-600"></i>
         </a>
         <a href="#process" class="hover:text-brand-400 py-1 flex items-center justify-between" onclick="toggleMobileMenu()">
-          <span>How It Works</span>
+          <span>3-Step Delivery</span>
           <i data-lucide="chevron-right" class="w-4 h-4 text-zinc-600"></i>
         </a>
         <a href="#why-us" class="hover:text-brand-400 py-1 flex items-center justify-between" onclick="toggleMobileMenu()">
-          <span>The Tekton Edge</span>
+          <span>Why JayTekton</span>
           <i data-lucide="chevron-right" class="w-4 h-4 text-zinc-600"></i>
         </a>
         <a href="#about" class="hover:text-brand-400 py-1 flex items-center justify-between" onclick="toggleMobileMenu()">
-          <span>Our Heritage</span>
+          <span>About Us</span>
           <i data-lucide="chevron-right" class="w-4 h-4 text-zinc-600"></i>
         </a>
         <a href="#estimator" class="hover:text-brand-400 py-1 flex items-center justify-between" onclick="toggleMobileMenu()">
           <span>Scope & Cost Estimator</span>
           <i data-lucide="chevron-right" class="w-4 h-4 text-zinc-600"></i>
         </a>
-        <a href="#contact" class="w-full mt-2 text-center px-5 py-3 rounded-xl bg-brand-600 text-white font-semibold shadow-lg shadow-brand-600/30" onclick="toggleMobileMenu()">Start Your Project</a>
+        <a href="#contact" class="w-full mt-2 text-center px-5 py-3 rounded-xl bg-brand-600 text-white font-semibold shadow-lg shadow-brand-600/30" onclick="toggleMobileMenu()">Start Your Build</a>
       </div>
     </div>
   </header>
 
   <main class="pt-16 sm:pt-20">
-    <!-- ================= HERO SECTION ================= -->
+    <!-- ================= HERO SECTION (CLEAR, TRENDY, IMPACTFUL) ================= -->
     <section class="relative pt-12 pb-16 sm:pt-24 sm:pb-24 overflow-hidden reveal-on-scroll radial-vignette">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 text-center relative z-10">
+        <!-- Floating Status Pill -->
         <div class="inline-flex items-center gap-2 px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-full border border-brand-500/25 bg-brand-500/10 text-brand-300 text-[11px] sm:text-xs md:text-sm font-medium mb-6 shadow-sm backdrop-blur-md">
           <span class="inline-block w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-          <span>Architecting Digital Victory at Production Speed</span>
+          <span>Fast-Track App & Web Development Studio</span>
         </div>
 
+        <!-- Punchy Hero Line -->
         <h1 class="text-3xl sm:text-5xl lg:text-7xl font-black tracking-tight text-white max-w-5xl mx-auto leading-[1.18] sm:leading-[1.12]">
-          Master-Crafted Apps Built <br class="hidden sm:inline" />
-          <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-400 via-indigo-200 to-emerald-300 animated-gradient-text">with AI Velocity & Zero Bloat.</span>
+          We Build Custom Apps That <br class="hidden sm:inline" />
+          <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-400 via-indigo-200 to-emerald-300 animated-gradient-text">Turn Clicks Into Paying Clients.</span>
         </h1>
 
+        <!-- Plain English Subtext -->
         <p class="mt-4 sm:mt-6 text-sm sm:text-lg md:text-xl text-zinc-400 max-w-3xl mx-auto leading-relaxed px-2 font-normal">
-          Cross-platform iOS, Android, and responsive web platforms forged on unshakeable Flutter and serverless cloud architectures. Test all 8 live client prototypes below.
+          From appointment booking engines and zero-commission food ordering to smart AI assistants and school management portals. We deploy working prototypes to your phone in <strong>72 hours</strong>.
         </p>
 
         <!-- CTA Buttons -->
         <div class="mt-8 sm:mt-10 flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3.5 max-w-sm sm:max-w-none mx-auto">
           <a href="#sandbox" class="px-6 py-3.5 sm:py-4 rounded-xl bg-gradient-to-r from-brand-600 to-indigo-600 hover:from-brand-500 hover:to-indigo-500 text-white text-sm sm:text-base font-semibold shadow-xl shadow-brand-600/30 flex items-center justify-center gap-2 hover:scale-[1.02] transition-transform duration-200 border border-white/10">
             <i data-lucide="play" class="w-4 h-4 fill-white"></i>
-            Try App Simulator
+            Test Real Builds Below
           </a>
           <a href="#demos" class="px-6 py-3.5 sm:py-4 rounded-xl border border-surface-border bg-surface-subtle/80 hover:bg-surface-elevated text-zinc-300 hover:text-white text-sm sm:text-base font-semibold flex items-center justify-center gap-2 transition-all duration-200">
-            View All 8 Demos
+            Explore 8 Ready Blueprints
             <i data-lucide="layout-grid" class="w-4 h-4 text-brand-400"></i>
           </a>
         </div>
@@ -218,20 +221,20 @@
         <!-- Metric Badges Grid -->
         <div class="mt-12 sm:mt-16 pt-8 border-t border-surface-border grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-6 max-w-4xl mx-auto">
           <div class="p-3.5 sm:p-4 rounded-2xl bg-surface-subtle/60 border border-surface-border text-center backdrop-blur-sm">
-            <div class="text-xl sm:text-3xl font-black text-white">8 Live Demos</div>
-            <div class="text-[11px] sm:text-xs text-zinc-400 mt-0.5 font-medium">Production Deployed</div>
+            <div class="text-xl sm:text-3xl font-black text-white">8 Live Apps</div>
+            <div class="text-[11px] sm:text-xs text-zinc-400 mt-0.5 font-medium">Ready to Test Now</div>
           </div>
           <div class="p-3.5 sm:p-4 rounded-2xl bg-surface-subtle/60 border border-surface-border text-center backdrop-blur-sm">
-            <div class="text-xl sm:text-3xl font-black text-brand-400">48-72h</div>
-            <div class="text-[11px] sm:text-xs text-zinc-400 mt-0.5 font-medium">First Interactive Draft</div>
+            <div class="text-xl sm:text-3xl font-black text-brand-400">72 Hours</div>
+            <div class="text-[11px] sm:text-xs text-zinc-400 mt-0.5 font-medium">Clickable First Draft</div>
           </div>
           <div class="p-3.5 sm:p-4 rounded-2xl bg-surface-subtle/60 border border-surface-border text-center backdrop-blur-sm">
-            <div class="text-xl sm:text-3xl font-black text-emerald-400">1 Codebase</div>
-            <div class="text-[11px] sm:text-xs text-zinc-400 mt-0.5 font-medium">iOS, Android & Web</div>
+            <div class="text-xl sm:text-3xl font-black text-emerald-400">iOS & Android</div>
+            <div class="text-[11px] sm:text-xs text-zinc-400 mt-0.5 font-medium">1 Unified Codebase</div>
           </div>
           <div class="p-3.5 sm:p-4 rounded-2xl bg-surface-subtle/60 border border-surface-border text-center backdrop-blur-sm">
-            <div class="text-xl sm:text-3xl font-black text-amber-400">Zero Lock-In</div>
-            <div class="text-[11px] sm:text-xs text-zinc-400 mt-0.5 font-medium">100% Code Ownership</div>
+            <div class="text-xl sm:text-3xl font-black text-amber-400">100% Yours</div>
+            <div class="text-[11px] sm:text-xs text-zinc-400 mt-0.5 font-medium">Zero Proprietary Lock-In</div>
           </div>
         </div>
       </div>
@@ -242,37 +245,37 @@
       <div class="max-w-7xl mx-auto px-4 sm:px-6">
         <div class="text-center max-w-3xl mx-auto mb-8">
           <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/25 text-emerald-400 text-[11px] font-semibold uppercase tracking-wider mb-2">
-            <i data-lucide="sparkles" class="w-3 h-3"></i> Real-Time Interactive Simulator
+            <i data-lucide="sparkles" class="w-3 h-3"></i> Interactive Device Simulator
           </div>
-          <h2 class="text-2xl sm:text-4xl font-extrabold text-white">Test Actual Builds Right Here</h2>
-          <p class="mt-2 text-xs sm:text-sm text-zinc-400">Swipe horizontally through the apps below to launch them in our simulator frame.</p>
+          <h2 class="text-2xl sm:text-4xl font-extrabold text-white">Don't Take Our Word For It. Try The Apps.</h2>
+          <p class="mt-2 text-xs sm:text-sm text-zinc-400">Tap below to switch between live apps directly inside our interactive frame.</p>
         </div>
 
-        <!-- Swipeable Tab Row for Mobile (Expanded to 8 Demos) -->
+        <!-- Swipeable Tab Row for Mobile -->
         <div class="flex items-center gap-2 overflow-x-auto no-scrollbar pb-3 mb-4 -mx-4 px-4 sm:mx-0 sm:px-0 sm:justify-center">
           <button onclick="loadSandboxApp('https://zionappsstudio.github.io/zion-booking-demo/', 'Booking Engine (Demo #1)', this)" class="sandbox-btn shrink-0 px-3.5 py-2 rounded-xl text-xs font-semibold border transition-all bg-brand-600 text-white border-brand-500 shadow-md">
-            🗓️ Service Booking
+            🗓️ Appointments & Salons
           </button>
           <button onclick="loadSandboxApp('https://zionappsstudio.github.io/zion-ai-assistant-demo/', 'AI Knowledge Assistant (Demo #2)', this)" class="sandbox-btn shrink-0 px-3.5 py-2 rounded-xl text-xs font-semibold border border-surface-border bg-surface-subtle text-zinc-400 hover:text-white transition-all">
-            🤖 AI Bot
+            🤖 24/7 AI Sales Bot
           </button>
           <button onclick="loadSandboxApp('https://zionappsstudio.github.io/zion-church-hub/', 'Grace Community Hub (Demo #3)', this)" class="sandbox-btn shrink-0 px-3.5 py-2 rounded-xl text-xs font-semibold border border-surface-border bg-surface-subtle text-zinc-400 hover:text-white transition-all">
-            ⛪ Church Hub
+            ⛪ Community & Non-Profit
           </button>
           <button onclick="loadSandboxApp('https://zionappsstudio.github.io/zion-estate-hub/', 'Luxury Real Estate Portal (Demo #4)', this)" class="sandbox-btn shrink-0 px-3.5 py-2 rounded-xl text-xs font-semibold border border-surface-border bg-surface-subtle text-zinc-400 hover:text-white transition-all">
-            🏡 PropTech
+            🏡 Luxury Real Estate
           </button>
           <button onclick="loadSandboxApp('https://zionappsstudio.github.io/zion-wedding-studio/', 'Lumière Wedding Studios (Demo #5)', this)" class="sandbox-btn shrink-0 px-3.5 py-2 rounded-xl text-xs font-semibold border border-surface-border bg-surface-subtle text-zinc-400 hover:text-white transition-all">
-            📸 Wedding Studio
+            📸 Photo & Wedding Studios
           </button>
           <button onclick="loadSandboxApp('https://zionappsstudio.github.io/zion-artisan-cafe/', 'Artisan Roast & Cloud Kitchen (Demo #6)', this)" class="sandbox-btn shrink-0 px-3.5 py-2 rounded-xl text-xs font-semibold border border-surface-border bg-surface-subtle text-zinc-400 hover:text-white transition-all">
-            ☕ Cloud Kitchen
+            ☕ Cafes & Cloud Kitchens
           </button>
           <button onclick="loadSandboxApp('https://zionappsstudio.github.io/zion-school-app/', 'School Management Mobile System (Demo #7)', this)" class="sandbox-btn shrink-0 px-3.5 py-2 rounded-xl text-xs font-semibold border border-surface-border bg-surface-subtle text-zinc-400 hover:text-white transition-all">
-            🏫 School App
+            🏫 School Attendance & Fees
           </button>
           <button onclick="loadSandboxApp('https://zionappsstudio.github.io/zion-academy-hub/', 'Collegiate Institutional Portal (Demo #8)', this)" class="sandbox-btn shrink-0 px-3.5 py-2 rounded-xl text-xs font-semibold border border-surface-border bg-surface-subtle text-zinc-400 hover:text-white transition-all">
-            🎓 Campus Portal
+            🎓 Campus Admissions Portal
           </button>
         </div>
 
@@ -300,7 +303,7 @@
                 </div>
                 <a id="sandbox-external-link" href="https://zionappsstudio.github.io/zion-booking-demo/" target="_blank" rel="noopener noreferrer" class="px-2.5 py-1 rounded-lg bg-brand-600/20 text-brand-300 border border-brand-500/40 text-[11px] font-bold flex items-center gap-1 hover:bg-brand-600/30 transition-all">
                   <span>Open Fullscreen</span>
-                  <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+                  <i data-lucide="external-link" class="w-3 h-3"></i>
                 </a>
               </div>
             </div>
@@ -313,18 +316,19 @@
             </div>
           </div>
           <p class="text-center text-[11px] text-zinc-500 mt-2 block sm:hidden">
-            💡 Tip: Scroll outside the black box or tap "Open Fullscreen" for complete immersive navigation.
+            💡 Tap "Open Fullscreen" for complete full-phone immersion.
           </p>
         </div>
       </div>
     </section>
 
-    <!-- ================= BENTO-GRID PROTOTYPES ================= -->
+    <!-- ================= BENTO-GRID PROTOTYPES (8 DEMOS) ================= -->
     <section id="demos" class="py-16 sm:py-24 reveal-on-scroll">
       <div class="max-w-7xl mx-auto px-4 sm:px-6">
         <div class="text-center max-w-3xl mx-auto mb-8 sm:mb-12">
-          <h2 class="text-xs uppercase tracking-widest text-brand-400 font-bold mb-2">Master-Crafted Showcase</h2>
-          <p class="text-2xl sm:text-4xl font-extrabold text-white">Ready-to-Deploy Blueprints</p>
+          <h2 class="text-xs uppercase tracking-widest text-brand-400 font-bold mb-2">Live Production Blueprints</h2>
+          <p class="text-2xl sm:text-4xl font-extrabold text-white">Choose Your Vertical</p>
+          <p class="text-xs sm:text-sm text-zinc-400 mt-2">Every blueprint can be customized with your brand identity and live within days.</p>
         </div>
 
         <!-- Swipeable Filter Tabs for Mobile -->
@@ -332,40 +336,40 @@
           <button onclick="filterBento('all', this)" class="bento-tab shrink-0 px-3.5 py-1.5 rounded-full text-xs font-semibold bg-brand-600 text-white shadow-sm">
             All (8)
           </button>
-          <button onclick="filterBento('education', this)" class="bento-tab shrink-0 px-3.5 py-1.5 rounded-full text-xs font-semibold bg-surface-subtle border border-surface-border text-zinc-400 hover:text-white">
-            Education & Campus (2)
-          </button>
           <button onclick="filterBento('commerce', this)" class="bento-tab shrink-0 px-3.5 py-1.5 rounded-full text-xs font-semibold bg-surface-subtle border border-surface-border text-zinc-400 hover:text-white">
-            Commerce & Ordering (2)
+            Booking & Ordering (2)
+          </button>
+          <button onclick="filterBento('education', this)" class="bento-tab shrink-0 px-3.5 py-1.5 rounded-full text-xs font-semibold bg-surface-subtle border border-surface-border text-zinc-400 hover:text-white">
+            Schools & Academies (2)
           </button>
           <button onclick="filterBento('proptech', this)" class="bento-tab shrink-0 px-3.5 py-1.5 rounded-full text-xs font-semibold bg-surface-subtle border border-surface-border text-zinc-400 hover:text-white">
-            Luxury & Estates (2)
+            Luxury & Studios (2)
           </button>
           <button onclick="filterBento('ai', this)" class="bento-tab shrink-0 px-3.5 py-1.5 rounded-full text-xs font-semibold bg-surface-subtle border border-surface-border text-zinc-400 hover:text-white">
-            AI Assistant (1)
+            AI Sales Bot (1)
           </button>
           <button onclick="filterBento('community', this)" class="bento-tab shrink-0 px-3.5 py-1.5 rounded-full text-xs font-semibold bg-surface-subtle border border-surface-border text-zinc-400 hover:text-white">
             Community (1)
           </button>
         </div>
 
-        <!-- Bento Grid Container (8 Coordinated Prototypes) -->
+        <!-- Bento Grid Container -->
         <div class="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
           
-          <!-- Card 1: Booking Engine (Emerald Glow) -->
+          <!-- Card 1: Booking Engine -->
           <div data-category="commerce" class="bento-item relative overflow-hidden rounded-2xl sm:rounded-3xl border border-emerald-500/20 bg-surface-subtle/50 p-5 sm:p-7 flex flex-col justify-between hover:border-emerald-500/50 hover:bg-surface-subtle/80 hover:shadow-xl hover:shadow-emerald-500/10 transition-all duration-300 group">
             <div class="absolute -top-12 -right-12 w-48 h-48 bg-emerald-500/15 group-hover:bg-emerald-500/25 rounded-full blur-2xl pointer-events-none transition-all duration-500"></div>
             
             <div class="relative z-10">
               <div class="flex items-center justify-between gap-4 mb-3">
                 <span class="px-2.5 py-0.5 rounded-full text-[11px] font-semibold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
-                  Service Commerce
+                  Direct Reservations
                 </span>
                 <span class="text-xs text-zinc-500 font-mono font-bold">Demo #1</span>
               </div>
-              <h3 class="text-lg sm:text-xl font-bold text-white mb-2 group-hover:text-emerald-300 transition-colors">Booking Engine & Scheduling</h3>
+              <h3 class="text-lg sm:text-xl font-bold text-white mb-2 group-hover:text-emerald-300 transition-colors">Instant Appointment Booking</h3>
               <p class="text-zinc-400 text-xs sm:text-sm leading-relaxed mb-4">
-                Interactive appointment scheduler with real-time calendar picker, service customization, and direct admin agenda dashboard.
+                Stop losing bookings in WhatsApp DMs. Let clients select dates, services, and staff in two taps with instant calendar sync.
               </p>
             </div>
             <div class="relative z-10 pt-4 border-t border-surface-border flex items-center justify-between">
@@ -378,20 +382,20 @@
             </div>
           </div>
 
-          <!-- Card 2: AI Knowledge Assistant (Indigo Glow) -->
+          <!-- Card 2: AI Knowledge Assistant -->
           <div data-category="ai" class="bento-item relative overflow-hidden rounded-2xl sm:rounded-3xl border border-indigo-500/20 bg-surface-subtle/50 p-5 sm:p-7 flex flex-col justify-between hover:border-indigo-500/50 hover:bg-surface-subtle/80 hover:shadow-xl hover:shadow-indigo-500/10 transition-all duration-300 group">
             <div class="absolute -top-12 -right-12 w-48 h-48 bg-indigo-500/15 group-hover:bg-indigo-500/25 rounded-full blur-2xl pointer-events-none transition-all duration-500"></div>
 
             <div class="relative z-10">
               <div class="flex items-center justify-between gap-4 mb-3">
                 <span class="px-2.5 py-0.5 rounded-full text-[11px] font-semibold bg-indigo-500/10 text-indigo-400 border border-indigo-500/20">
-                  Enterprise AI Agent
+                  24/7 AI Lead Qualifier
                 </span>
                 <span class="text-xs text-zinc-500 font-mono font-bold">Demo #2</span>
               </div>
-              <h3 class="text-lg sm:text-xl font-bold text-white mb-2 group-hover:text-indigo-300 transition-colors">Intelligent Knowledge Assistant</h3>
+              <h3 class="text-lg sm:text-xl font-bold text-white mb-2 group-hover:text-indigo-300 transition-colors">Smart AI Knowledge Bot</h3>
               <p class="text-zinc-400 text-xs sm:text-sm leading-relaxed mb-4">
-                Contextual AI agent strictly anchored to company documentation to answer client inquiries 24/7 with zero hallucinations.
+                Trained strictly on your business pricing, rules, and FAQs. Answers prospect inquiries instantly at 2 AM with zero hallucinations.
               </p>
             </div>
             <div class="relative z-10 pt-4 border-t border-surface-border flex items-center justify-between">
@@ -404,20 +408,20 @@
             </div>
           </div>
 
-          <!-- Card 3: Church Hub (Amber Glow) -->
+          <!-- Card 3: Church Hub -->
           <div data-category="community" class="bento-item relative overflow-hidden rounded-2xl sm:rounded-3xl border border-amber-500/20 bg-surface-subtle/50 p-5 sm:p-7 flex flex-col justify-between hover:border-amber-500/50 hover:bg-surface-subtle/80 hover:shadow-xl hover:shadow-amber-500/10 transition-all duration-300 group">
             <div class="absolute -top-12 -right-12 w-48 h-48 bg-amber-500/15 group-hover:bg-amber-500/25 rounded-full blur-2xl pointer-events-none transition-all duration-500"></div>
 
             <div class="relative z-10">
               <div class="flex items-center justify-between gap-4 mb-3">
                 <span class="px-2.5 py-0.5 rounded-full text-[11px] font-semibold bg-amber-500/10 text-amber-400 border border-amber-500/20">
-                  Non-Profit & Faith
+                  Community & Faith
                 </span>
                 <span class="text-xs text-zinc-500 font-mono font-bold">Demo #3</span>
               </div>
-              <h3 class="text-lg sm:text-xl font-bold text-white mb-2 group-hover:text-amber-300 transition-colors">Grace Community Church Hub</h3>
+              <h3 class="text-lg sm:text-xl font-bold text-white mb-2 group-hover:text-amber-300 transition-colors">Grace Community Hub</h3>
               <p class="text-zinc-400 text-xs sm:text-sm leading-relaxed mb-4">
-                Royal blue & gold portal offering 6-language scripture, video sermon streaming, digital offerings, and member directories.
+                Multilingual scripture reading, sermon video streaming, digital donations, and instant member event notifications.
               </p>
             </div>
             <div class="relative z-10 pt-4 border-t border-surface-border flex items-center justify-between">
@@ -430,20 +434,20 @@
             </div>
           </div>
 
-          <!-- Card 4: Luxury PropTech Hub (Cyan Glow) -->
+          <!-- Card 4: Luxury PropTech Hub -->
           <div data-category="proptech" class="bento-item relative overflow-hidden rounded-2xl sm:rounded-3xl border border-cyan-500/20 bg-surface-subtle/50 p-5 sm:p-7 flex flex-col justify-between hover:border-cyan-500/50 hover:bg-surface-subtle/80 hover:shadow-xl hover:shadow-cyan-500/10 transition-all duration-300 group">
             <div class="absolute -top-12 -right-12 w-48 h-48 bg-cyan-500/15 group-hover:bg-cyan-500/25 rounded-full blur-2xl pointer-events-none transition-all duration-500"></div>
 
             <div class="relative z-10">
               <div class="flex items-center justify-between gap-4 mb-3">
                 <span class="px-2.5 py-0.5 rounded-full text-[11px] font-semibold bg-cyan-500/10 text-cyan-400 border border-cyan-500/20">
-                  PropTech & Estates
+                  Luxury Real Estate
                 </span>
                 <span class="text-xs text-zinc-500 font-mono font-bold">Demo #4</span>
               </div>
-              <h3 class="text-lg sm:text-xl font-bold text-white mb-2 group-hover:text-cyan-300 transition-colors">Luxury Real Estate Portal</h3>
+              <h3 class="text-lg sm:text-xl font-bold text-white mb-2 group-hover:text-cyan-300 transition-colors">High-End Property Showcase</h3>
               <p class="text-zinc-400 text-xs sm:text-sm leading-relaxed mb-4">
-                Electric cyan portal featuring a floating glass dock, mortgage & ROI yield calculator, 3D walkthroughs, and VIP showings.
+                Interactive mortgage EMI calculator, high-res floor plans, ROI yield estimates, and direct WhatsApp VIP viewing requests.
               </p>
             </div>
             <div class="relative z-10 pt-4 border-t border-surface-border flex items-center justify-between">
@@ -456,7 +460,7 @@
             </div>
           </div>
 
-          <!-- Card 5: Wedding Studio (Rose Glow) -->
+          <!-- Card 5: Wedding Studio -->
           <div data-category="proptech" class="bento-item relative overflow-hidden rounded-2xl sm:rounded-3xl border border-rose-500/20 bg-surface-subtle/50 p-5 sm:p-7 flex flex-col justify-between hover:border-rose-500/50 hover:bg-surface-subtle/80 hover:shadow-xl hover:shadow-rose-500/10 transition-all duration-300 group">
             <div class="absolute -top-12 -right-12 w-48 h-48 bg-rose-500/15 group-hover:bg-rose-500/25 rounded-full blur-2xl pointer-events-none transition-all duration-500"></div>
 
@@ -469,7 +473,7 @@
               </div>
               <h3 class="text-lg sm:text-xl font-bold text-white mb-2 group-hover:text-rose-300 transition-colors">Lumière Wedding Studios</h3>
               <p class="text-zinc-400 text-xs sm:text-sm leading-relaxed mb-4">
-                Editorial photography portfolio with presentation slide transitions, custom package cost estimator, and client proofing vault.
+                Editorial photography portfolio with slide presentations, custom package quote builders, and private client proofing vaults.
               </p>
             </div>
             <div class="relative z-10 pt-4 border-t border-surface-border flex items-center justify-between">
@@ -482,20 +486,20 @@
             </div>
           </div>
 
-          <!-- Card 6: Artisan Cloud Kitchen (Orange Glow) -->
+          <!-- Card 6: Artisan Cloud Kitchen -->
           <div data-category="commerce" class="bento-item relative overflow-hidden rounded-2xl sm:rounded-3xl border border-orange-500/20 bg-surface-subtle/50 p-5 sm:p-7 flex flex-col justify-between hover:border-orange-500/50 hover:bg-surface-subtle/80 hover:shadow-xl hover:shadow-orange-500/10 transition-all duration-300 group">
             <div class="absolute -top-12 -right-12 w-48 h-48 bg-orange-500/15 group-hover:bg-orange-500/25 rounded-full blur-2xl pointer-events-none transition-all duration-500"></div>
 
             <div class="relative z-10">
               <div class="flex items-center justify-between gap-4 mb-3">
                 <span class="px-2.5 py-0.5 rounded-full text-[11px] font-semibold bg-orange-500/10 text-orange-400 border border-orange-500/20">
-                  Direct F&B Ordering
+                  0% Commission Ordering
                 </span>
                 <span class="text-xs text-zinc-500 font-mono font-bold">Demo #6</span>
               </div>
-              <h3 class="text-lg sm:text-xl font-bold text-white mb-2 group-hover:text-orange-300 transition-colors">Artisan Roast & Cloud Kitchen</h3>
+              <h3 class="text-lg sm:text-xl font-bold text-white mb-2 group-hover:text-orange-300 transition-colors">Direct Food & Beverage Ordering</h3>
               <p class="text-zinc-400 text-xs sm:text-sm leading-relaxed mb-4">
-                Direct zero-commission ordering platform with beverage customizers, floating cart capsule, and 4-stage kitchen order tracker.
+                Keep the 30% aggregator cut. Deliver visual digital menus, custom modifiers, and live 4-stage kitchen order tracking.
               </p>
             </div>
             <div class="relative z-10 pt-4 border-t border-surface-border flex items-center justify-between">
@@ -508,20 +512,20 @@
             </div>
           </div>
 
-          <!-- Card 7: School Management Mobile System (Indigo Glow) -->
+          <!-- Card 7: School Attendance App -->
           <div data-category="education" class="bento-item relative overflow-hidden rounded-2xl sm:rounded-3xl border border-indigo-500/20 bg-surface-subtle/50 p-5 sm:p-7 flex flex-col justify-between hover:border-indigo-500/50 hover:bg-surface-subtle/80 hover:shadow-xl hover:shadow-indigo-500/10 transition-all duration-300 group">
             <div class="absolute -top-12 -right-12 w-48 h-48 bg-indigo-500/15 group-hover:bg-indigo-500/25 rounded-full blur-2xl pointer-events-none transition-all duration-500"></div>
 
             <div class="relative z-10">
               <div class="flex items-center justify-between gap-4 mb-3">
                 <span class="px-2.5 py-0.5 rounded-full text-[11px] font-semibold bg-indigo-500/10 text-indigo-400 border border-indigo-500/20">
-                  School Operations App
+                  School Mobile System
                 </span>
                 <span class="text-xs text-zinc-500 font-mono font-bold">Demo #7</span>
               </div>
-              <h3 class="text-lg sm:text-xl font-bold text-white mb-2 group-hover:text-indigo-300 transition-colors">School Management Mobile System</h3>
+              <h3 class="text-lg sm:text-xl font-bold text-white mb-2 group-hover:text-indigo-300 transition-colors">School Attendance & Fee App</h3>
               <p class="text-zinc-400 text-xs sm:text-sm leading-relaxed mb-4">
-                Class-wise student & teacher rosters, dual attendance registers, fee dues tracking, and quick payment reconciliations.
+                Two-tap attendance register for teachers, instant push notices for exams, and automated WhatsApp fee reminders for parents.
               </p>
             </div>
             <div class="relative z-10 pt-4 border-t border-surface-border flex items-center justify-between">
@@ -534,20 +538,20 @@
             </div>
           </div>
 
-          <!-- Card 8: Collegiate Institutional Web Portal (Violet Glow) -->
+          <!-- Card 8: Campus Web Portal -->
           <div data-category="education" class="bento-item relative overflow-hidden rounded-2xl sm:rounded-3xl border border-violet-500/20 bg-surface-subtle/50 p-5 sm:p-7 flex flex-col justify-between hover:border-violet-500/50 hover:bg-surface-subtle/80 hover:shadow-xl hover:shadow-violet-500/10 transition-all duration-300 group">
             <div class="absolute -top-12 -right-12 w-48 h-48 bg-violet-500/15 group-hover:bg-violet-500/25 rounded-full blur-2xl pointer-events-none transition-all duration-500"></div>
 
             <div class="relative z-10">
               <div class="flex items-center justify-between gap-4 mb-3">
                 <span class="px-2.5 py-0.5 rounded-full text-[11px] font-semibold bg-violet-500/10 text-violet-400 border border-violet-500/20">
-                  Collegiate Web Portal
+                  Admissions Web Portal
                 </span>
                 <span class="text-xs text-zinc-500 font-mono font-bold">Demo #8</span>
               </div>
-              <h3 class="text-lg sm:text-xl font-bold text-white mb-2 group-hover:text-violet-300 transition-colors">Collegiate Institutional Portal</h3>
+              <h3 class="text-lg sm:text-xl font-bold text-white mb-2 group-hover:text-violet-300 transition-colors">Admissions & Campus Portal</h3>
               <p class="text-zinc-400 text-xs sm:text-sm leading-relaxed mb-4">
-                Live course seat availability matrix, annual fee structures, faculty leadership profiles, and official parent event circulars.
+                Real-time seat vacancy counters, transparent tuition fee breakdowns, faculty credentials, and digital parent inquiry forms.
               </p>
             </div>
             <div class="relative z-10 pt-4 border-t border-surface-border flex items-center justify-between">
@@ -564,12 +568,13 @@
       </div>
     </section>
 
-    <!-- ================= CAPABILITIES (SERVICES) ================= -->
+    <!-- ================= WHAT WE BUILD (SERVICES REFRAMED CLEARLY) ================= -->
     <section id="services" class="py-16 sm:py-24 reveal-on-scroll">
       <div class="max-w-7xl mx-auto px-4 sm:px-6">
         <div class="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
-          <h2 class="text-xs uppercase tracking-widest text-brand-400 font-bold mb-3">Capabilities</h2>
-          <p class="text-2xl sm:text-4xl font-extrabold text-white">Full-Spectrum Digital Engineering</p>
+          <h2 class="text-xs uppercase tracking-widest text-brand-400 font-bold mb-3">What We Do</h2>
+          <p class="text-2xl sm:text-4xl font-extrabold text-white">Full-Stack Digital Products Built For Revenue</p>
+          <p class="text-xs sm:text-sm text-zinc-400 mt-2">No bloated consulting decks. We build functional software your customers actually love using.</p>
         </div>
 
         <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
@@ -579,7 +584,7 @@
             </div>
             <h3 class="text-lg font-bold text-white mb-2">Cross-Platform Apps</h3>
             <p class="text-zinc-400 text-xs sm:text-sm leading-relaxed">
-              Native-feel applications for iOS and Android engineered with Flutter for fluid 60fps UI and unified performance.
+              Native-speed iOS and Android apps built on Flutter. One clean codebase means half the cost and double the delivery speed.
             </p>
           </div>
 
@@ -587,9 +592,9 @@
             <div class="w-12 h-12 rounded-2xl bg-brand-500/10 text-brand-400 flex items-center justify-center mb-5 group-hover:scale-110 transition-transform duration-300 border border-brand-500/20">
               <i data-lucide="globe" class="w-6 h-6"></i>
             </div>
-            <h3 class="text-lg font-bold text-white mb-2">Web Platforms</h3>
+            <h3 class="text-lg font-bold text-white mb-2">High-Converting Web Portals</h3>
             <p class="text-zinc-400 text-xs sm:text-sm leading-relaxed">
-              Responsive SaaS portals, booking engines, and custom back-office administrative dashboards.
+              Ultra-fast web platforms, customer dashboards, and internal business consoles engineered to turn visitors into buyers.
             </p>
           </div>
 
@@ -597,9 +602,9 @@
             <div class="w-12 h-12 rounded-2xl bg-brand-500/10 text-brand-400 flex items-center justify-center mb-5 group-hover:scale-110 transition-transform duration-300 border border-brand-500/20">
               <i data-lucide="bot" class="w-6 h-6"></i>
             </div>
-            <h3 class="text-lg font-bold text-white mb-2">AI Workflows</h3>
+            <h3 class="text-lg font-bold text-white mb-2">Custom AI Bots</h3>
             <p class="text-zinc-400 text-xs sm:text-sm leading-relaxed">
-              Ground intelligent assistants strictly in your business rules, FAQ policies, and internal documentation.
+              Automated AI receptionists and customer support agents trained strictly on your documentation to handle repetitive client chats.
             </p>
           </div>
 
@@ -607,9 +612,9 @@
             <div class="w-12 h-12 rounded-2xl bg-brand-500/10 text-brand-400 flex items-center justify-center mb-5 group-hover:scale-110 transition-transform duration-300 border border-brand-500/20">
               <i data-lucide="database" class="w-6 h-6"></i>
             </div>
-            <h3 class="text-lg font-bold text-white mb-2">Serverless Cloud</h3>
+            <h3 class="text-lg font-bold text-white mb-2">Serverless Cloud Backends</h3>
             <p class="text-zinc-400 text-xs sm:text-sm leading-relaxed">
-              Real-time synchronization, role-based security, and autoscaling cloud data pipelines with zero maintenance.
+              Real-time database sync, automatic backups, and zero server maintenance headaches. Your app scales without extra effort.
             </p>
           </div>
         </div>
@@ -621,10 +626,10 @@
       <div class="max-w-7xl mx-auto px-4 sm:px-6">
         <div class="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
           <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-500/10 border border-brand-500/25 text-brand-400 text-[11px] font-semibold uppercase tracking-wider mb-2">
-            <i data-lucide="clock" class="w-3.5 h-3.5"></i> Streamlined Workflow
+            <i data-lucide="clock" class="w-3.5 h-3.5"></i> Streamlined 3-Step Process
           </div>
-          <h2 class="text-2xl sm:text-4xl font-extrabold text-white">How We Build in Days, Not Quarters</h2>
-          <p class="mt-2 text-xs sm:text-sm text-zinc-400">Zero corporate bloat. Direct access to founding engineers from kickoff to production launch.</p>
+          <h2 class="text-2xl sm:text-4xl font-extrabold text-white">How We Ship in Days, Not Months</h2>
+          <p class="mt-2 text-xs sm:text-sm text-zinc-400">Direct access to founding engineers from kickoff to store launch.</p>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6 relative">
@@ -633,9 +638,9 @@
             <div class="w-10 h-10 rounded-xl bg-brand-600/20 border border-brand-500/30 text-brand-300 font-mono font-black text-sm flex items-center justify-center mb-5 group-hover:scale-110 transition-transform duration-300">
               01
             </div>
-            <h3 class="text-lg font-bold text-white mb-2">48h Interactive Draft</h3>
+            <h3 class="text-lg font-bold text-white mb-2">72-Hour Clickable Draft</h3>
             <p class="text-zinc-400 text-xs sm:text-sm leading-relaxed">
-              We ingest your brand assets, catalogs, and workflows to deploy an interactive, clickable staging prototype to your phone in 48 to 72 hours.
+              We take your catalog, colors, and workflows, then deploy a live, interactive draft right onto your phone in 3 days.
             </p>
           </div>
 
@@ -644,9 +649,9 @@
             <div class="w-10 h-10 rounded-xl bg-indigo-600/20 border border-indigo-500/30 text-indigo-300 font-mono font-black text-sm flex items-center justify-center mb-5 group-hover:scale-110 transition-transform duration-300">
               02
             </div>
-            <h3 class="text-lg font-bold text-white mb-2">Custom Logic & Wiring</h3>
+            <h3 class="text-lg font-bold text-white mb-2">Custom Wiring & Logic</h3>
             <p class="text-zinc-400 text-xs sm:text-sm leading-relaxed">
-              We connect your real-time database, role-based access consoles, custom payment pipelines, and automated lead notifications.
+              We wire your payment gateways, live databases, staff dashboards, and automated WhatsApp alert triggers.
             </p>
           </div>
 
@@ -655,95 +660,65 @@
             <div class="w-10 h-10 rounded-xl bg-emerald-600/20 border border-emerald-500/30 text-emerald-300 font-mono font-black text-sm flex items-center justify-center mb-5 group-hover:scale-110 transition-transform duration-300">
               03
             </div>
-            <h3 class="text-lg font-bold text-white mb-2">Handover & Launch</h3>
+            <h3 class="text-lg font-bold text-white mb-2">Go Live & Full Handover</h3>
             <p class="text-zinc-400 text-xs sm:text-sm leading-relaxed">
-              Zero-downtime DNS deployment, app store compilation, and full transfer of 100% intellectual property and source code ownership.
+              Custom domain configuration, app store releases, and complete transfer of 100% source code ownership to you.
             </p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ================= FINANCIAL IMPACT / ROI METRICS ================= -->
-    <section class="py-16 sm:py-20 reveal-on-scroll">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6">
-        <div class="text-center max-w-3xl mx-auto mb-10 sm:mb-14">
-          <h2 class="text-xs uppercase tracking-widest text-emerald-400 font-bold mb-2">Tangible Return on Investment</h2>
-          <p class="text-2xl sm:text-4xl font-extrabold text-white">Engineered for Direct Bottom-Line Growth</p>
-        </div>
-
-        <div class="grid sm:grid-cols-3 gap-4 sm:gap-6 max-w-5xl mx-auto">
-          <div class="p-6 rounded-2xl sm:rounded-3xl bg-surface-subtle/50 border border-surface-border text-center hover:border-emerald-500/30 transition-colors">
-            <div class="text-3xl sm:text-4xl font-black text-emerald-400">0% Cuts</div>
-            <div class="text-sm font-bold text-white mt-2">Zero Aggregator Commission</div>
-            <p class="text-zinc-400 text-xs mt-1">Keep 25%–30% of each ticket by owning direct customer ordering and checkout channels.</p>
-          </div>
-
-          <div class="p-6 rounded-2xl sm:rounded-3xl bg-surface-subtle/50 border border-surface-border text-center hover:border-brand-400/30 transition-colors">
-            <div class="text-3xl sm:text-4xl font-black text-brand-400">2-Tap Booking</div>
-            <div class="text-sm font-bold text-white mt-2">Recover Lost Night Leaks</div>
-            <p class="text-zinc-400 text-xs mt-1">Stop losing 20% of potential appointments stuck in delayed WhatsApp or Instagram DM responses.</p>
-          </div>
-
-          <div class="p-6 rounded-2xl sm:rounded-3xl bg-surface-subtle/50 border border-surface-border text-center hover:border-indigo-400/30 transition-colors">
-            <div class="text-3xl sm:text-4xl font-black text-indigo-400">15+ Hours</div>
-            <div class="text-sm font-bold text-white mt-2">Reclaimed Partner Time</div>
-            <p class="text-zinc-400 text-xs mt-1">Automate routine client qualification, document intake, and FAQs with strictly bounded AI models.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ================= THE JAYATEKTON EDGE (WHY US) ================= -->
+    <!-- ================= THE JAYTEKTON EDGE (WHY US) ================= -->
     <section id="why-us" class="py-16 sm:py-20 bg-surface/40 border-y border-surface-border reveal-on-scroll">
       <div class="max-w-7xl mx-auto px-4 sm:px-6">
         <div class="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
-          <h2 class="text-xs uppercase tracking-widest text-brand-400 font-bold mb-3">The Tekton Edge</h2>
-          <p class="text-2xl sm:text-4xl font-extrabold text-white">Why JayaTekton Outperforms Traditional Agencies</p>
+          <h2 class="text-xs uppercase tracking-widest text-brand-400 font-bold mb-3">The JayTekton Difference</h2>
+          <p class="text-2xl sm:text-4xl font-extrabold text-white">Why Founders Choose JayTekton Over Traditional Agencies</p>
         </div>
 
         <div class="grid md:grid-cols-2 gap-6 sm:gap-8 max-w-5xl mx-auto">
           <!-- Traditional Agency Model -->
           <div class="p-6 sm:p-8 rounded-2xl sm:rounded-3xl bg-surface-subtle/40 border border-red-500/20 shadow-sm relative">
             <h3 class="text-lg sm:text-xl font-bold text-red-400 mb-5 flex items-center gap-2">
-              <i data-lucide="x-circle" class="w-5 h-5"></i> The Traditional Agency Model
+              <i data-lucide="x-circle" class="w-5 h-5"></i> Traditional Agencies
             </h3>
             <ul class="space-y-4 text-zinc-400 text-xs sm:text-sm">
               <li class="flex items-start gap-3">
                 <i data-lucide="minus" class="w-4 h-4 text-red-400 mt-0.5 shrink-0"></i>
-                <span><strong>Months of waiting</strong> before delivering your first functional interactive build.</span>
+                <span><strong>Months of waiting</strong> before you ever get to touch a working build.</span>
               </li>
               <li class="flex items-start gap-3">
                 <i data-lucide="minus" class="w-4 h-4 text-red-400 mt-0.5 shrink-0"></i>
-                <span><strong>Inflated engineering fees</strong> billing hourly for boilerplate, repetitive code.</span>
+                <span><strong>Bloated hourly invoices</strong> billing you for basic setup and boilerplate screens.</span>
               </li>
               <li class="flex items-start gap-3">
                 <i data-lucide="minus" class="w-4 h-4 text-red-400 mt-0.5 shrink-0"></i>
-                <span><strong>Fractured tech stacks</strong> requiring separate engineers for iOS, Android, and Web.</span>
+                <span><strong>Separate teams</strong> for iOS, Android, and web that triple your ongoing maintenance.</span>
               </li>
             </ul>
           </div>
 
-          <!-- The JayaTekton Way -->
+          <!-- The JayTekton Way -->
           <div class="p-6 sm:p-8 rounded-2xl sm:rounded-3xl bg-surface-subtle/80 border border-brand-500/40 shadow-xl shadow-brand-500/5 relative ring-1 ring-brand-500/20">
             <div class="absolute -top-3 right-6 px-3 py-0.5 rounded-full bg-brand-600 text-[10px] sm:text-[11px] font-semibold text-white tracking-wider uppercase shadow-md">
-              The Master-Crafted Standard
+              The Modern Standard
             </div>
             <h3 class="text-lg sm:text-xl font-bold text-brand-300 mb-5 flex items-center gap-2">
-              <i data-lucide="zap" class="w-5 h-5 text-brand-400"></i> The JayaTekton Way
+              <i data-lucide="zap" class="w-5 h-5 text-brand-400"></i> The JayTekton Way
             </h3>
             <ul class="space-y-4 text-zinc-300 text-xs sm:text-sm">
               <li class="flex items-start gap-3">
                 <i data-lucide="check" class="w-4 h-4 text-emerald-400 mt-0.5 shrink-0"></i>
-                <span><strong>Rapid interactive drafts</strong> ready for review in days using AI scaffolding tools.</span>
+                <span><strong>Interactive prototype in 72 hours</strong> so you can test before spending serious budget.</span>
               </li>
               <li class="flex items-start gap-3">
                 <i data-lucide="check" class="w-4 h-4 text-emerald-400 mt-0.5 shrink-0"></i>
-                <span><strong>Value-focused pricing</strong> where you pay strictly for custom logic, not boilerplate.</span>
+                <span><strong>Flat, milestone-based pricing</strong> where you pay strictly for deliverables, never hours.</span>
               </li>
               <li class="flex items-start gap-3">
                 <i data-lucide="check" class="w-4 h-4 text-emerald-400 mt-0.5 shrink-0"></i>
-                <span><strong>Cross-platform by default</strong> guaranteeing unified UX across smartphones, tablets, and desktop browsers.</span>
+                <span><strong>100% code and data ownership</strong> with zero monthly per-user licensing penalties.</span>
               </li>
             </ul>
           </div>
@@ -762,23 +737,23 @@
               <div class="w-16 h-16 rounded-2xl bg-gradient-to-tr from-brand-600 to-indigo-400 flex items-center justify-center text-white text-2xl font-black shadow-lg shadow-brand-500/20 mb-4 border border-white/10">
                 J
               </div>
-              <h3 class="text-xl font-bold text-white">About JayaTekton</h3>
-              <p class="text-xs text-brand-400 font-semibold tracking-wide uppercase mt-1">Architecting Digital Victory</p>
+              <h3 class="text-xl font-bold text-white">About JayTekton</h3>
+              <p class="text-xs text-brand-400 font-semibold tracking-wide uppercase mt-1">Master Builders in Code</p>
               <div class="mt-4 flex items-center gap-2 text-xs text-zinc-400">
                 <span class="w-2 h-2 rounded-full bg-emerald-400 inline-block"></span>
-                Master Craftsmanship &bull; 1 Cor 15:57
+                Founder-Led &bull; Zero Middlemen
               </div>
             </div>
 
             <div class="md:col-span-8 space-y-4 text-zinc-300 text-xs sm:text-sm leading-relaxed">
               <p>
-                In biblical antiquity, a <em>Tekton</em> was far more than an ordinary laborer—they were master builders, artisan craftsmen who shaped enduring architectural works with precision and purpose. Combined with <em>Jaya</em> (the victory and triumph granted through divine grace), <strong>JayaTekton</strong> was established to bring that standard of structural integrity to modern digital software.
+                In ancient Greek, a <em>Tekton</em> was a master craftsman who built enduring structures with precision. Paired with <em>Jay</em> (triumph and victory), <strong>JayTekton</strong> was created to bring that standard of unshakeable craftsmanship to digital apps.
               </p>
               <p>
-                Traditional development agencies bury founders in months of bureaucratic delay, billing excessive hours for routine boilerplate code. At <strong>JayaTekton</strong>, we operate differently: pairing battle-tested cross-platform Flutter architecture with modern AI engineering tools to take your vision from concept to a production-grade, interactive build in days rather than quarters.
+                We believe founders deserve better than 6-month timelines and vague promises. By combining modern Flutter cross-platform architecture with AI development speed, we turn business ideas into fluid, production-ready apps in days.
               </p>
               <p class="text-zinc-400">
-                When you partner with JayaTekton, you collaborate directly with hands-on systems engineers who architect the database, write clean code, and oversee production deployment—giving you full transparency, complete intellectual property ownership, and digital foundations designed to triumph.
+                When you build with JayTekton, you speak directly with the engineers building your product. No account managers, no game of telephone—just high-velocity execution.
               </p>
             </div>
           </div>
@@ -793,8 +768,8 @@
           <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-500/10 border border-brand-500/25 text-brand-400 text-[11px] font-semibold uppercase tracking-wider mb-2">
             <i data-lucide="calculator" class="w-3 h-3"></i> Interactive Scope Planner
           </div>
-          <h2 class="text-2xl sm:text-4xl font-extrabold text-white">Estimate Your Build in 60s</h2>
-          <p class="mt-2 text-xs sm:text-sm text-zinc-400">Configure your stack and modules to auto-calculate your estimated turnaround window.</p>
+          <h2 class="text-2xl sm:text-4xl font-extrabold text-white">Estimate Your Turnaround in 60s</h2>
+          <p class="mt-2 text-xs sm:text-sm text-zinc-400">Select your platform and modules to calculate your delivery window.</p>
         </div>
 
         <div class="rounded-2xl sm:rounded-3xl border border-surface-border bg-surface-subtle/70 p-5 sm:p-8 shadow-2xl space-y-6">
@@ -820,7 +795,7 @@
           <!-- Step 2: Core Modules (Multi Select Toggle) -->
           <div>
             <div class="flex items-center justify-between mb-2.5">
-              <label class="block text-xs font-bold uppercase tracking-wider text-zinc-300">2. Core Architecture Modules</label>
+              <label class="block text-xs font-bold uppercase tracking-wider text-zinc-300">2. Core Modules</label>
               <span class="text-[11px] text-brand-400 font-medium">Multi-Select (Tap to toggle)</span>
             </div>
             <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 sm:gap-3">
@@ -854,7 +829,7 @@
       </div>
     </section>
 
-    <!-- ================= INTERACTIVE FAQ SECTION ================= -->
+    <!-- ================= FAQ SECTION ================= -->
     <section id="faq" class="py-16 sm:py-24 reveal-on-scroll">
       <div class="max-w-4xl mx-auto px-4 sm:px-6">
         <div class="text-center mb-10 sm:mb-14">
@@ -866,71 +841,66 @@
         </div>
 
         <div class="space-y-3">
-          <!-- FAQ Item 1 -->
           <div class="rounded-2xl bg-surface-subtle/50 border border-surface-border overflow-hidden">
             <button onclick="toggleFAQ('faq-1', this)" class="w-full p-4 sm:p-5 flex items-center justify-between text-left text-sm font-bold text-white hover:text-brand-300 transition-colors">
-              <span>Do I own 100% of the source code and intellectual property?</span>
+              <span>Do I own 100% of the source code and IP?</span>
               <i data-lucide="chevron-down" class="w-4 h-4 text-zinc-400 transition-transform duration-300"></i>
             </button>
             <div id="faq-1" class="hidden px-4 sm:px-5 pb-5 text-xs sm:text-sm text-zinc-400 leading-relaxed border-t border-surface-border pt-3">
-              Yes, absolutely. Upon final project settlement, complete repository rights, cloud configurations, and assets are transferred entirely to your control. We believe in zero proprietary lock-in.
+              Yes, 100%. Upon project completion, all repository rights, cloud configurations, and assets belong entirely to you. No proprietary locks.
             </div>
           </div>
 
-          <!-- FAQ Item 2 -->
           <div class="rounded-2xl bg-surface-subtle/50 border border-surface-border overflow-hidden">
             <button onclick="toggleFAQ('faq-2', this)" class="w-full p-4 sm:p-5 flex items-center justify-between text-left text-sm font-bold text-white hover:text-brand-300 transition-colors">
-              <span>Will I be locked into a compulsory monthly maintenance retainer?</span>
+              <span>Are there mandatory monthly maintenance fees?</span>
               <i data-lucide="chevron-down" class="w-4 h-4 text-zinc-400 transition-transform duration-300"></i>
             </button>
             <div id="faq-2" class="hidden px-4 sm:px-5 pb-5 text-xs sm:text-sm text-zinc-400 leading-relaxed border-t border-surface-border pt-3">
-              Never. We architect platforms using modern serverless cloud infrastructure with near-zero ongoing maintenance overhead. If you ever require new custom features, you can hire us on an ad-hoc milestone basis.
+              Never. We architect platforms using modern serverless cloud infrastructure with near-zero maintenance overhead. You can hire us on an ad-hoc basis whenever you want new features.
             </div>
           </div>
 
-          <!-- FAQ Item 3 -->
           <div class="rounded-2xl bg-surface-subtle/50 border border-surface-border overflow-hidden">
             <button onclick="toggleFAQ('faq-3', this)" class="w-full p-4 sm:p-5 flex items-center justify-between text-left text-sm font-bold text-white hover:text-brand-300 transition-colors">
-              <span>Can our mobile applications be published to both the Apple App Store & Google Play?</span>
+              <span>Will our mobile app publish to Apple App Store and Google Play?</span>
               <i data-lucide="chevron-down" class="w-4 h-4 text-zinc-400 transition-transform duration-300"></i>
             </button>
             <div id="faq-3" class="hidden px-4 sm:px-5 pb-5 text-xs sm:text-sm text-zinc-400 leading-relaxed border-t border-surface-border pt-3">
-              Yes. Because we build with Flutter, your codebase generates production-ready native iOS and Android packages compliant with App Store and Google Play guidelines, alongside responsive web builds.
+              Yes. Built with Flutter, your codebase generates production-ready native iOS and Android packages compliant with both stores, alongside web browser builds.
             </div>
           </div>
 
-          <!-- FAQ Item 4 -->
           <div class="rounded-2xl bg-surface-subtle/50 border border-surface-border overflow-hidden">
             <button onclick="toggleFAQ('faq-4', this)" class="w-full p-4 sm:p-5 flex items-center justify-between text-left text-sm font-bold text-white hover:text-brand-300 transition-colors">
-              <span>How are you able to ship working prototypes in just 48 to 72 hours?</span>
+              <span>How are you able to ship working drafts in 72 hours?</span>
               <i data-lucide="chevron-down" class="w-4 h-4 text-zinc-400 transition-transform duration-300"></i>
             </button>
             <div id="faq-4" class="hidden px-4 sm:px-5 pb-5 text-xs sm:text-sm text-zinc-400 leading-relaxed border-t border-surface-border pt-3">
-              We eliminate traditional agency bureaucracy. Instead of billing hours for boilerplate login boxes or basic layouts, we utilize proprietary modular scaffolds and AI developer tooling to build your specific custom logic immediately.
+              We eliminate agency bureaucracy. Instead of billing hours for basic layouts, we utilize proprietary modular scaffolds and AI developer tooling to build your specific custom logic immediately.
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ================= LEAD CAPTURE FORM WITH PROTOTYPE HOOK ================= -->
+    <!-- ================= LEAD INTAKE ================= -->
     <section id="contact" class="py-16 sm:py-20 bg-obsidian border-t border-surface-border reveal-on-scroll">
       <div class="max-w-3xl mx-auto px-4 sm:px-6">
         <div class="text-center mb-8 sm:mb-12">
-          <!-- High-Converting Lead Magnet Badge -->
           <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-[11px] font-semibold uppercase tracking-wider mb-2">
             <i data-lucide="shield-check" class="w-3.5 h-3.5"></i> Zero-Risk Offer
           </div>
-          <h2 class="text-2xl sm:text-4xl font-extrabold text-white">Claim a Free 48-Hour Prototype Draft</h2>
+          <h2 class="text-2xl sm:text-4xl font-extrabold text-white">Claim Your 72-Hour Interactive Prototype</h2>
           <p class="mt-2 text-xs sm:text-sm text-zinc-400 max-w-lg mx-auto">
-            Drop your website or service details below. We'll assemble a live interactive preview using your brand assets before you commit a single dollar.
+            Drop your website or business details below. We'll assemble a live interactive preview on your phone before you commit a single dollar.
           </p>
         </div>
 
         <form id="contact-form" action="https://api.web3forms.com/submit" method="POST" class="bg-surface-subtle/60 border border-surface-border rounded-2xl sm:rounded-3xl p-5 sm:p-8 shadow-2xl space-y-4 sm:space-y-6">
           <input type="hidden" name="access_key" value="8be3eac5-5859-4bab-bf78-505a28c7710b" />
-          <input type="hidden" name="subject" value="New Client Inquiry - JayaTekton" />
-          <input type="hidden" name="from_name" value="JayaTekton Portal" />
+          <input type="hidden" name="subject" value="New Client Inquiry - JayTekton" />
+          <input type="hidden" name="from_name" value="JayTekton Portal" />
           <input type="checkbox" name="botcheck" class="hidden" style="display: none;" />
 
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
@@ -970,7 +940,7 @@
           </div>
 
           <button type="submit" id="submit-btn" class="w-full py-3.5 rounded-xl bg-gradient-to-r from-brand-600 to-indigo-600 hover:from-brand-500 hover:to-indigo-500 text-white text-sm sm:text-base font-semibold transition-all shadow-xl shadow-brand-600/30 flex items-center justify-center gap-2 cursor-pointer hover:scale-[1.01] border border-white/10">
-            <span id="btn-text">Request 48-Hour Prototype Draft</span>
+            <span id="btn-text">Request 72-Hour Prototype Draft</span>
             <i data-lucide="send" class="w-4 h-4"></i>
           </button>
           
@@ -980,8 +950,8 @@
     </section>
   </main>
 
-  <!-- ================= FLOATING WHATSAPP QUICK-CHAT HOOK ================= -->
-  <a href="https://wa.me/919381217686?text=Hi%20JayaTekton%20team,%20I'd%20like%20to%20review%20a%20prototype%20for%20my%20business." target="_blank" rel="noopener noreferrer" class="wa-float fixed bottom-16 sm:bottom-6 right-4 sm:right-6 z-40 px-3.5 py-2.5 rounded-full bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold flex items-center gap-2 shadow-2xl transition-transform hover:scale-105 border border-white/15" title="Chat on WhatsApp">
+  <!-- ================= FLOATING WHATSAPP BUTTON ================= -->
+  <a href="https://wa.me/919381217686?text=Hi%20JayTekton%20team,%20I'd%20like%20to%20review%20a%20prototype%20for%20my%20business." target="_blank" rel="noopener noreferrer" class="wa-float fixed bottom-16 sm:bottom-6 right-4 sm:right-6 z-40 px-3.5 py-2.5 rounded-full bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold flex items-center gap-2 shadow-2xl transition-transform hover:scale-105 border border-white/15" title="Chat on WhatsApp">
     <i data-lucide="message-circle" class="w-4 h-4 fill-white"></i>
     <span class="hidden sm:inline">Fast Track Chat</span>
   </a>
@@ -1005,10 +975,10 @@
         <div class="w-7 h-7 rounded-lg bg-brand-600 flex items-center justify-center text-white font-bold text-xs border border-white/10">
           J
         </div>
-        <span class="text-xs sm:text-sm font-semibold text-white">JayaTekton</span>
+        <span class="text-xs sm:text-sm font-semibold text-white">JayTekton</span>
       </div>
       <p class="text-[11px] sm:text-xs text-zinc-500">
-        &copy; 2026 JayaTekton. Master-crafted engineering. All rights reserved.
+        &copy; 2026 JayTekton. Master-crafted engineering. All rights reserved.
       </p>
     </div>
   </footer>
@@ -1120,7 +1090,6 @@
       const icon = btn.querySelector('svg');
       const isHidden = panel.classList.contains('hidden');
 
-      // Close other open panels
       document.querySelectorAll('[id^="faq-"]').forEach(p => p.classList.add('hidden'));
       document.querySelectorAll('#faq svg').forEach(i => i.style.transform = 'rotate(0deg)');
 
@@ -1130,7 +1099,7 @@
       }
     }
 
-    // Estimator State (Single Platform, Multi-Module)
+    // Estimator State
     let estState = {
       platform: 'Mobile App (iOS & Android)',
       platformDays: 4,
@@ -1182,7 +1151,7 @@
       const detailsField = document.getElementById('details');
       const moduleNames = Array.from(estState.modules.keys()).join(', ');
       
-      detailsField.value = `Hi JayaTekton team, I estimated a project:\n- Target Platform: ${estState.platform}\n- Core Modules: ${moduleNames}\nLooking for a kickoff prototype review.`;
+      detailsField.value = `Hi JayTekton team, I estimated a project:\n- Target Platform: ${estState.platform}\n- Core Modules: ${moduleNames}\nLooking for a kickoff prototype review.`;
 
       const projectTypeSelect = document.getElementById('project-type');
       if (projectTypeSelect) {
@@ -1221,7 +1190,7 @@
         const result = await response.json();
 
         if (result.success) {
-          feedback.textContent = "Thank you! Your project request was sent directly to JayaTekton. We will reply within 24 hours.";
+          feedback.textContent = "Thank you! Your project request was sent directly to JayTekton. We will reply within 24 hours.";
           feedback.className = "text-center text-xs sm:text-sm font-medium text-emerald-400";
           form.reset();
         } else {
@@ -1233,7 +1202,7 @@
         feedback.className = "text-center text-xs sm:text-sm font-medium text-red-400";
       } finally {
         feedback.classList.remove('hidden');
-        btnText.textContent = "Request 48-Hour Prototype Draft";
+        btnText.textContent = "Request 72-Hour Prototype Draft";
         submitBtn.disabled = false;
       }
     });
