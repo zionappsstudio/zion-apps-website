@@ -15,7 +15,7 @@
       --bg-canvas: #040711;
       --bg-surface: #091024;
       --bg-surface-elevated: #101B3B;
-      --bg-surface-glass: rgba(9, 16, 36, 0.92);
+      --bg-surface-glass: rgba(9, 16, 36, 0.94);
       
       --border-subtle: rgba(226, 185, 59, 0.22);
       --border-gold: #E2B93B;
@@ -77,11 +77,11 @@
       -webkit-text-fill-color: transparent;
     }
 
-    /* 1 & 2. NAVIGATION: CENTER ALIGNED & NO EMPTY GAPS */
+    /* NAVIGATION */
     .site-nav {
       position: sticky;
       top: 0;
-      z-index: 999;
+      z-index: 1000;
       background: var(--bg-surface-glass);
       backdrop-filter: blur(20px);
       border-bottom: 1px solid var(--border-subtle);
@@ -89,10 +89,9 @@
     }
 
     .nav-wrapper {
-      display: grid;
-      grid-template-columns: auto 1fr auto;
+      display: flex;
+      justify-content: space-between;
       align-items: center;
-      gap: 20px;
     }
 
     .brand-logo-link {
@@ -114,11 +113,9 @@
       box-shadow: 0 4px 16px rgba(0, 0, 0, 0.6), 0 0 16px rgba(226, 185, 59, 0.3);
     }
 
-    /* Centered Links: Ordered 1 to 5 */
     .nav-links-center {
       display: flex;
       align-items: center;
-      justify-content: center;
       gap: 32px;
     }
 
@@ -134,7 +131,7 @@
       color: var(--gold-bright);
     }
 
-    /* 3. MOBILE HAMBURGER BUTTON & DRAWER */
+    /* MOBILE MENU: RIGHT-ALIGNED FLOATING DRAWER (NO NUMBERS) */
     .mobile-menu-toggle {
       display: none;
       background: rgba(226, 185, 59, 0.1);
@@ -149,16 +146,17 @@
     .mobile-nav-drawer {
       display: none;
       position: absolute;
-      top: 100%;
-      left: 0;
-      right: 0;
-      background: var(--bg-surface-glass);
-      backdrop-filter: blur(25px);
-      border-bottom: 2px solid var(--gold-primary);
-      padding: 20px 24px;
+      top: calc(100% + 8px);
+      right: 16px;
+      width: 250px;
+      background: #091024;
+      border: 1.5px solid var(--border-gold);
+      border-radius: 18px;
+      padding: 16px 20px;
       flex-direction: column;
-      gap: 16px;
-      box-shadow: 0 16px 40px rgba(0,0,0,0.8);
+      gap: 12px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.85), 0 0 25px rgba(226, 185, 59, 0.25);
+      z-index: 1001;
     }
 
     .mobile-nav-drawer.open {
@@ -166,11 +164,20 @@
     }
 
     .mobile-nav-drawer a {
-      font-size: 1.05rem;
+      font-size: 1rem;
       font-weight: 700;
       color: #FFFFFF;
-      padding: 8px 0;
-      border-bottom: 1px solid rgba(255,255,255,0.06);
+      padding: 10px 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      transition: color 0.2s;
+    }
+
+    .mobile-nav-drawer a:last-child {
+      border-bottom: none;
+    }
+
+    .mobile-nav-drawer a:hover {
+      color: var(--gold-bright);
     }
 
     /* Hero Section */
@@ -289,7 +296,7 @@
       color: var(--gold-bright);
     }
 
-    /* Chamfered Metric Cards */
+    /* Metric Strip */
     .metric-strip {
       padding: 40px 0;
       position: relative;
@@ -389,7 +396,7 @@
       letter-spacing: 0.06em;
     }
 
-    /* Section Headings */
+    /* Headings */
     .section-header-center {
       text-align: center;
       max-width: 860px;
@@ -417,7 +424,7 @@
       line-height: 1.65;
     }
 
-    /* 4. LIVE BUILDS: DESKTOP 4x2 GRID & MOBILE 2-LINE HORIZONTAL SCROLL */
+    /* Live Builds: Desktop 4x2 & Mobile 2-Line Strip */
     .builds-tabs-desktop {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
@@ -451,7 +458,6 @@
       box-shadow: 0 0 20px var(--gold-glow);
     }
 
-    /* Mobile 2-Line Blueprint Strip */
     .mobile-blueprints-slider {
       display: none;
       flex-direction: column;
@@ -491,7 +497,6 @@
       color: var(--gold-bright);
     }
 
-    /* Viewport Simulator Control */
     .viewport-toggle-row {
       display: flex;
       justify-content: center;
@@ -590,7 +595,7 @@
       color: #FFFFFF;
     }
 
-    /* What We Build (4 Cards with 3D Gradients) */
+    /* What We Build Cards */
     .capabilities-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
@@ -669,7 +674,7 @@
       line-height: 1.65;
     }
 
-    /* 5. COMPARISON SECTION: TOP-RIGHT BADGE, ALIGNED HEADERS & WAVY GOLD SPARKLE */
+    /* COMPARISON: HEADINGS ALIGNED + TOP-RIGHT FLOATED BADGE */
     .comparison-wrapper {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
@@ -679,7 +684,7 @@
 
     .compare-card-agency {
       border-radius: 24px;
-      padding: 40px;
+      padding: 42px 36px;
       background: linear-gradient(145deg, rgba(239, 68, 68, 0.12) 0%, #091024 100%);
       border: 1.5px solid rgba(239, 68, 68, 0.4);
       box-shadow: 0 8px 30px rgba(239, 68, 68, 0.1);
@@ -687,11 +692,10 @@
       flex-direction: column;
     }
 
-    /* JayTekton Way: Gold Wavy Border + Sparkling Aura */
     .compare-card-jaytekton {
       position: relative;
       border-radius: 24px;
-      padding: 40px;
+      padding: 42px 36px;
       background: linear-gradient(145deg, #101B3B 0%, #060B18 100%);
       border: 2px solid transparent;
       background-clip: padding-box;
@@ -700,7 +704,6 @@
       flex-direction: column;
     }
 
-    /* Wavy Gold Border Ring */
     .compare-card-jaytekton::after {
       content: '';
       position: absolute;
@@ -718,21 +721,21 @@
       100% { background-position: 0% 50%; }
     }
 
-    /* Top-Right Floated Modern Standard Badge */
+    /* Top-Right Badge: Keeps internal titles aligned */
     .top-right-gold-badge {
       position: absolute;
       top: -14px;
-      right: 24px;
+      right: 20px;
       background: linear-gradient(135deg, #FFF6D1, #E2B93B);
       color: #050814;
       font-size: 0.8rem;
       font-weight: 800;
-      padding: 6px 16px;
+      padding: 5px 14px;
       border-radius: 9999px;
       box-shadow: 0 4px 16px rgba(226, 185, 59, 0.5);
       display: flex;
       align-items: center;
-      gap: 6px;
+      gap: 5px;
     }
 
     .compare-list-pro {
@@ -740,7 +743,7 @@
       display: flex;
       flex-direction: column;
       gap: 20px;
-      margin-top: 10px;
+      margin-top: 14px;
     }
 
     .compare-list-pro li {
@@ -880,7 +883,7 @@
       display: block;
     }
 
-    /* 6. MOBILE FORM INPUT FIXES (No clipped text or iOS auto-zoom) */
+    /* FORM: 100% FLUID WIDTH FOR DESKTOP & MOBILE */
     .form-wrapper {
       background: var(--bg-surface);
       border: 1px solid var(--border-subtle);
@@ -901,12 +904,13 @@
 
     .form-input, .form-select, .form-textarea {
       width: 100%;
+      box-sizing: border-box;
       padding: 16px 18px;
       background: var(--bg-surface-elevated);
       border: 1.5px solid var(--border-subtle);
       border-radius: 12px;
       color: #FFFFFF;
-      font-size: 16px; /* Prevents auto-zoom on mobile */
+      font-size: 16px; /* Avoid mobile zoom */
       font-family: inherit;
       outline: none;
       -webkit-appearance: none;
@@ -970,7 +974,6 @@
     @media (max-width: 992px) {
       .nav-links-center { display: none; }
       .mobile-menu-toggle { display: block; }
-      .nav-wrapper { display: flex; justify-content: space-between; }
       .capabilities-grid { grid-template-columns: 1fr; }
       .estimator-container { grid-template-columns: 1fr; }
       .comparison-wrapper { grid-template-columns: 1fr; gap: 40px; }
@@ -978,6 +981,7 @@
       .metric-grid { grid-template-columns: repeat(2, 1fr); }
       .builds-tabs-desktop { display: none; }
       .mobile-blueprints-slider { display: flex; }
+      .form-grid { grid-template-columns: 1fr !important; }
     }
 
     @media (max-width: 640px) {
@@ -989,8 +993,8 @@
       .metric-value { font-size: 1.45rem; }
       .simulator-container-responsive { width: 100% !important; }
       .device-chassis-pro { height: 480px; border-radius: 24px; }
-      .form-grid { grid-template-columns: 1fr; }
-      .form-wrapper { padding: 26px 18px; }
+      .form-wrapper { padding: 24px 16px; }
+      .form-grid { grid-template-columns: 1fr !important; gap: 16px; }
       .footer-grid { grid-template-columns: 1fr; gap: 28px; }
       .estimator-container { padding: 24px 16px; }
       
@@ -1024,7 +1028,7 @@
         </div>
       </a>
 
-      <!-- 1 & 2. CENTER-ALIGNED LINKS (ORDER: 1. What We Build, 2. Why Us, 3. Live Builds, 4. Estimator, 5. FAQ) -->
+      <!-- Centered Links (Order: What We Build, Why Us, Live Builds, Estimator, FAQ) -->
       <div class="nav-links-center">
         <a href="#capabilities">What We Build</a>
         <a href="#why-us">Why Us</a>
@@ -1033,19 +1037,19 @@
         <a href="#faq">FAQ</a>
       </div>
 
-      <!-- 3. MOBILE MENU HAMBURGER BUTTON -->
+      <!-- Mobile Hamburger Button -->
       <button class="mobile-menu-toggle" id="menuToggle" aria-label="Toggle navigation">
         ☰
       </button>
-    </div>
 
-    <!-- Mobile Navigation Drawer -->
-    <div class="mobile-nav-drawer" id="mobileDrawer">
-      <a href="#capabilities" onclick="closeDrawer()">1. What We Build</a>
-      <a href="#why-us" onclick="closeDrawer()">2. Why Us</a>
-      <a href="#demos" onclick="closeDrawer()">3. Live Builds</a>
-      <a href="#estimator" onclick="closeDrawer()">4. Scope Estimator</a>
-      <a href="#faq" onclick="closeDrawer()">5. FAQ</a>
+      <!-- Right-Aligned Floating Mobile Drawer (Clean, No Numbers) -->
+      <div class="mobile-nav-drawer" id="mobileDrawer">
+        <a href="#capabilities" onclick="closeDrawer()">What We Build</a>
+        <a href="#why-us" onclick="closeDrawer()">Why Us</a>
+        <a href="#demos" onclick="closeDrawer()">Live Builds</a>
+        <a href="#estimator" onclick="closeDrawer()">Scope Estimator</a>
+        <a href="#faq" onclick="closeDrawer()">FAQ</a>
+      </div>
     </div>
   </nav>
 
@@ -1067,7 +1071,7 @@
     </div>
   </section>
 
-  <!-- Metric Cards Below Hero -->
+  <!-- Metric Badges -->
   <div class="metric-strip">
     <div class="container">
       <div class="metric-grid">
@@ -1127,7 +1131,7 @@
     </div>
   </section>
 
-  <!-- 2. Why Us: Perfectly Aligned Headings & Wavy Gold Sparkles -->
+  <!-- 2. Why Us: Headings Aligned Perfectly + Top-Right Floated Modern Standard Badge -->
   <section id="why-us" style="padding: 90px 0;">
     <div class="container">
       <div class="section-header-center">
@@ -1162,14 +1166,14 @@
           </ul>
         </div>
 
-        <!-- The JayTekton Way: Gold Sparkles & Top-Right Badge -->
+        <!-- The JayTekton Way -->
         <div class="compare-card-jaytekton">
-          <!-- 5. TOP RIGHT BADGE -->
+          <!-- Top Right Floated Tag -->
           <div class="top-right-gold-badge">
             ✨ The Modern Standard
           </div>
 
-          <!-- Aligned Heading Level with Traditional Agency -->
+          <!-- Aligned Title with Traditional Agency -->
           <h3 style="font-size: 1.45rem; font-weight: 800; margin-bottom: 24px; color: var(--gold-bright); letter-spacing: -0.02em;">
             The <div class="brand-name-split"><span class="part-jay">Jay</span><span class="part-tekton">Tekton</span></div> Way
           </h3>
@@ -1239,7 +1243,7 @@
         </button>
       </div>
 
-      <!-- 4. MOBILE: 2-LINE HORIZONTAL SCROLL CHIP STRIP -->
+      <!-- Mobile: 2-Line Horizontal Scroll Chip Strip -->
       <div class="mobile-blueprints-slider">
         <div class="mobile-blueprint-row">
           <button class="mobile-bp-chip active" onclick="activateMobileBp(this, 'https://zionappsstudio.github.io/zion-school-app/', 'School & Academy Hub', 'Education Portal &bull; Mobile & Web', 'Complete portal for fee collection, student attendance, push circulars, and teacher-parent communication.', 'app')">
@@ -1470,7 +1474,7 @@
     </div>
   </section>
 
-  <!-- Lead Intake Form (Enhanced Mobile Input Fields) -->
+  <!-- Lead Intake Form (100% Fluid Width for Mobile & Clean Layout) -->
   <section id="contact" style="padding: 90px 0;">
     <div class="container">
       <div class="form-wrapper">
@@ -1484,22 +1488,22 @@
 
         <form id="leadForm" onsubmit="handleLeadSubmit(event)">
           <div class="form-grid">
-            <div>
+            <div style="width: 100%;">
               <label style="display: block; font-size: 0.9rem; font-weight: 700; margin-bottom: 8px; color: var(--gold-bright);">Your Name *</label>
               <input type="text" id="userName" class="form-input" placeholder="e.g. Rahul Sharma" required />
             </div>
 
-            <div>
+            <div style="width: 100%;">
               <label style="display: block; font-size: 0.9rem; font-weight: 700; margin-bottom: 8px; color: var(--gold-bright);">Work Email *</label>
               <input type="email" id="userEmail" class="form-input" placeholder="e.g. rahul@school.org" required />
             </div>
 
-            <div>
+            <div style="width: 100%;">
               <label style="display: block; font-size: 0.9rem; font-weight: 700; margin-bottom: 8px; color: var(--gold-bright);">WhatsApp Contact *</label>
               <input type="tel" id="userPhone" class="form-input" placeholder="Active WhatsApp number" required />
             </div>
 
-            <div>
+            <div style="width: 100%;">
               <label style="display: block; font-size: 0.9rem; font-weight: 700; margin-bottom: 8px; color: var(--gold-bright);">Business Category *</label>
               <select id="projectType" class="form-select" required>
                 <option value="" disabled selected>Select category...</option>
@@ -1512,7 +1516,7 @@
               </select>
             </div>
 
-            <div style="grid-column: span 2;">
+            <div style="grid-column: 1 / -1; width: 100%;">
               <label style="display: block; font-size: 0.9rem; font-weight: 700; margin-bottom: 8px; color: var(--gold-bright);">Project Overview or Links</label>
               <textarea id="projectDetails" class="form-textarea" placeholder="Tell us what you're looking to build, or paste your website link..."></textarea>
             </div>
@@ -1611,13 +1615,20 @@
 
   <!-- Scripts -->
   <script>
-    // Mobile Drawer Controller
+    // Mobile Drawer Controller (Click Outside to Close)
     const menuToggle = document.getElementById('menuToggle');
     const mobileDrawer = document.getElementById('mobileDrawer');
 
-    menuToggle.addEventListener('click', () => {
+    menuToggle.addEventListener('click', (e) => {
+      e.stopPropagation();
       mobileDrawer.classList.toggle('open');
       menuToggle.textContent = mobileDrawer.classList.contains('open') ? '✕' : '☰';
+    });
+
+    document.addEventListener('click', (e) => {
+      if (!mobileDrawer.contains(e.target) && !menuToggle.contains(e.target)) {
+        closeDrawer();
+      }
     });
 
     function closeDrawer() {
