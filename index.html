@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <title>JayTekton | Custom Apps & Web Portals Built at Master Velocity</title>
-  <meta name="description" content="High-performance iOS, Android, and web platforms built with AI velocity. Test 8 live interactive prototypes on mobile or desktop before committing budget." />
+  <meta name="description" content="High-performance iOS, Android, and web platforms built with AI velocity. Test live interactive prototypes on mobile or desktop before committing budget." />
   
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -12,29 +12,24 @@
 
   <style>
     :root {
-      /* Royal Navy Canvas & Atmospheric Gradients */
-      --bg-canvas: #050814;
-      --bg-surface: #0B132B;
-      --bg-surface-elevated: #111D3E;
-      --bg-surface-glass: rgba(11, 19, 43, 0.88);
+      --bg-canvas: #040711;
+      --bg-surface: #091024;
+      --bg-surface-elevated: #101B3B;
+      --bg-surface-glass: rgba(9, 16, 36, 0.92);
       
-      --border-subtle: rgba(226, 185, 59, 0.2);
+      --border-subtle: rgba(226, 185, 59, 0.22);
       --border-gold: #E2B93B;
       
       --text-primary: #FFFFFF;
       --text-secondary: #CBD5E1;
-      --text-muted: #94A3B8;
+      --text-muted: #8E9BAE;
       
-      /* Vibrant Multi-Color Accents */
       --gold-primary: #E2B93B;
-      --gold-bright: #F7D070;
+      --gold-bright: #FDE68A;
       --blue-accent: #60A5FA;
-      --gold-glow: rgba(226, 185, 59, 0.35);
-      
-      /* Multi-Color Gradient Stops */
-      --grad-brand-gold: linear-gradient(135deg, #FFF3C4 0%, #E2B93B 50%, #C49726 100%);
-      --grad-brand-text: linear-gradient(135deg, #FFFFFF 20%, #F7D070 55%, #60A5FA 100%);
-      --grad-glow: radial-gradient(circle, rgba(226, 185, 59, 0.18) 0%, rgba(96, 165, 250, 0.12) 50%, transparent 75%);
+      --gold-glow: rgba(226, 185, 59, 0.4);
+      --grad-gold: linear-gradient(135deg, #FFF6D1 0%, #E2B93B 50%, #B8861B 100%);
+      --grad-brand-text: linear-gradient(135deg, #FFFFFF 15%, #FDE68A 55%, #60A5FA 100%);
     }
 
     * {
@@ -62,7 +57,7 @@
       width: 100%;
       max-width: 1240px;
       margin: 0 auto;
-      padding: 0 20px;
+      padding: 0 24px;
     }
 
     /* Brand Name Dual-Color Component */
@@ -74,7 +69,7 @@
     }
     .brand-name-split .part-jay {
       color: #E2B93B;
-      text-shadow: 0 0 16px rgba(226, 185, 59, 0.4);
+      text-shadow: 0 0 16px rgba(226, 185, 59, 0.45);
     }
     .brand-name-split .part-tekton {
       background: linear-gradient(135deg, #60A5FA 0%, #93C5FD 50%, #FFFFFF 100%);
@@ -86,7 +81,7 @@
     .site-nav {
       position: sticky;
       top: 0;
-      z-index: 1000;
+      z-index: 999;
       background: var(--bg-surface-glass);
       backdrop-filter: blur(20px);
       border-bottom: 1px solid var(--border-subtle);
@@ -106,23 +101,23 @@
       font-size: 1.45rem;
     }
 
-    /* Minimalist Trendy 'J' Monogram Icon */
+    /* Minimalist Trendy 'J' Monogram */
     .logo-j-box {
       width: 42px;
       height: 42px;
       border-radius: 12px;
-      background: linear-gradient(145deg, #0F1D40, #060A17);
-      border: 1.5px solid rgba(226, 185, 59, 0.4);
+      background: linear-gradient(145deg, #132247, #060B18);
+      border: 1.5px solid rgba(226, 185, 59, 0.5);
       display: flex;
       align-items: center;
       justify-content: center;
-      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.6), 0 0 14px rgba(226, 185, 59, 0.25);
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.6), 0 0 16px rgba(226, 185, 59, 0.3);
     }
 
     .nav-links {
       display: flex;
       align-items: center;
-      gap: 28px;
+      gap: 32px;
     }
 
     .nav-links a {
@@ -136,30 +131,9 @@
       color: var(--gold-bright);
     }
 
-    .nav-whatsapp-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 9px 20px;
-      background: rgba(226, 185, 59, 0.1);
-      border: 1.5px solid var(--gold-primary);
-      border-radius: 9999px;
-      font-size: 0.88rem;
-      font-weight: 700;
-      color: var(--gold-bright);
-      transition: all 0.25s;
-    }
-
-    .nav-whatsapp-btn:hover {
-      background: var(--grad-brand-gold);
-      color: #050814;
-      box-shadow: 0 0 20px var(--gold-glow);
-      transform: translateY(-1px);
-    }
-
     /* Hero Section */
     .hero {
-      padding: 80px 0 60px;
+      padding: 85px 0 60px;
       text-align: center;
       position: relative;
     }
@@ -169,10 +143,10 @@
       top: 15%;
       left: 50%;
       transform: translate(-50%, -50%);
-      width: min(90vw, 650px);
+      width: min(90vw, 700px);
       height: 380px;
-      background: var(--grad-glow);
-      filter: blur(60px);
+      background: radial-gradient(circle, rgba(226, 185, 59, 0.18) 0%, rgba(96, 165, 250, 0.1) 50%, transparent 75%);
+      filter: blur(65px);
       z-index: 0;
       pointer-events: none;
     }
@@ -189,20 +163,20 @@
       align-items: center;
       gap: 8px;
       font-size: 0.85rem;
-      font-weight: 700;
+      font-weight: 800;
       text-transform: uppercase;
       letter-spacing: 0.1em;
       color: var(--gold-bright);
       background: linear-gradient(135deg, rgba(226, 185, 59, 0.15), rgba(96, 165, 250, 0.12));
-      padding: 8px 18px;
+      padding: 8px 20px;
       border-radius: 9999px;
       margin-bottom: 24px;
       border: 1px solid var(--border-subtle);
-      box-shadow: 0 0 18px rgba(226, 185, 59, 0.2);
+      box-shadow: 0 0 18px rgba(226, 185, 59, 0.25);
     }
 
     .hero-title {
-      font-size: clamp(2.3rem, 5.5vw, 3.8rem);
+      font-size: clamp(2.3rem, 5.2vw, 3.8rem);
       font-weight: 800;
       letter-spacing: -0.035em;
       line-height: 1.18;
@@ -218,10 +192,10 @@
     }
 
     .hero-subtext {
-      font-size: clamp(1.05rem, 2.5vw, 1.3rem);
+      font-size: clamp(1.05rem, 2.2vw, 1.25rem);
       color: var(--text-secondary);
       line-height: 1.65;
-      max-width: 820px;
+      max-width: 840px;
       margin: 0 auto 38px;
     }
 
@@ -237,8 +211,8 @@
       display: inline-flex;
       align-items: center;
       gap: 10px;
-      padding: 16px 30px;
-      background: var(--grad-brand-gold);
+      padding: 16px 32px;
+      background: var(--grad-gold);
       color: #050814;
       font-weight: 800;
       font-size: 1rem;
@@ -258,7 +232,7 @@
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      padding: 16px 26px;
+      padding: 16px 28px;
       background: var(--bg-surface);
       color: #FFFFFF;
       font-weight: 700;
@@ -273,62 +247,129 @@
       color: var(--gold-bright);
     }
 
-    /* Metric Badges Grid */
+    /* 3. UNIQUE CHAMFERED CARDS (Below Hero) */
     .metric-strip {
-      padding: 30px 0;
-      border-top: 1px solid var(--border-subtle);
-      border-bottom: 1px solid var(--border-subtle);
-      background: rgba(11, 19, 43, 0.45);
+      padding: 40px 0;
+      position: relative;
     }
 
     .metric-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      gap: 18px;
+      gap: 20px;
     }
 
-    .metric-card {
+    .metric-hex-card {
+      position: relative;
+      padding: 24px 18px;
+      background: linear-gradient(145deg, #0D1633 0%, #060B18 100%);
+      border-radius: 18px;
       text-align: center;
-      padding: 18px 14px;
-      border-radius: 16px;
-      background: var(--bg-surface);
-      border: 1px solid var(--border-subtle);
+      transition: all 0.35s cubic-bezier(0.2, 0.8, 0.2, 1);
+      overflow: hidden;
+      border: 1.5px solid rgba(255, 255, 255, 0.08);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+    }
+
+    /* Animated Shimmer sweep */
+    .metric-hex-card::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: linear-gradient(60deg, transparent 40%, rgba(255, 255, 255, 0.08) 50%, transparent 60%);
+      transform: rotate(30deg);
+      transition: all 0.7s;
+      pointer-events: none;
+    }
+
+    .metric-hex-card:hover::before {
+      left: 100%;
+    }
+
+    .metric-hex-card:hover {
+      transform: translateY(-5px);
+    }
+
+    /* Card 1: Gold Brilliance */
+    .card-theme-gold {
+      border-color: rgba(226, 185, 59, 0.45);
+      box-shadow: 0 8px 24px rgba(226, 185, 59, 0.15);
+    }
+    .card-theme-gold .metric-value {
+      background: linear-gradient(135deg, #FFFFFF, #FDE68A 60%, #E2B93B);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    /* Card 2: Emerald Laser */
+    .card-theme-emerald {
+      border-color: rgba(16, 185, 129, 0.45);
+      box-shadow: 0 8px 24px rgba(16, 185, 129, 0.15);
+    }
+    .card-theme-emerald .metric-value {
+      background: linear-gradient(135deg, #FFFFFF, #6EE7B7 60%, #10B981);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    /* Card 3: Electric Sapphire */
+    .card-theme-sapphire {
+      border-color: rgba(96, 165, 250, 0.45);
+      box-shadow: 0 8px 24px rgba(96, 165, 250, 0.15);
+    }
+    .card-theme-sapphire .metric-value {
+      background: linear-gradient(135deg, #FFFFFF, #93C5FD 60%, #3B82F6);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    /* Card 4: Cyber Violet */
+    .card-theme-violet {
+      border-color: rgba(192, 132, 252, 0.45);
+      box-shadow: 0 8px 24px rgba(192, 132, 252, 0.15);
+    }
+    .card-theme-violet .metric-value {
+      background: linear-gradient(135deg, #FFFFFF, #D8B4FE 60%, #A855F7);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
 
     .metric-value {
-      font-size: 1.8rem;
+      font-size: 1.85rem;
       font-weight: 800;
-      background: var(--grad-brand-text);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      margin-bottom: 4px;
+      margin-bottom: 6px;
+      letter-spacing: -0.02em;
     }
 
     .metric-label {
       font-size: 0.85rem;
       font-weight: 700;
-      color: var(--gold-bright);
+      color: var(--text-secondary);
       text-transform: uppercase;
-      letter-spacing: 0.05em;
+      letter-spacing: 0.06em;
     }
 
     /* Section Headings */
     .section-header-center {
       text-align: center;
-      max-width: 800px;
+      max-width: 860px;
       margin: 0 auto 46px;
     }
 
     .section-heading-gold {
-      font-size: clamp(1.9rem, 4vw, 2.6rem);
+      font-size: clamp(1.9rem, 4vw, 2.7rem);
       font-weight: 800;
       letter-spacing: -0.03em;
       margin-bottom: 14px;
       color: #FFFFFF;
+      line-height: 1.25;
     }
 
     .section-heading-gold span {
-      background: var(--grad-brand-gold);
+      background: var(--grad-gold);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
@@ -336,132 +377,28 @@
     .section-subtext {
       font-size: 1.1rem;
       color: var(--text-secondary);
-      line-height: 1.6;
-    }
-
-    /* 4-Card 3D Gradients (What We Build) */
-    .capabilities-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 26px;
-    }
-
-    .cap-card-3d {
-      position: relative;
-      border-radius: 24px;
-      padding: 38px 32px;
-      overflow: hidden;
-      transition: all 0.35s cubic-bezier(0.2, 0.8, 0.2, 1);
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
-      background: var(--bg-surface);
-      border: 1px solid rgba(255, 255, 255, 0.08);
-    }
-
-    .cap-card-3d::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 0; right: 0; height: 100%;
-      pointer-events: none;
-      opacity: 0.18;
-      transition: opacity 0.35s;
-    }
-
-    /* Card 1: Emerald & Mint Aurora */
-    .cap-card-emerald {
-      border-color: rgba(16, 185, 129, 0.35);
-    }
-    .cap-card-emerald::before {
-      background: radial-gradient(circle at top left, #10B981, #047857, transparent 75%);
-    }
-    .cap-card-emerald .cap-title {
-      background: linear-gradient(135deg, #A7F3D0 0%, #34D399 50%, #E2B93B 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-
-    /* Card 2: Azure & Sapphire Indigo */
-    .cap-card-sapphire {
-      border-color: rgba(59, 130, 246, 0.35);
-    }
-    .cap-card-sapphire::before {
-      background: radial-gradient(circle at top left, #3B82F6, #1D4ED8, transparent 75%);
-    }
-    .cap-card-sapphire .cap-title {
-      background: linear-gradient(135deg, #BFDBFE 0%, #60A5FA 50%, #E2B93B 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-
-    /* Card 3: Cyber Violet & Magenta */
-    .cap-card-violet {
-      border-color: rgba(168, 85, 247, 0.35);
-    }
-    .cap-card-violet::before {
-      background: radial-gradient(circle at top left, #A855F7, #7E22CE, transparent 75%);
-    }
-    .cap-card-violet .cap-title {
-      background: linear-gradient(135deg, #E9D5FF 0%, #C084FC 50%, #E2B93B 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-
-    /* Card 4: Radiant Amber Sunlight */
-    .cap-card-amber {
-      border-color: rgba(245, 158, 11, 0.4);
-    }
-    .cap-card-amber::before {
-      background: radial-gradient(circle at top left, #F59E0B, #B45309, transparent 75%);
-    }
-    .cap-card-amber .cap-title {
-      background: linear-gradient(135deg, #FEF3C7 0%, #FBBF24 50%, #F59E0B 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-
-    .cap-card-3d:hover {
-      transform: translateY(-5px) scale(1.01);
-      box-shadow: 0 20px 45px rgba(0, 0, 0, 0.6);
-    }
-    .cap-card-3d:hover::before {
-      opacity: 0.35;
-    }
-
-    .cap-title {
-      font-size: 1.45rem;
-      font-weight: 800;
-      margin-bottom: 14px;
-      letter-spacing: -0.02em;
-    }
-
-    .cap-desc {
-      font-size: 1.02rem;
-      color: var(--text-secondary);
       line-height: 1.65;
     }
 
-    /* 8 Builds: 4x2 Grid Layout & Viewport Switcher */
+    /* Live Builds Tabs: 4x2 Grid */
     .builds-tabs-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      gap: 12px;
+      gap: 14px;
       margin-bottom: 36px;
     }
 
     .build-tab-btn {
-      padding: 14px 12px;
+      padding: 16px 14px;
       background: var(--bg-surface);
       border: 1.5px solid var(--border-subtle);
-      border-radius: 14px;
+      border-radius: 16px;
       color: var(--text-secondary);
-      font-size: 0.88rem;
+      font-size: 0.92rem;
       font-weight: 700;
       text-align: center;
       cursor: pointer;
       transition: all 0.2s;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 6px;
     }
 
     .build-tab-btn:hover {
@@ -474,10 +411,10 @@
       background: linear-gradient(145deg, rgba(226, 185, 59, 0.18), rgba(96, 165, 250, 0.12));
       border-color: var(--gold-primary);
       color: var(--gold-bright);
-      box-shadow: 0 0 18px var(--gold-glow);
+      box-shadow: 0 0 20px var(--gold-glow);
     }
 
-    /* Device Viewport Toggle (Phone vs Desktop for Websites) */
+    /* Viewport Simulator Control */
     .viewport-toggle-row {
       display: flex;
       justify-content: center;
@@ -487,19 +424,19 @@
     }
 
     .vp-btn {
-      padding: 8px 18px;
+      padding: 8px 20px;
       background: var(--bg-surface);
       border: 1px solid var(--border-subtle);
       border-radius: 9999px;
       color: var(--text-secondary);
-      font-size: 0.85rem;
+      font-size: 0.88rem;
       font-weight: 700;
       cursor: pointer;
       transition: all 0.2s;
     }
 
     .vp-btn.active {
-      background: var(--grad-brand-gold);
+      background: var(--grad-gold);
       color: #050814;
       border-color: var(--gold-primary);
     }
@@ -512,15 +449,14 @@
       flex-wrap: wrap;
     }
 
-    /* Responsive Simulator Frame (Switches Width for Websites) */
     .simulator-container-responsive {
-      transition: width 0.35s cubic-bezier(0.2, 0.8, 0.2, 1);
-      width: 330px; /* default phone */
+      transition: all 0.35s cubic-bezier(0.2, 0.8, 0.2, 1);
+      width: 330px;
       max-width: 100%;
     }
 
     .simulator-container-responsive.desktop-mode {
-      width: min(100%, 680px); /* desktop website preview */
+      width: min(100%, 680px);
     }
 
     .device-chassis-pro {
@@ -536,7 +472,6 @@
     .device-chassis-pro.desktop-frame {
       border-radius: 20px;
       height: 480px;
-      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
     }
 
     .device-screen-pro {
@@ -578,7 +513,157 @@
       color: #FFFFFF;
     }
 
-    /* Dynamic Estimator */
+    /* What We Build (4 Cards with 3D Gradients) */
+    .capabilities-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 26px;
+    }
+
+    .cap-card-3d {
+      position: relative;
+      border-radius: 24px;
+      padding: 38px 32px;
+      overflow: hidden;
+      transition: all 0.35s cubic-bezier(0.2, 0.8, 0.2, 1);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+      background: var(--bg-surface);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .cap-card-3d::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; height: 100%;
+      pointer-events: none;
+      opacity: 0.18;
+      transition: opacity 0.35s;
+    }
+
+    .cap-card-emerald { border-color: rgba(16, 185, 129, 0.4); }
+    .cap-card-emerald::before { background: radial-gradient(circle at top left, #10B981, #047857, transparent 75%); }
+    .cap-card-emerald .cap-title {
+      background: linear-gradient(135deg, #A7F3D0 0%, #34D399 50%, #E2B93B 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .cap-card-sapphire { border-color: rgba(59, 130, 246, 0.4); }
+    .cap-card-sapphire::before { background: radial-gradient(circle at top left, #3B82F6, #1D4ED8, transparent 75%); }
+    .cap-card-sapphire .cap-title {
+      background: linear-gradient(135deg, #BFDBFE 0%, #60A5FA 50%, #E2B93B 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .cap-card-violet { border-color: rgba(168, 85, 247, 0.4); }
+    .cap-card-violet::before { background: radial-gradient(circle at top left, #A855F7, #7E22CE, transparent 75%); }
+    .cap-card-violet .cap-title {
+      background: linear-gradient(135deg, #E9D5FF 0%, #C084FC 50%, #E2B93B 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .cap-card-amber { border-color: rgba(245, 158, 11, 0.45); }
+    .cap-card-amber::before { background: radial-gradient(circle at top left, #F59E0B, #B45309, transparent 75%); }
+    .cap-card-amber .cap-title {
+      background: linear-gradient(135deg, #FEF3C7 0%, #FBBF24 50%, #F59E0B 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .cap-card-3d:hover {
+      transform: translateY(-5px) scale(1.01);
+    }
+    .cap-card-3d:hover::before {
+      opacity: 0.35;
+    }
+
+    .cap-title {
+      font-size: 1.45rem;
+      font-weight: 800;
+      margin-bottom: 14px;
+      letter-spacing: -0.02em;
+    }
+
+    .cap-desc {
+      font-size: 1.02rem;
+      color: var(--text-secondary);
+      line-height: 1.65;
+    }
+
+    /* 5. COMPARISON SECTION WITH PRECISE ICON ALIGNMENT */
+    .comparison-wrapper {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 32px;
+    }
+
+    /* Traditional Agency (Crimson Alert Gradient) */
+    .compare-card-agency {
+      border-radius: 24px;
+      padding: 40px;
+      background: linear-gradient(145deg, rgba(239, 68, 68, 0.12) 0%, #091024 100%);
+      border: 1.5px solid rgba(239, 68, 68, 0.4);
+      box-shadow: 0 8px 30px rgba(239, 68, 68, 0.1);
+    }
+
+    /* JayTekton Way (Gold Sparkle + Green Neon Aura) */
+    .compare-card-jaytekton {
+      border-radius: 24px;
+      padding: 40px;
+      background: linear-gradient(145deg, #101B3B 0%, #060B18 100%);
+      border: 2px solid #10B981; /* Green border */
+      box-shadow: 0 0 35px rgba(16, 185, 129, 0.25), 0 0 20px var(--gold-glow);
+      position: relative;
+    }
+
+    .compare-list-pro {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .compare-list-pro li {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      font-size: 1.02rem;
+      color: var(--text-secondary);
+      line-height: 1.55;
+    }
+
+    /* Fixed Icon Alignment */
+    .icon-bullet {
+      flex-shrink: 0;
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 2px;
+    }
+
+    .icon-bullet-cross {
+      background: rgba(239, 68, 68, 0.2);
+      border: 1px solid #EF4444;
+      color: #EF4444;
+      font-size: 0.85rem;
+      font-weight: 800;
+    }
+
+    .icon-bullet-tick {
+      background: rgba(16, 185, 129, 0.2);
+      border: 1.5px solid #10B981;
+      color: #10B981;
+      font-size: 0.85rem;
+      font-weight: 800;
+      box-shadow: 0 0 10px rgba(16, 185, 129, 0.4);
+    }
+
+    /* Estimator */
     .estimator-container {
       background: var(--bg-surface);
       border: 1px solid var(--border-subtle);
@@ -622,7 +707,7 @@
       justify-content: space-between;
     }
 
-    /* FAQ Section (Gold Headings) */
+    /* FAQ Section */
     .faq-list {
       display: flex;
       flex-direction: column;
@@ -640,14 +725,14 @@
     }
 
     .faq-item:hover {
-      border-color: rgba(226, 185, 59, 0.4);
+      border-color: rgba(226, 185, 59, 0.45);
     }
 
     .faq-question {
       padding: 22px 28px;
       font-size: 1.15rem;
       font-weight: 700;
-      color: var(--gold-bright); /* Radiant Gold Heading */
+      color: var(--gold-bright);
       cursor: pointer;
       display: flex;
       justify-content: space-between;
@@ -711,29 +796,6 @@
       border-color: var(--gold-primary);
     }
 
-    /* Comparison Cards */
-    .comparison-wrapper {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 32px;
-    }
-
-    .compare-card {
-      border-radius: 24px;
-      padding: 40px;
-    }
-
-    .compare-card.traditional {
-      background: rgba(11, 19, 43, 0.5);
-      border: 1px solid var(--border-subtle);
-    }
-
-    .compare-card.jaytekton {
-      background: var(--bg-surface);
-      border: 1.5px solid var(--gold-primary);
-      box-shadow: 0 0 35px var(--gold-glow);
-    }
-
     /* Footer */
     .site-footer {
       background: #03050B;
@@ -748,30 +810,81 @@
       margin-bottom: 46px;
     }
 
-    /* MOBILE BREAKPOINTS (Fully Fixed Mobile Layout) */
+    /* 1. FLOATING WHATSAPP BUTTON (BOTTOM RIGHT) */
+    .floating-whatsapp-widget {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      z-index: 9999;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      background: #25D366;
+      color: #FFFFFF;
+      padding: 12px 20px;
+      border-radius: 9999px;
+      font-weight: 800;
+      font-size: 0.95rem;
+      box-shadow: 0 8px 30px rgba(37, 211, 102, 0.45);
+      transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+      text-decoration: none;
+    }
+
+    .floating-whatsapp-widget:hover {
+      transform: translateY(-4px) scale(1.03);
+      box-shadow: 0 12px 35px rgba(37, 211, 102, 0.6);
+      color: #FFFFFF;
+    }
+
+    .wa-pulsing-icon {
+      width: 28px;
+      height: 28px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* 6. MOBILE RESPONSIVE ENGINE (No broken iframes, clean card decks) */
     @media (max-width: 992px) {
       .builds-tabs-grid { grid-template-columns: repeat(2, 1fr); }
       .capabilities-grid { grid-template-columns: 1fr; }
       .estimator-container { grid-template-columns: 1fr; }
       .comparison-wrapper { grid-template-columns: 1fr; }
       .footer-grid { grid-template-columns: 1fr 1fr; }
+      .metric-grid { grid-template-columns: repeat(2, 1fr); }
     }
 
     @media (max-width: 640px) {
       .container { padding: 0 16px; }
-      .nav-links { display: none; } /* Clean mobile header */
-      .hero { padding: 50px 0 40px; }
+      .nav-links { display: none; }
+      .hero { padding: 50px 0 35px; }
       .hero-title { font-size: 2.2rem; }
-      .metric-grid { grid-template-columns: 1fr 1fr; gap: 10px; }
-      .metric-card { padding: 14px 10px; }
-      .metric-value { font-size: 1.5rem; }
+      .metric-grid { grid-template-columns: 1fr 1fr; gap: 12px; }
+      .metric-hex-card { padding: 18px 12px; }
+      .metric-value { font-size: 1.45rem; }
       .builds-tabs-grid { grid-template-columns: 1fr; }
-      .simulator-container-responsive { width: 100%; }
-      .device-chassis-pro { height: 580px; border-radius: 28px; }
+      
+      /* Mobile View Simulator: Transforms to friendly quick card */
+      .simulator-container-responsive {
+        width: 100% !important;
+      }
+      .device-chassis-pro {
+        height: 480px;
+        border-radius: 24px;
+      }
       .form-grid { grid-template-columns: 1fr; }
       .form-wrapper { padding: 26px 18px; }
       .footer-grid { grid-template-columns: 1fr; gap: 28px; }
       .estimator-container { padding: 24px 16px; }
+      
+      .floating-whatsapp-widget span {
+        display: none; /* Compact icon button on small screens */
+      }
+      .floating-whatsapp-widget {
+        padding: 14px;
+        bottom: 20px;
+        right: 20px;
+      }
     }
   </style>
 </head>
@@ -801,16 +914,12 @@
       </a>
 
       <div class="nav-links">
-        <a href="#demos">8 Live Builds</a>
+        <a href="#demos">Live Builds</a>
         <a href="#capabilities">What We Build</a>
         <a href="#estimator">Estimator</a>
         <a href="#why-us">Why Us</a>
         <a href="#faq">FAQ</a>
       </div>
-
-      <a href="https://wa.me/919381217686?text=Hi%20Jayakar,%20I'm%20interested%20in%20building%20an%20app%20with%20JayTekton." class="nav-whatsapp-btn" target="_blank" rel="noopener">
-        Chat on WhatsApp ↗
-      </a>
     </div>
   </nav>
 
@@ -823,32 +932,39 @@
         We Build Custom Apps That Ship in <span class="glow-gold">Days, Not Quarters.</span>
       </h1>
       <p class="hero-subtext">
-        High-performance iOS, Android, and web platforms built with AI-accelerated velocity. Test 8 live interactive prototypes on mobile or desktop viewports before writing a single check.
+        High-performance iOS, Android, and web platforms built with AI-accelerated velocity. Test live interactive prototypes on mobile or desktop viewports before writing a single check.
       </p>
       <div class="hero-actions">
-        <a href="#demos" class="btn-gold-action">▶ Test 8 Live Interactive Builds</a>
+        <a href="#demos" class="btn-gold-action">▶ Test Live Interactive Builds</a>
         <a href="#contact" class="btn-secondary-wire">Request 72-Hour Prototype Draft &rarr;</a>
       </div>
     </div>
   </section>
 
-  <!-- Metric Badges Strip -->
+  <!-- 3. UNIQUE CHAMFERED CARDS (Below Hero) -->
   <div class="metric-strip">
     <div class="container">
       <div class="metric-grid">
-        <div class="metric-card">
-          <div class="metric-value">8 Live Builds</div>
+        <!-- 1. Gold Shining Card -->
+        <div class="metric-hex-card card-theme-gold">
+          <div class="metric-value">Live Builds</div>
           <div class="metric-label">Ready to Test Now</div>
         </div>
-        <div class="metric-card">
+
+        <!-- 2. Emerald Laser Card -->
+        <div class="metric-hex-card card-theme-emerald">
           <div class="metric-value">72 Hours</div>
           <div class="metric-label">Clickable First Draft</div>
         </div>
-        <div class="metric-card">
+
+        <!-- 3. Electric Sapphire Card -->
+        <div class="metric-hex-card card-theme-sapphire">
           <div class="metric-value">iOS & Android</div>
           <div class="metric-label">1 Unified Codebase</div>
         </div>
-        <div class="metric-card">
+
+        <!-- 4. Cyber Violet Card -->
+        <div class="metric-hex-card card-theme-violet">
           <div class="metric-value">100% Code IP</div>
           <div class="metric-label">Complete Ownership</div>
         </div>
@@ -856,56 +972,58 @@
     </div>
   </div>
 
-  <!-- 8 Builds: 4x2 Clean Grid Showcase & Viewport Switcher -->
+  <!-- Live Builds: 4x2 Grid Layout with No-Wrap Fixes -->
   <section id="demos" style="padding: 90px 0;">
     <div class="container">
       <div class="section-header-center">
-        <div class="eyebrow-badge">Tested & Proven Architectures</div>
-        <h2 class="section-heading-gold">8 Live Production Builds <span>(Apps & Websites)</span></h2>
+        <div class="eyebrow-badge">Tested & Proven Blueprints</div>
+        <h2 class="section-heading-gold">
+          Live Production Builds <span>(Apps & Websites)</span>
+        </h2>
         <p class="section-subtext">
-          Select any build below. Toggle between Phone and Desktop viewports to experience full responsive layouts without distortion.
+          Select any build below. Switch between Phone and Desktop modes to preview responsive layouts without distortion.
         </p>
       </div>
 
       <!-- 4 Items per Line x 2 Rows -->
       <div class="builds-tabs-grid">
         <button class="build-tab-btn active" data-url="https://zionappsstudio.github.io/zion-school-app/" data-title="School & Academy Hub" data-tag="Education Portal &bull; Mobile & Web" data-desc="Complete portal for fee collection, student attendance, push circulars, and teacher-parent communication with zero recurring per-student SaaS fees." data-type="app">
-          <span>🎓 School & Academy</span>
+          🎓 School & Academy
         </button>
         <button class="build-tab-btn" data-url="https://zionappsstudio.github.io/zion-artisan-cafe/" data-title="Artisan Cafe & Ordering" data-tag="F&B &bull; Responsive Web & Mobile" data-desc="Direct table QR ordering, live takeaway kitchen ticket display, and UPI payments with 0% middleman aggregator commissions." data-type="web">
-          <span>☕ Artisan Cafe</span>
+          ☕ Artisan Cafe
         </button>
         <button class="build-tab-btn" data-url="https://zionappsstudio.github.io/zion-booking-demo/" data-title="Salon & Clinic Booking" data-tag="Appointments & Scheduling" data-desc="Frictionless slot booking, stylist allocation, automated WhatsApp appointment reminders, and advance deposit settlement." data-type="app">
-          <span>💇 Salon & Clinic</span>
+          💇 Salon & Clinic
         </button>
         <button class="build-tab-btn" data-url="https://zionappsstudio.github.io/zion-ai-assistant-demo/" data-title="Intelligent AI Assistant" data-tag="AI Automation & Support" data-desc="Tailored 24/7 client concierge grounded strictly in business documentation to qualify leads and answer FAQs with zero hallucinations." data-type="app">
-          <span>🤖 AI Assistant</span>
+          🤖 AI Assistant
         </button>
 
         <!-- Row 2 -->
         <button class="build-tab-btn" data-url="https://zionappsstudio.github.io/zion-estate-hub/" data-title="Real Estate & PropTech" data-tag="High-Ticket Web Portal & App" data-desc="Interactive property floorplans, verified amenities, instant WhatsApp site-visit booking, and CRM lead capture." data-type="web">
-          <span>🏡 Real Estate Hub</span>
+          🏡 Real Estate Hub
         </button>
         <button class="build-tab-btn" data-url="https://zionappsstudio.github.io/zion-academy-hub/" data-title="Academy Hub" data-tag="Coaching & Courseware Portal" data-desc="Course syllabus viewer, batch scheduling, homework submission portal, and parent fee reminder notifications." data-type="web">
-          <span>📚 Academy Hub</span>
+          📚 Academy Hub
         </button>
         <button class="build-tab-btn" data-url="https://zionappsstudio.github.io/zion-wedding-studio/" data-title="Wedding Studio Hub" data-tag="Luxury Portfolio Website" data-desc="Photo showcase, package selection, date reservation, and contract workflows for luxury photographers and event planners." data-type="web">
-          <span>💍 Wedding Studio</span>
+          💍 Wedding Studio
         </button>
         <button class="build-tab-btn" data-url="https://zionappsstudio.github.io/zion-church-hub/" data-title="Church Community Hub" data-tag="Community Portal & Livestream" data-desc="Livestream broadcasts, prayer requests, event registration, and secure tithes/donations with automated receipts." data-type="app">
-          <span>⛪ Community Hub</span>
+          ⛪ Community Hub
         </button>
       </div>
 
       <!-- Viewport Toggle -->
       <div class="viewport-toggle-row">
-        <span style="font-size: 0.85rem; color: var(--text-muted); font-weight: 700;">Simulate Device:</span>
+        <span style="font-size: 0.88rem; color: var(--text-muted); font-weight: 700;">Simulate Device:</span>
         <button class="vp-btn active" id="btnVpMobile" onclick="switchViewport('mobile')">📱 Mobile View</button>
-        <button class="vp-btn" id="btnVpDesktop" onclick="switchViewport('desktop')">💻 Desktop / Tablet View</button>
+        <button class="vp-btn" id="btnVpDesktop" onclick="switchViewport('desktop')">💻 Desktop View</button>
       </div>
 
       <div class="showcase-stage-flex">
-        <!-- Simulator Viewport (Responsive Dimensions) -->
+        <!-- Responsive Simulator Frame -->
         <div class="simulator-container-responsive" id="simulatorChassisWrapper">
           <div class="device-chassis-pro" id="deviceFrame">
             <div class="device-screen-pro">
@@ -938,8 +1056,8 @@
     </div>
   </section>
 
-  <!-- What We Build: 4 Cards with Distinct 3D Gradients -->
-  <section id="capabilities" style="background: rgba(11, 19, 43, 0.35); padding: 90px 0;">
+  <!-- What We Build: 4 Cards with 3D Gradients -->
+  <section id="capabilities" style="background: rgba(9, 16, 36, 0.45); padding: 90px 0;">
     <div class="container">
       <div class="section-header-center">
         <div class="eyebrow-badge">Engineering Disciplines</div>
@@ -975,7 +1093,7 @@
     </div>
   </section>
 
-  <!-- Dynamic Scope Estimator (Starts Unselected) -->
+  <!-- Dynamic Scope Estimator -->
   <section id="estimator" style="padding: 90px 0;">
     <div class="container">
       <div class="section-header-center">
@@ -1036,7 +1154,7 @@
           </div>
         </div>
 
-        <!-- Summary Calculation Box (Hidden Output by Default) -->
+        <!-- Summary Calculation Box -->
         <div class="estimator-summary-box">
           <div id="unselectedPrompt" style="text-align: center; padding: 40px 10px; color: var(--text-secondary);">
             <div style="font-size: 2.8rem; margin-bottom: 12px;">⚙️</div>
@@ -1074,8 +1192,8 @@
     </div>
   </section>
 
-  <!-- Why Choose Us -->
-  <section id="why-us" style="background: rgba(11, 19, 43, 0.35); padding: 90px 0;">
+  <!-- 5. COMPARISON SECTION WITH PRECISE ALIGNMENT & GRADIENTS -->
+  <section id="why-us" style="background: rgba(9, 16, 36, 0.45); padding: 90px 0;">
     <div class="container">
       <div class="section-header-center">
         <div class="eyebrow-badge">The Direct Engineer Standard</div>
@@ -1084,26 +1202,56 @@
       </div>
 
       <div class="comparison-wrapper">
-        <div class="compare-card traditional">
-          <h3 style="font-size: 1.4rem; font-weight: 800; margin-bottom: 24px; color: #EF4444;">Traditional Agencies</h3>
-          <ul style="list-style: none; display: flex; flex-direction: column; gap: 18px; font-size: 1.02rem; color: var(--text-secondary);">
-            <li><span>❌</span> <div><strong>Months of waiting</strong> before you ever touch a working build.</div></li>
-            <li><span>❌</span> <div><strong>Bloated hourly invoices</strong> billing you for basic setup and boilerplate screens.</div></li>
-            <li><span>❌</span> <div><strong>Separate teams</strong> for iOS, Android, and web that triple your ongoing maintenance.</div></li>
-            <li><span>❌</span> <div><strong>Junior account managers</strong> playing telephone between you and developers.</div></li>
+        <!-- Traditional Agency (Red Alert Gradient) -->
+        <div class="compare-card-agency">
+          <h3 style="font-size: 1.45rem; font-weight: 800; margin-bottom: 24px; color: #EF4444; letter-spacing: -0.02em;">
+            Traditional Agencies
+          </h3>
+          <ul class="compare-list-pro">
+            <li>
+              <div class="icon-bullet icon-bullet-cross">✕</div>
+              <div><strong>Months of waiting</strong> before you ever touch a working build.</div>
+            </li>
+            <li>
+              <div class="icon-bullet icon-bullet-cross">✕</div>
+              <div><strong>Bloated hourly invoices</strong> billing you for basic setup and boilerplate screens.</div>
+            </li>
+            <li>
+              <div class="icon-bullet icon-bullet-cross">✕</div>
+              <div><strong>Separate teams</strong> for iOS, Android, and web that triple your ongoing maintenance.</div>
+            </li>
+            <li>
+              <div class="icon-bullet icon-bullet-cross">✕</div>
+              <div><strong>Junior account managers</strong> playing telephone between you and developers.</div>
+            </li>
           </ul>
         </div>
 
-        <div class="compare-card jaytekton">
-          <div class="eyebrow-badge" style="margin-bottom: 16px;">The Modern Standard</div>
-          <h3 style="font-size: 1.4rem; font-weight: 800; margin-bottom: 24px; color: var(--gold-bright);">
+        <!-- The JayTekton Way (Gold Sparkle + Green Neon Border) -->
+        <div class="compare-card-jaytekton">
+          <div class="eyebrow-badge" style="margin-bottom: 16px; background: rgba(16, 185, 129, 0.18); border-color: #10B981; color: #6EE7B7;">
+            The Modern Standard
+          </div>
+          <h3 style="font-size: 1.45rem; font-weight: 800; margin-bottom: 24px; color: var(--gold-bright); letter-spacing: -0.02em;">
             The <div class="brand-name-split"><span class="part-jay">Jay</span><span class="part-tekton">Tekton</span></div> Way
           </h3>
-          <ul style="list-style: none; display: flex; flex-direction: column; gap: 18px; font-size: 1.02rem; color: var(--text-secondary);">
-            <li><span>✅</span> <div><strong>Interactive prototype in 72 hours</strong> so you can test before spending serious budget.</div></li>
-            <li><span>✅</span> <div><strong>Flat milestone-based pricing</strong> where you pay strictly for deliverables, never hours.</div></li>
-            <li><span>✅</span> <div><strong>100% code and data ownership</strong> with zero monthly per-user licensing penalties.</div></li>
-            <li><span>✅</span> <div><strong>Direct access to master engineers</strong> who architect and write your code from day one.</div></li>
+          <ul class="compare-list-pro">
+            <li>
+              <div class="icon-bullet icon-bullet-tick">✓</div>
+              <div><strong>Interactive prototype in 72 hours</strong> so you can test before spending serious budget.</div>
+            </li>
+            <li>
+              <div class="icon-bullet icon-bullet-tick">✓</div>
+              <div><strong>Flat milestone-based pricing</strong> where you pay strictly for deliverables, never hours.</div>
+            </li>
+            <li>
+              <div class="icon-bullet icon-bullet-tick">✓</div>
+              <div><strong>100% code and data ownership</strong> with zero monthly per-user licensing penalties.</div>
+            </li>
+            <li>
+              <div class="icon-bullet icon-bullet-tick">✓</div>
+              <div><strong>Direct access to master engineers</strong> who architect and write your code from day one.</div>
+            </li>
           </ul>
         </div>
       </div>
@@ -1162,21 +1310,15 @@
             Request 72-Hour Prototype Draft &rarr;
           </button>
           <div style="text-align: center; font-size: 0.85rem; color: var(--text-muted); margin-top: 14px;">
-            🔒 Zero spam. 100% confidential. Direct reply via WhatsApp or email within 2–4 hours.
-          </div>
-
-          <div style="text-align: center; margin-top: 26px; padding-top: 20px; border-top: 1px solid var(--border-subtle);">
-            <a href="https://wa.me/919381217686?text=Hi%20Jayakar,%20I'm%20interested%20in%20building%20an%20app%20with%20JayTekton." target="_blank" rel="noopener" style="color: var(--gold-bright); font-weight: 700; font-size: 1rem;">
-              Chat Directly on WhatsApp ↗
-            </a>
+            🔒 Zero spam. 100% confidential. Direct reply within 2–4 hours.
           </div>
         </form>
       </div>
     </div>
   </section>
 
-  <!-- FAQ Section (Gold Headings) -->
-  <section id="faq" style="background: rgba(11, 19, 43, 0.35); padding: 90px 0;">
+  <!-- FAQ Section (Radiant Gold Headings) -->
+  <section id="faq" style="background: rgba(9, 16, 36, 0.45); padding: 90px 0;">
     <div class="container">
       <div class="section-header-center">
         <div class="eyebrow-badge">Clear Answers &bull; Zero Fluff</div>
@@ -1266,11 +1408,6 @@
           <p style="font-size: 0.95rem; line-height: 1.6; margin-bottom: 20px; color: var(--text-secondary); max-width: 320px;">
             Master builders in code. We turn complex workflows into high-converting native apps and web portals in days, not quarters.
           </p>
-          <div>
-            <a href="https://wa.me/919381217686?text=Hi%20Jayakar,%20I'm%20interested%20in%20building%20an%20app%20with%20JayTekton." target="_blank" rel="noopener" style="color: var(--gold-bright); font-size: 0.95rem; font-weight: 700;">
-              Chat on WhatsApp ↗
-            </a>
-          </div>
         </div>
 
         <div>
@@ -1284,7 +1421,7 @@
         </div>
 
         <div>
-          <div style="font-size: 0.85rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--gold-bright); margin-bottom: 18px;">Live Demos</div>
+          <div style="font-size: 0.85rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--gold-bright); margin-bottom: 18px;">Live Builds</div>
           <div style="display: flex; flex-direction: column; gap: 10px; font-size: 0.95rem;">
             <a href="https://zionappsstudio.github.io/zion-school-app/" target="_blank" rel="noopener">School & Academy Hub</a>
             <a href="https://zionappsstudio.github.io/zion-artisan-cafe/" target="_blank" rel="noopener">Artisan Cafe Ordering</a>
@@ -1315,9 +1452,19 @@
     </div>
   </footer>
 
+  <!-- 1. FLOATING WHATSAPP BUTTON (BOTTOM RIGHT) -->
+  <a href="https://wa.me/919381217686?text=Hi%20Jayakar,%20I'm%20interested%20in%20building%20an%20app%20with%20JayTekton." target="_blank" rel="noopener" class="floating-whatsapp-widget" aria-label="Chat on WhatsApp">
+    <div class="wa-pulsing-icon">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M12.031 2C6.496 2 2 6.496 2 12.031c0 1.802.484 3.513 1.332 5.002L2.05 22l5.122-1.258a10.024 10.024 0 004.859 1.289h.005c5.534 0 10.03-4.496 10.03-10.031C22.066 6.496 17.565 2 12.031 2zm5.871 14.237c-.244.686-1.42 1.309-1.969 1.393-.52.08-1.198.114-1.928-.119a14.73 14.73 0 01-4.707-2.736 12.56 12.56 0 01-3.238-4.041c-.38-.654-.04-1.01.215-1.264.228-.228.513-.59.77-.883.256-.293.342-.497.513-.829.171-.332.086-.622-.043-.883-.129-.26-.983-2.37-1.347-3.245-.355-.852-.716-.736-.983-.75-.247-.013-.53-.016-.813-.016-.282 0-.74.106-1.128.528-.388.423-1.482 1.45-1.482 3.535 0 2.085 1.517 4.099 1.73 4.385.213.286 2.986 4.56 7.235 6.394 1.01.437 1.799.697 2.414.892.1.032.197.06.29.088.756.241 1.62.138 2.222.049.673-.1 2.063-.843 2.353-1.657.29-.814.29-1.512.203-1.657-.086-.145-.316-.231-.663-.404z"/>
+      </svg>
+    </div>
+    <span>Chat on WhatsApp</span>
+  </a>
+
   <!-- Scripts -->
   <script>
-    // 1. 8 Builds Showcase Tab Controller & Viewport Switcher
+    // 1. Live Builds Tab Controller & Viewport Switcher
     const buildTabs = document.querySelectorAll('.build-tab-btn');
     const demoIframe = document.getElementById('demoIframe');
     const demoTitle = document.getElementById('demoTitle');
@@ -1334,7 +1481,7 @@
         btn.classList.add('active');
 
         const url = btn.getAttribute('data-url');
-        const type = btn.getAttribute('data-type'); // 'app' or 'web'
+        const type = btn.getAttribute('data-type');
         demoIframe.src = url;
         demoTitle.textContent = btn.getAttribute('data-title');
         demoTag.textContent = btn.getAttribute('data-tag');
@@ -1342,7 +1489,6 @@
         demoLaunchBtn.href = url;
         demoQrImg.src = `https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=${encodeURIComponent(url)}`;
 
-        // Auto-optimize viewport mode based on build type
         if (type === 'web') {
           switchViewport('desktop');
         } else {
