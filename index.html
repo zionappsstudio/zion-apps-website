@@ -195,66 +195,70 @@
       color: var(--gold-bright);
     }
 
-    /* FLOATING RIGHT-SIDE VERTICAL QUICK-NAV */
+    /* FLOATING RIGHT-SIDE VERTICAL QUICK-NAV (RESPONSIVE ON DESKTOP & MOBILE) */
     .side-quick-nav {
       position: fixed;
-      right: 20px;
+      right: 12px;
       top: 50%;
       transform: translateY(-50%);
       display: flex;
       flex-direction: column;
-      gap: 14px;
+      gap: 12px;
       z-index: 999;
-      background: rgba(9, 16, 36, 0.85);
+      background: rgba(9, 16, 36, 0.88);
       backdrop-filter: blur(14px);
-      padding: 14px 10px;
+      padding: 12px 8px;
       border-radius: 9999px;
-      border: 1px solid rgba(226, 185, 59, 0.25);
-      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.65);
+      border: 1px solid rgba(226, 185, 59, 0.3);
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.75);
     }
 
     .side-nav-dot {
       position: relative;
-      width: 12px;
-      height: 12px;
+      width: 10px;
+      height: 10px;
       border-radius: 50%;
-      background: rgba(255, 255, 255, 0.25);
-      border: 1.5px solid transparent;
+      background: rgba(255, 255, 255, 0.28);
+      border: 1px solid transparent;
       display: flex;
       align-items: center;
       justify-content: center;
       cursor: pointer;
       transition: all 0.25s cubic-bezier(0.2, 0.8, 0.2, 1);
+      -webkit-tap-highlight-color: transparent;
     }
 
-    .side-nav-dot:hover {
-      background: var(--gold-bright);
-      transform: scale(1.35);
+    /* Invisible touch target hit-box for precise mobile tapping */
+    .side-nav-dot::before {
+      content: '';
+      position: absolute;
+      inset: -8px;
+      border-radius: 50%;
     }
 
-    .side-nav-dot.active {
+    .side-nav-dot:hover, .side-nav-dot.active {
       background: var(--gold-primary);
       border-color: #FFF6D1;
-      transform: scale(1.4);
-      box-shadow: 0 0 14px var(--gold-glow);
+      transform: scale(1.35);
+      box-shadow: 0 0 12px var(--gold-glow);
     }
 
     .side-nav-dot .dot-tooltip {
       position: absolute;
-      right: 26px;
+      right: 24px;
       background: #091024;
       border: 1px solid var(--border-gold);
       color: #FFF6D1;
-      font-size: 0.76rem;
+      font-size: 0.74rem;
       font-weight: 700;
-      padding: 5px 12px;
+      padding: 4px 10px;
       border-radius: 8px;
       white-space: nowrap;
       pointer-events: none;
       opacity: 0;
-      transform: translateX(10px);
+      transform: translateX(8px);
       transition: all 0.2s ease;
-      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.7);
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.8);
     }
 
     .side-nav-dot:hover .dot-tooltip {
@@ -1178,7 +1182,6 @@
     @media (max-width: 992px) {
       .nav-links-center { display: none; }
       .mobile-menu-toggle { display: block; }
-      .side-quick-nav { display: none; } /* Hide floating side dots on tablets & mobile */
       .capabilities-grid { grid-template-columns: 1fr; }
       .estimator-container { grid-template-columns: 1fr; }
       .comparison-wrapper { grid-template-columns: 1fr; gap: 40px; }
@@ -1190,6 +1193,21 @@
     }
 
     @media (max-width: 640px) {
+      /* Pinned slim side navigation for mobile screens */
+      .side-quick-nav {
+        right: 6px;
+        padding: 10px 5px;
+        gap: 10px;
+        background: rgba(9, 16, 36, 0.92);
+      }
+      .side-nav-dot {
+        width: 8px;
+        height: 8px;
+      }
+      .side-nav-dot .dot-tooltip {
+        display: none;
+      }
+
       .container { padding: 0 16px; }
       .hero { padding: 50px 0 35px; }
       .hero-title { font-size: 2.2rem; }
