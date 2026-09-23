@@ -9,10 +9,10 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="sitemap" type="application/xml" title="Sitemap" href="https://jaytekton.com/sitemap.xml" />
 
   <!-- Social Share Preview Cards -->
   <link rel="canonical" href="https://jaytekton.com/">
+  <link rel="sitemap" type="application/xml" title="Sitemap" href="https://jaytekton.com/sitemap.xml" />
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://jaytekton.com/">
   <meta property="og:title" content="JayTekton | Architects in Code">
@@ -229,7 +229,6 @@
       -webkit-tap-highlight-color: transparent;
     }
 
-    /* Invisible touch target hit-box for precise mobile tapping */
     .side-nav-dot::before {
       content: '';
       position: absolute;
@@ -705,6 +704,33 @@
 
     @keyframes spinGold {
       to { transform: rotate(360deg); }
+    }
+
+    /* Touch Interaction Indicator for Mobile Chassis */
+    .touch-interact-pill {
+      display: none;
+      position: absolute;
+      bottom: 16px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(9, 16, 36, 0.94);
+      border: 1.5px solid var(--gold-primary);
+      color: var(--gold-bright);
+      font-size: 0.76rem;
+      font-weight: 800;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      padding: 6px 16px;
+      border-radius: 9999px;
+      z-index: 15;
+      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.8), 0 0 10px var(--gold-glow);
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+      white-space: nowrap;
+    }
+
+    .device-chassis-pro.touch-active .touch-interact-pill {
+      opacity: 0;
     }
 
     .demo-info-card {
@@ -1209,6 +1235,33 @@
         display: none;
       }
 
+      /* 1. Hide the QR code container completely on mobile phones */
+      .demo-qr-box {
+        display: none !important;
+      }
+
+      /* 2. Expand launch CTA button full width with touch emphasis */
+      #demoLaunchBtn {
+        width: 100% !important;
+        padding: 16px 20px !important;
+        font-size: 1rem !important;
+      }
+
+      /* 3. Disable pointer-events by default inside simulator on mobile to prevent scroll trap */
+      .device-screen-pro iframe {
+        pointer-events: none;
+      }
+
+      /* When the user deliberately taps the simulator, enable child app interactions */
+      .device-chassis-pro.touch-active .device-screen-pro iframe {
+        pointer-events: auto;
+      }
+
+      /* Mobile hint overlay telling user to tap to interact */
+      .touch-interact-pill {
+        display: flex;
+      }
+
       .container { padding: 0 16px; }
       .hero { padding: 50px 0 35px; }
       .hero-title { font-size: 2.2rem; }
@@ -1532,7 +1585,10 @@
 
       <div class="showcase-stage-flex">
         <div class="simulator-container-responsive" id="simulatorChassisWrapper">
-          <div class="device-chassis-pro" id="deviceFrame">
+          <div class="device-chassis-pro" id="deviceFrame" onclick="activateMobileChassis(this)">
+            <!-- Mobile Tap-to-Interact Hint -->
+            <div class="touch-interact-pill">👆 Tap to Interact</div>
+
             <div class="device-screen-pro">
               <!-- Sleek Gold Loading Skeleton Overlay -->
               <div class="iframe-loader active" id="iframeLoader">
@@ -1551,7 +1607,8 @@
             Complete portal for fee collection, student attendance, push circulars, and teacher-parent communication with zero recurring per-student SaaS fees.
           </p>
 
-          <div style="display: flex; align-items: center; gap: 16px; background: var(--bg-surface-elevated); padding: 16px; border-radius: 16px; border: 1px solid var(--border-subtle); margin-bottom: 24px;">
+          <!-- QR Code Box: Hidden on Mobile Viewports via .demo-qr-box -->
+          <div class="demo-qr-box" style="display: flex; align-items: center; gap: 16px; background: var(--bg-surface-elevated); padding: 16px; border-radius: 16px; border: 1px solid var(--border-subtle); margin-bottom: 24px;">
             <img id="demoQrImg" src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://zionappsstudio.github.io/zion-school-app/" alt="Scan to test" style="width: 76px; height: 76px; background: #FFF; border-radius: 8px; padding: 3px;" />
             <div style="font-size: 0.85rem; color: var(--text-secondary);">
               <strong style="display: block; color: var(--gold-bright); margin-bottom: 3px;">Instant Phone Test</strong>
@@ -1950,6 +2007,21 @@
           dot.classList.remove('active');
         }
       });
+    });
+
+    // Mobile Simulator Touch Toggle
+    function activateMobileChassis(chassisEl) {
+      if (window.innerWidth <= 640) {
+        chassisEl.classList.toggle('touch-active');
+      }
+    }
+
+    // Reset touch activation when tapping outside simulator
+    document.addEventListener('touchstart', (e) => {
+      const chassis = document.getElementById('deviceFrame');
+      if (chassis && !chassis.contains(e.target)) {
+        chassis.classList.remove('touch-active');
+      }
     });
 
     // Live Builds Tab Controller (Desktop)
