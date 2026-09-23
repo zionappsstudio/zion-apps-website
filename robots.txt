@@ -1,0 +1,6 @@
+# JayTekton Crawl Directive
+User-agent: *
+Allow: /
+
+# Canonical XML Sitemap
+Sitemap: https://jaytekton.com/sitemap.xml
