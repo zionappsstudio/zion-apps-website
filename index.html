@@ -145,7 +145,7 @@
       color: var(--gold-bright);
     }
 
-    /* MOBILE MENU: RIGHT-ALIGNED FLOATING DRAWER (NO NUMBERS) */
+    /* MOBILE MENU: RIGHT-ALIGNED FLOATING DRAWER */
     .mobile-menu-toggle {
       display: none;
       background: rgba(226, 185, 59, 0.1);
@@ -303,6 +303,7 @@
       border-radius: 14px;
       border: 1.5px solid var(--border-subtle);
       transition: all 0.25s;
+      cursor: pointer;
     }
 
     .btn-secondary-wire:hover {
@@ -1091,7 +1092,7 @@
         </div>
       </a>
 
-      <!-- Centered Links (Order: What We Build, Why Us, Live Builds, Estimator, FAQ) -->
+      <!-- Centered Links -->
       <div class="nav-links-center">
         <a href="#capabilities">What We Build</a>
         <a href="#why-us">Why Us</a>
@@ -1105,7 +1106,7 @@
         ☰
       </button>
 
-      <!-- Right-Aligned Floating Mobile Drawer (Clean, No Numbers) -->
+      <!-- Right-Aligned Floating Mobile Drawer -->
       <div class="mobile-nav-drawer" id="mobileDrawer">
         <a href="#capabilities" onclick="closeDrawer()">What We Build</a>
         <a href="#why-us" onclick="closeDrawer()">Why Us</a>
@@ -1194,7 +1195,7 @@
     </div>
   </section>
 
-  <!-- 2. Why Us: Headings Aligned Perfectly + Top-Right Floated Modern Standard Badge -->
+  <!-- 2. Why Us -->
   <section id="why-us" style="padding: 90px 0;">
     <div class="container">
       <div class="section-header-center">
@@ -1231,12 +1232,10 @@
 
         <!-- The JayTekton Way -->
         <div class="compare-card-jaytekton">
-          <!-- Top Right Floated Tag -->
           <div class="top-right-gold-badge">
             ✨ The Modern Standard
           </div>
 
-          <!-- Aligned Title with Traditional Agency -->
           <h3 style="font-size: 1.45rem; font-weight: 800; margin-bottom: 24px; color: var(--gold-bright); letter-spacing: -0.02em;">
             The <div class="brand-name-split"><span class="part-jay">Jay</span><span class="part-tekton">Tekton</span></div> Way
           </h3>
@@ -1468,9 +1467,15 @@
               </ul>
             </div>
 
-            <button class="btn-gold-action" style="width: 100%; justify-content: center;" onclick="sendEstimateViaWhatsApp()">
-              Chat on WhatsApp to Lock In Estimate ↗
-            </button>
+            <!-- Dual Action: Desktop Email Form Submission & WhatsApp Direct -->
+            <div style="display: flex; flex-direction: column; gap: 10px;">
+              <button class="btn-gold-action" style="width: 100%; justify-content: center;" onclick="prefillFormWithEstimate()">
+                ✉️ Lock In Scope via Email Form &darr;
+              </button>
+              <button class="btn-secondary-wire" style="width: 100%; justify-content: center;" onclick="sendEstimateViaWhatsApp()">
+                Chat on WhatsApp ↗
+              </button>
+            </div>
           </div>
         </div>
       </div>
@@ -1704,7 +1709,7 @@
 
   <!-- Scripts -->
   <script>
-    // Mobile Drawer Controller (Click Outside to Close)
+    // Mobile Drawer Controller
     const menuToggle = document.getElementById('menuToggle');
     const mobileDrawer = document.getElementById('mobileDrawer');
 
@@ -1906,6 +1911,30 @@
       document.getElementById('totalEstimateTimeline').textContent = `${minDays} – ${maxDays} Working Days`;
     }
 
+    // 1. Pre-fill Form with Estimator Data & Scroll to Contact
+    function prefillFormWithEstimate() {
+      if (!selectedPlatform) return;
+
+      const sym = currentCurrency === 'INR' ? '₹' : '$';
+      const priceText = document.getElementById('totalEstimatePrice').textContent;
+      const timelineText = document.getElementById('totalEstimateTimeline').textContent;
+      const platformName = PRICING_DATA[currentCurrency].platforms[selectedPlatform].label;
+
+      let modulesList = [];
+      selectedModules.forEach(mod => modulesList.push(PRICING_DATA[currentCurrency].modules[mod].label));
+      const modulesString = modulesList.length > 0 ? modulesList.join(', ') : 'None';
+
+      const projectSelect = document.getElementById('projectType');
+      projectSelect.value = 'Custom Mobile/Web App';
+
+      const detailsField = document.getElementById('projectDetails');
+      detailsField.value = `[ESTIMATED SCOPE BREAKDOWN]\n• Platform Target: ${platformName}\n• Modular Add-ons: ${modulesString}\n• Estimated Total: ${priceText}\n• Delivery Window: ${timelineText}\n\nAdditional Features / Context:\n`;
+
+      const contactSection = document.getElementById('contact');
+      contactSection.scrollIntoView({ behavior: 'smooth' });
+      document.getElementById('userName').focus();
+    }
+
     function sendEstimateViaWhatsApp() {
       const sym = currentCurrency === 'INR' ? '₹' : '$';
       const priceText = document.getElementById('totalEstimatePrice').textContent;
@@ -1916,7 +1945,7 @@
       selectedModules.forEach(mod => modulesList.push(PRICING_DATA[currentCurrency].modules[mod].label));
       const modulesString = modulesList.length > 0 ? modulesList.join(', ') : 'None';
 
-      const message = `Hi Jayakar, I calculated a project estimate on JayTekton:\n\n• Platform: ${platformName}\n• Modules: ${modulesString}\n• Estimated Total: ${priceText}\n• Timeline: ${timelineText}\n\nLet's discuss our 72-hour prototype!`;
+      const message = `Hi Sudhakar, I calculated a project estimate on JayTekton:\n\n• Platform: ${platformName}\n• Modules: ${modulesString}\n• Estimated Total: ${priceText}\n• Timeline: ${timelineText}\n\nLet's discuss our 72-hour prototype!`;
       window.open(`https://wa.me/919381217686?text=${encodeURIComponent(message)}`, '_blank');
     }
 
@@ -1925,17 +1954,53 @@
       questionEl.parentElement.classList.toggle('open');
     }
 
-    // Lead Form Handler
-    function handleLeadSubmit(e) {
+    // 2. Dual-Route Lead Handler: Dispatches to contact@jaytekton.com with feedback
+    async function handleLeadSubmit(e) {
       e.preventDefault();
+      
+      const submitBtn = e.target.querySelector('button[type="submit"]');
+      const originalText = submitBtn.innerHTML;
+      submitBtn.disabled = true;
+      submitBtn.innerHTML = 'Sending to Architects... ⏳';
+
       const name = document.getElementById('userName').value;
       const email = document.getElementById('userEmail').value;
       const phone = document.getElementById('userPhone').value;
       const project = document.getElementById('projectType').value;
       const details = document.getElementById('projectDetails').value;
 
-      const leadMessage = `Hi Jayakar, here is a new project inquiry for JayTekton:\n\n• Name: ${name}\n• WhatsApp: ${phone}\n• Email: ${email}\n• Category: ${project}\n• Details: ${details || 'N/A'}`;
-      window.open(`https://wa.me/919381217686?text=${encodeURIComponent(leadMessage)}`, '_blank');
+      try {
+        const response = await fetch("https://formsubmit.co/ajax/contact@jaytekton.com", {
+          method: "POST",
+          headers: { 
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+          },
+          body: JSON.stringify({
+            _subject: `New JayTekton Inquiry: ${project} - ${name}`,
+            _replyto: email,
+            "Client Name": name,
+            "Work Email": email,
+            "WhatsApp Phone": phone,
+            "Category": project,
+            "Project Scope & Details": details
+          })
+        });
+
+        if (response.ok) {
+          submitBtn.style.background = '#10B981';
+          submitBtn.style.color = '#FFFFFF';
+          submitBtn.innerHTML = '✓ Scope Submitted! We will reply within 2–4 hours.';
+          e.target.reset();
+        } else {
+          throw new Error('Fallback to WhatsApp');
+        }
+      } catch (err) {
+        const leadMessage = `Hi Sudhakar, here is my project scope for JayTekton:\n\n• Name: ${name}\n• Phone: ${phone}\n• Email: ${email}\n• Category: ${project}\n• Details:\n${details}`;
+        window.open(`https://wa.me/919381217686?text=${encodeURIComponent(leadMessage)}`, '_blank');
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = originalText;
+      }
     }
   </script>
 </body>
