@@ -1278,9 +1278,292 @@
       .floating-whatsapp-widget span { display: none; }
       .floating-whatsapp-widget { padding: 14px; bottom: 20px; right: 20px; }
     }
+  
+    /* =========================================================
+       JAYTEKTON TEKTON MOTION BACKGROUND — V2
+       3D tectonic strata + digital engineering energy.
+       ========================================================= */
+    #tekton-motion-canvas {
+      position: fixed;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+      pointer-events: none;
+      opacity: 0.94;
+      mix-blend-mode: screen;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
+      background:
+        radial-gradient(circle at 50% 10%, rgba(226,185,59,0.13), transparent 30%),
+        radial-gradient(circle at 14% 42%, rgba(96,165,250,0.075), transparent 28%),
+        radial-gradient(circle at 86% 72%, rgba(226,185,59,0.055), transparent 30%),
+        linear-gradient(180deg, rgba(4,7,17,0.06), rgba(4,7,17,0.78));
+    }
+
+    body::after {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
+      opacity: 0.14;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+      background-size: 72px 72px;
+      mask-image: linear-gradient(to bottom, black, transparent 92%);
+    }
+
+    body > * {
+      position: relative;
+      z-index: 1;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      #tekton-motion-canvas {
+        display: none;
+      }
+    }
+
   </style>
+
+<style id="jaytekton-glass-3d-v3">
+/* JayTekton V3 — Glass + 3D visual enhancement layer */
+:root{
+  --jt-glass-bg: rgba(11, 20, 43, .46);
+  --jt-glass-bg-strong: rgba(14, 26, 55, .68);
+  --jt-glass-border: rgba(255,255,255,.13);
+  --jt-glass-highlight: rgba(255,255,255,.24);
+  --jt-glass-shadow: 0 24px 80px rgba(0,0,0,.34), inset 0 1px 0 rgba(255,255,255,.08);
+  --jt-gold-glow: rgba(226,185,59,.22);
+  --jt-blue-glow: rgba(96,165,250,.16);
+}
+
+/* Layered glass atmosphere */
+body{
+  background:
+    radial-gradient(900px 600px at 8% 8%, rgba(226,185,59,.10), transparent 60%),
+    radial-gradient(850px 600px at 92% 14%, rgba(96,165,250,.12), transparent 62%),
+    linear-gradient(180deg,#03050c 0%,#040711 45%,#02040a 100%);
+}
+body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  z-index:-1;
+  background:
+    linear-gradient(115deg,transparent 0 38%,rgba(255,255,255,.018) 39%,transparent 40% 100%),
+    linear-gradient(65deg,transparent 0 57%,rgba(255,255,255,.014) 58%,transparent 59% 100%);
+  mix-blend-mode:screen;
+}
+
+/* Premium glass nav */
+nav, header{
+  -webkit-backdrop-filter: blur(22px) saturate(145%);
+  backdrop-filter: blur(22px) saturate(145%);
+}
+nav{
+  background:linear-gradient(180deg,rgba(7,13,29,.82),rgba(7,13,29,.58)) !important;
+  border-bottom:1px solid rgba(255,255,255,.09) !important;
+  box-shadow:0 14px 45px rgba(0,0,0,.18), inset 0 -1px 0 rgba(255,255,255,.035);
+}
+
+/* Make major cards feel like floating glass */
+.glass-card, .card, .feature-card, .build-card, .faq-item, .estimate-card,
+section .panel, .comparison-card{
+  background:
+    linear-gradient(145deg,rgba(255,255,255,.075),rgba(255,255,255,.018) 42%,rgba(4,8,20,.42)),
+    var(--jt-glass-bg);
+  border:1px solid var(--jt-glass-border);
+  box-shadow:var(--jt-glass-shadow);
+  -webkit-backdrop-filter:blur(18px) saturate(135%);
+  backdrop-filter:blur(18px) saturate(135%);
+}
+
+/* Apply glass treatment to likely existing card classes */
+[class*="card"], [class*="panel"], [class*="build"], [class*="faq"], [class*="feature"]{
+  -webkit-backdrop-filter:blur(14px) saturate(130%);
+  backdrop-filter:blur(14px) saturate(130%);
+}
+
+/* Hero: stronger 3D stage */
+.hero, #hero, section:first-of-type{
+  perspective:1400px;
+  transform-style:preserve-3d;
+}
+.hero::before, #hero::before{
+  content:"";
+  position:absolute;
+  width:42vw;
+  height:42vw;
+  max-width:620px;
+  max-height:620px;
+  left:-8%;
+  top:2%;
+  border-radius:50%;
+  background:radial-gradient(circle,rgba(226,185,59,.13),rgba(226,185,59,.035) 35%,transparent 70%);
+  filter:blur(16px);
+  pointer-events:none;
+  transform:translateZ(-80px);
+}
+.hero::after, #hero::after{
+  content:"";
+  position:absolute;
+  width:46vw;
+  height:46vw;
+  max-width:680px;
+  max-height:680px;
+  right:-12%;
+  top:-8%;
+  border-radius:50%;
+  background:radial-gradient(circle,rgba(96,165,250,.13),rgba(96,165,250,.03) 36%,transparent 70%);
+  filter:blur(18px);
+  pointer-events:none;
+  transform:translateZ(-100px);
+}
+
+/* Glass eyebrow / badges */
+.eyebrow, .badge, .pill, .tag{
+  background:linear-gradient(135deg,rgba(255,255,255,.11),rgba(255,255,255,.035)) !important;
+  border:1px solid rgba(255,255,255,.14) !important;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.14),0 8px 30px rgba(0,0,0,.18);
+  -webkit-backdrop-filter:blur(14px);
+  backdrop-filter:blur(14px);
+}
+
+/* Hero headline depth */
+.hero h1, #hero h1{
+  text-shadow:
+    0 2px 0 rgba(255,255,255,.06),
+    0 10px 36px rgba(0,0,0,.48),
+    0 0 42px rgba(226,185,59,.08);
+  letter-spacing:-.035em;
+}
+.glow-gold{
+  text-shadow:0 0 18px rgba(226,185,59,.28),0 7px 28px rgba(0,0,0,.45);
+}
+
+/* Buttons become glass-metal controls */
+button, .btn, a.btn, .cta, .button{
+  position:relative;
+  overflow:hidden;
+  border:1px solid rgba(255,255,255,.14);
+  box-shadow:0 14px 34px rgba(0,0,0,.25), inset 0 1px 0 rgba(255,255,255,.18);
+  -webkit-backdrop-filter:blur(12px);
+  backdrop-filter:blur(12px);
+  transform:translateZ(0);
+}
+button::before, .btn::before, a.btn::before, .cta::before, .button::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(105deg,transparent 25%,rgba(255,255,255,.17) 48%,transparent 66%);
+  transform:translateX(-125%);
+  transition:transform .65s ease;
+  pointer-events:none;
+}
+button:hover::before, .btn:hover::before, a.btn:hover::before, .cta:hover::before, .button:hover::before{
+  transform:translateX(125%);
+}
+
+/* Floating 3D metric tiles */
+.metrics, .stats, .metric-strip{
+  perspective:1100px;
+}
+.metrics > *, .stats > *, .metric-strip > *{
+  background:linear-gradient(145deg,rgba(255,255,255,.075),rgba(255,255,255,.018));
+  border:1px solid rgba(255,255,255,.10);
+  box-shadow:0 20px 50px rgba(0,0,0,.22), inset 0 1px 0 rgba(255,255,255,.08);
+  -webkit-backdrop-filter:blur(15px);
+  backdrop-filter:blur(15px);
+  transform:rotateX(1deg) translateZ(0);
+  transition:transform .35s ease, box-shadow .35s ease, border-color .35s ease;
+}
+.metrics > *:hover, .stats > *:hover, .metric-strip > *:hover{
+  transform:translateY(-6px) rotateX(3deg) rotateY(-1deg);
+  box-shadow:0 28px 65px rgba(0,0,0,.32),0 0 35px var(--jt-gold-glow),inset 0 1px 0 rgba(255,255,255,.13);
+  border-color:rgba(226,185,59,.28);
+}
+
+/* Add a subtle glass reflection to cards */
+[class*="card"]::after, [class*="panel"]::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  border-radius:inherit;
+  pointer-events:none;
+  background:linear-gradient(120deg,rgba(255,255,255,.07),transparent 24%,transparent 72%,rgba(96,165,250,.035));
+  opacity:.65;
+}
+
+/* 3D live-build viewport */
+iframe, .simulator, .device, .preview, .live-preview{
+  box-shadow:0 30px 90px rgba(0,0,0,.42),0 0 55px rgba(96,165,250,.08);
+  border:1px solid rgba(255,255,255,.12) !important;
+}
+
+/* Perspective accents behind sections */
+section{
+  position:relative;
+}
+section::selection{background:rgba(226,185,59,.25);}
+
+/* Floating right quick-nav glass */
+#quick-nav, .quick-nav, .side-nav{
+  -webkit-backdrop-filter:blur(18px) saturate(140%);
+  backdrop-filter:blur(18px) saturate(140%);
+  background:rgba(6,11,24,.46) !important;
+  border:1px solid rgba(255,255,255,.10) !important;
+  box-shadow:0 20px 55px rgba(0,0,0,.28),inset 0 1px 0 rgba(255,255,255,.08);
+}
+
+/* Tectonic canvas gets a soft glass mask at the edges */
+#tekton-motion-canvas{
+  filter:saturate(112%) contrast(104%);
+  opacity:.86;
+  mask-image:linear-gradient(to bottom,transparent 0%,black 10%,black 86%,transparent 100%);
+  -webkit-mask-image:linear-gradient(to bottom,transparent 0%,black 10%,black 86%,transparent 100%);
+}
+
+/* Fine grain for premium material feel */
+body::after{
+  content:"";
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  z-index:9998;
+  opacity:.035;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.38'/%3E%3C/svg%3E");
+  mix-blend-mode:soft-light;
+}
+
+/* Respect reduced-motion */
+@media (prefers-reduced-motion: reduce){
+  button, .btn, a.btn, .cta, .button,
+  .metrics > *, .stats > *, .metric-strip > *{
+    transition:none !important;
+    transform:none !important;
+  }
+}
+@media (max-width:760px){
+  body::after{opacity:.022;}
+  .hero h1, #hero h1{letter-spacing:-.025em;}
+}
+</style>
+
 </head>
 <body id="top">
+  <!-- Tekton Motion Background -->
+  <canvas id="tekton-motion-canvas" aria-hidden="true"></canvas>
+
 
   <!-- Floating Right-Side Vertical Quick-Nav Bar -->
   <aside class="side-quick-nav" aria-label="Page Section Navigation">
@@ -1360,12 +1643,17 @@
   <section class="hero">
     <div class="hero-glow"></div>
     <div class="container hero-container">
-      <div class="eyebrow-badge">⚡ Master Builders in Code &bull; Zero Agency Fluff</div>
+      <div class="eyebrow-badge">⚡ MASTER BUILDERS IN CODE &bull; ENGINEERED TO SHIP</div>
       <h1 class="hero-title">
-        We Build Custom Apps That Ship in <span class="glow-gold">Days, Not Quarters.</span>
+        Master Builders in Code — Software That Ships in <span class="glow-gold">Days, Not Quarters.</span>
       </h1>
       <p class="hero-subtext">
-        High-performance iOS, Android, and web platforms built with AI-accelerated velocity. Test live interactive prototypes on mobile or desktop viewports before writing a single check.
+        We engineer seamless iOS, Android, and web software with AI-accelerated velocity — turning ideas into polished, testable products quickly, without sacrificing architecture, quality, or ownership.
+<div class="jt-glass-proof" style="display:flex;flex-wrap:wrap;gap:10px;margin-top:22px;position:relative;z-index:2;">
+  <span style="padding:9px 13px;border-radius:999px;background:rgba(255,255,255,.055);border:1px solid rgba(255,255,255,.12);box-shadow:inset 0 1px 0 rgba(255,255,255,.12),0 10px 30px rgba(0,0,0,.18);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.78);">⚡ Built with AI Velocity</span>
+  <span style="padding:9px 13px;border-radius:999px;background:rgba(255,255,255,.055);border:1px solid rgba(255,255,255,.12);box-shadow:inset 0 1px 0 rgba(255,255,255,.12),0 10px 30px rgba(0,0,0,.18);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.78);">◈ Architecture First</span>
+  <span style="padding:9px 13px;border-radius:999px;background:rgba(255,255,255,.055);border:1px solid rgba(255,255,255,.12);box-shadow:inset 0 1px 0 rgba(255,255,255,.12),0 10px 30px rgba(0,0,0,.18);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.78);">◆ Full Code Ownership</span>
+</div>
       </p>
       <div class="hero-actions">
         <a href="#demos" class="btn-gold-action">▶ Test Live Interactive Builds</a>
@@ -2296,5 +2584,183 @@
       }
     }
   </script>
+
+  <script>
+    /* =========================================================
+       JAYTEKTON TEKTON MOTION BACKGROUND — V2
+       3D tectonic strata / rock layers + digital build energy.
+       Scroll subtly shifts the perspective and energy flow.
+       ========================================================= */
+    (() => {
+      const canvas = document.getElementById('tekton-motion-canvas');
+      if (!canvas) return;
+
+      const ctx = canvas.getContext('2d', { alpha: true });
+      if (!ctx) return;
+
+      const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+      if (reducedMotion.matches) return;
+
+      let width = 0, height = 0, dpr = 1;
+      let time = 0;
+      let scrollTarget = window.scrollY || 0;
+      let scrollSmooth = scrollTarget;
+      let last = performance.now();
+
+      const strata = [
+        { y: 0.24, amp: 38, freq: 0.0062, speed: 0.00034, phase: 0.3, alpha: 0.15, line: 1.2 },
+        { y: 0.38, amp: 58, freq: 0.0049, speed: -0.00025, phase: 1.4, alpha: 0.12, line: 1.5 },
+        { y: 0.53, amp: 78, freq: 0.0038, speed: 0.00021, phase: 2.6, alpha: 0.105, line: 1.8 },
+        { y: 0.69, amp: 102, freq: 0.0030, speed: -0.00017, phase: 4.0, alpha: 0.075, line: 2.1 },
+        { y: 0.84, amp: 126, freq: 0.0024, speed: 0.00013, phase: 5.1, alpha: 0.05, line: 2.5 }
+      ];
+
+      const particles = Array.from({ length: 42 }, (_, i) => ({
+        x: Math.random(),
+        y: Math.random(),
+        size: 0.7 + Math.random() * 1.8,
+        speed: 0.000008 + Math.random() * 0.000018,
+        phase: Math.random() * Math.PI * 2,
+        gold: i % 3 === 0
+      }));
+
+      function resize() {
+        dpr = Math.min(window.devicePixelRatio || 1, 2);
+        width = window.innerWidth;
+        height = window.innerHeight;
+        canvas.width = Math.floor(width * dpr);
+        canvas.height = Math.floor(height * dpr);
+        canvas.style.width = width + 'px';
+        canvas.style.height = height + 'px';
+        ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      }
+
+      function layerY(layer, x, now, depth) {
+        const scrollPhase = scrollSmooth * (0.000028 + depth * 0.000006);
+        const a = Math.sin(x * layer.freq + now * layer.speed + layer.phase + scrollPhase);
+        const b = Math.sin(x * layer.freq * 0.43 - now * layer.speed * 0.72 + layer.phase * 1.8);
+        const c = Math.sin(x * layer.freq * 1.8 + now * layer.speed * 0.25);
+        return height * layer.y + a * layer.amp + b * layer.amp * 0.30 + c * layer.amp * 0.08;
+      }
+
+      function drawStrata(layer, index, now) {
+        const gradient = ctx.createLinearGradient(0, 0, width, 0);
+        gradient.addColorStop(0, 'rgba(226,185,59,0)');
+        gradient.addColorStop(0.12, `rgba(226,185,59,${layer.alpha * 0.55})`);
+        gradient.addColorStop(0.34, `rgba(226,185,59,${layer.alpha})`);
+        gradient.addColorStop(0.50, `rgba(147,197,253,${layer.alpha * 0.82})`);
+        gradient.addColorStop(0.68, `rgba(96,165,250,${layer.alpha * 0.75})`);
+        gradient.addColorStop(0.88, `rgba(226,185,59,${layer.alpha * 0.72})`);
+        gradient.addColorStop(1, 'rgba(226,185,59,0)');
+
+        ctx.beginPath();
+        for (let x = -50; x <= width + 50; x += 7) {
+          const y = layerY(layer, x, now, index);
+          if (x === -50) ctx.moveTo(x, y);
+          else ctx.lineTo(x, y);
+        }
+
+        ctx.strokeStyle = gradient;
+        ctx.lineWidth = layer.line;
+        ctx.shadowBlur = index < 3 ? 22 : 12;
+        ctx.shadowColor = index % 2
+          ? 'rgba(96,165,250,0.20)'
+          : 'rgba(226,185,59,0.22)';
+        ctx.stroke();
+        ctx.shadowBlur = 0;
+
+        // Secondary "rock edge" creates depth without heavy fill.
+        ctx.beginPath();
+        for (let x = -50; x <= width + 50; x += 12) {
+          const y = layerY(layer, x, now + 900, index) + 10 + index * 2;
+          if (x === -50) ctx.moveTo(x, y);
+          else ctx.lineTo(x, y);
+        }
+        ctx.strokeStyle = `rgba(255,255,255,${Math.max(0.015, layer.alpha * 0.12)})`;
+        ctx.lineWidth = 0.8;
+        ctx.stroke();
+      }
+
+      function drawPerspectiveCuts(now) {
+        const horizon = height * 0.38;
+        const drift = (scrollSmooth * 0.018 + now * 0.002) % 120;
+
+        ctx.save();
+        ctx.lineWidth = 1;
+        ctx.globalAlpha = 0.055;
+
+        for (let i = -5; i < 12; i++) {
+          const bottomX = i * 120 + drift - 180;
+          ctx.beginPath();
+          ctx.moveTo(width * 0.5 + (bottomX - width * 0.5) * 0.14, horizon);
+          ctx.lineTo(bottomX, height + 40);
+          ctx.strokeStyle = i % 3 === 0
+            ? 'rgba(226,185,59,0.8)'
+            : 'rgba(96,165,250,0.55)';
+          ctx.stroke();
+        }
+
+        ctx.restore();
+      }
+
+      function drawParticles(now) {
+        for (const p of particles) {
+          const px = p.x * width;
+          const py = ((p.y * height) + now * p.speed * height * 2) % (height + 30) - 15;
+          const pulse = 0.45 + Math.sin(now * 0.001 + p.phase) * 0.25;
+
+          ctx.beginPath();
+          ctx.arc(px, py, p.size, 0, Math.PI * 2);
+          ctx.fillStyle = p.gold
+            ? `rgba(253,230,138,${0.12 + pulse * 0.10})`
+            : `rgba(147,197,253,${0.09 + pulse * 0.08})`;
+          ctx.shadowBlur = 10;
+          ctx.shadowColor = p.gold
+            ? 'rgba(226,185,59,0.45)'
+            : 'rgba(96,165,250,0.35)';
+          ctx.fill();
+          ctx.shadowBlur = 0;
+        }
+      }
+
+      function draw(now) {
+        const dt = Math.min(32, now - last);
+        last = now;
+        time += dt;
+
+        scrollSmooth += (scrollTarget - scrollSmooth) * 0.045;
+
+        ctx.clearRect(0, 0, width, height);
+
+        // Deep atmospheric foundation.
+        const atmosphere = ctx.createRadialGradient(
+          width * 0.5, height * 0.32, 0,
+          width * 0.5, height * 0.32, Math.max(width, height) * 0.72
+        );
+        atmosphere.addColorStop(0, 'rgba(12,25,55,0.16)');
+        atmosphere.addColorStop(0.48, 'rgba(4,7,17,0.04)');
+        atmosphere.addColorStop(1, 'rgba(4,7,17,0)');
+        ctx.fillStyle = atmosphere;
+        ctx.fillRect(0, 0, width, height);
+
+        drawPerspectiveCuts(time);
+
+        strata.forEach((layer, index) => drawStrata(layer, index, time));
+
+        drawParticles(time);
+
+        requestAnimationFrame(draw);
+      }
+
+      window.addEventListener('resize', resize, { passive: true });
+      window.addEventListener('scroll', () => {
+        scrollTarget = window.scrollY || 0;
+      }, { passive: true });
+
+      resize();
+      requestAnimationFrame(draw);
+    })();
+  </script>
+
 </body>
 </html>
