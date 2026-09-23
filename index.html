@@ -59,6 +59,7 @@
       line-height: 1.6;
       overflow-x: hidden;
       width: 100%;
+      scroll-behavior: smooth;
       -webkit-font-smoothing: antialiased;
     }
 
@@ -192,6 +193,73 @@
 
     .mobile-nav-drawer a:hover {
       color: var(--gold-bright);
+    }
+
+    /* FLOATING RIGHT-SIDE VERTICAL QUICK-NAV */
+    .side-quick-nav {
+      position: fixed;
+      right: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      z-index: 999;
+      background: rgba(9, 16, 36, 0.85);
+      backdrop-filter: blur(14px);
+      padding: 14px 10px;
+      border-radius: 9999px;
+      border: 1px solid rgba(226, 185, 59, 0.25);
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.65);
+    }
+
+    .side-nav-dot {
+      position: relative;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.25);
+      border: 1.5px solid transparent;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.25s cubic-bezier(0.2, 0.8, 0.2, 1);
+    }
+
+    .side-nav-dot:hover {
+      background: var(--gold-bright);
+      transform: scale(1.35);
+    }
+
+    .side-nav-dot.active {
+      background: var(--gold-primary);
+      border-color: #FFF6D1;
+      transform: scale(1.4);
+      box-shadow: 0 0 14px var(--gold-glow);
+    }
+
+    .side-nav-dot .dot-tooltip {
+      position: absolute;
+      right: 26px;
+      background: #091024;
+      border: 1px solid var(--border-gold);
+      color: #FFF6D1;
+      font-size: 0.76rem;
+      font-weight: 700;
+      padding: 5px 12px;
+      border-radius: 8px;
+      white-space: nowrap;
+      pointer-events: none;
+      opacity: 0;
+      transform: translateX(10px);
+      transition: all 0.2s ease;
+      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.7);
+    }
+
+    .side-nav-dot:hover .dot-tooltip {
+      opacity: 1;
+      transform: translateX(0);
     }
 
     /* Hero Section */
@@ -785,7 +853,7 @@
       100% { background-position: 0% 50%; }
     }
 
-    /* Top-Right Badge: Keeps internal titles aligned */
+    /* Top-Right Badge */
     .top-right-gold-badge {
       position: absolute;
       top: -14px;
@@ -885,10 +953,82 @@
       background: var(--bg-surface-elevated);
       border: 1.5px solid var(--border-subtle);
       border-radius: 22px;
-      padding: 36px;
+      padding: 32px;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
+    }
+
+    /* Estimator Dual Option CTA Box */
+    .cta-claim-box {
+      margin-top: 18px;
+      padding: 18px 16px;
+      background: rgba(4, 7, 17, 0.75);
+      border: 1.5px solid rgba(226, 185, 59, 0.35);
+      border-radius: 18px;
+      text-align: center;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+    }
+
+    .cta-claim-title {
+      font-size: 0.95rem;
+      font-weight: 800;
+      color: #FFF6D1;
+      margin-bottom: 14px;
+      line-height: 1.45;
+      letter-spacing: -0.01em;
+    }
+
+    .cta-claim-buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .btn-cta-form {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      width: 100%;
+      padding: 13px 18px;
+      background: var(--grad-gold);
+      color: #050814;
+      font-weight: 800;
+      font-size: 0.92rem;
+      border-radius: 12px;
+      border: none;
+      cursor: pointer;
+      transition: transform 0.2s, box-shadow 0.2s;
+      box-shadow: 0 4px 16px rgba(226, 185, 59, 0.3);
+    }
+
+    .btn-cta-form:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 0 20px var(--gold-glow);
+    }
+
+    .btn-cta-whatsapp {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      width: 100%;
+      padding: 12px 18px;
+      background: rgba(37, 211, 102, 0.15);
+      color: #25D366;
+      border: 1.5px solid #25D366;
+      font-weight: 700;
+      font-size: 0.92rem;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .btn-cta-whatsapp:hover {
+      background: #25D366;
+      color: #FFFFFF;
+      box-shadow: 0 0 18px rgba(37, 211, 102, 0.45);
     }
 
     /* FAQ Section */
@@ -974,7 +1114,7 @@
       border: 1.5px solid var(--border-subtle);
       border-radius: 12px;
       color: #FFFFFF;
-      font-size: 16px; /* Avoid mobile zoom */
+      font-size: 16px;
       font-family: inherit;
       outline: none;
       -webkit-appearance: none;
@@ -1038,6 +1178,7 @@
     @media (max-width: 992px) {
       .nav-links-center { display: none; }
       .mobile-menu-toggle { display: block; }
+      .side-quick-nav { display: none; } /* Hide floating side dots on tablets & mobile */
       .capabilities-grid { grid-template-columns: 1fr; }
       .estimator-container { grid-template-columns: 1fr; }
       .comparison-wrapper { grid-template-columns: 1fr; gap: 40px; }
@@ -1067,13 +1208,38 @@
     }
   </style>
 </head>
-<body>
+<body id="top">
+
+  <!-- Floating Right-Side Vertical Quick-Nav Bar -->
+  <aside class="side-quick-nav" aria-label="Page Section Navigation">
+    <a href="#top" class="side-nav-dot active" data-section="top" aria-label="Hero Section">
+      <span class="dot-tooltip">Overview</span>
+    </a>
+    <a href="#capabilities" class="side-nav-dot" data-section="capabilities" aria-label="What We Build">
+      <span class="dot-tooltip">What We Build</span>
+    </a>
+    <a href="#why-us" class="side-nav-dot" data-section="why-us" aria-label="Why Choose Us">
+      <span class="dot-tooltip">The JayTekton Way</span>
+    </a>
+    <a href="#demos" class="side-nav-dot" data-section="demos" aria-label="Live Production Builds">
+      <span class="dot-tooltip">8 Live Blueprints</span>
+    </a>
+    <a href="#estimator" class="side-nav-dot" data-section="estimator" aria-label="Scope Estimator">
+      <span class="dot-tooltip">Project Calculator</span>
+    </a>
+    <a href="#faq" class="side-nav-dot" data-section="faq" aria-label="Frequently Asked Questions">
+      <span class="dot-tooltip">Client FAQs</span>
+    </a>
+    <a href="#contact" class="side-nav-dot" data-section="contact" aria-label="Claim Prototype Form">
+      <span class="dot-tooltip">Claim 72h Prototype</span>
+    </a>
+  </aside>
 
   <!-- Navigation Bar -->
   <nav class="site-nav">
     <div class="container nav-wrapper">
       <!-- Brand Logo -->
-      <a href="#" class="brand-logo-link">
+      <a href="#top" class="brand-logo-link">
         <div class="logo-j-box">
           <svg width="24" height="24" viewBox="0 0 32 32" fill="none">
             <path d="M19 6H23V19C23 23.4183 19.4183 27 15 27C10.5817 27 7 23.4183 7 19H11C11 21.2091 12.7909 23 15 23C17.2091 23 19 21.2091 19 19V6Z" fill="url(#jGradientGold)" />
@@ -1113,6 +1279,7 @@
         <a href="#demos" onclick="closeDrawer()">Live Builds</a>
         <a href="#estimator" onclick="closeDrawer()">Scope Estimator</a>
         <a href="#faq" onclick="closeDrawer()">FAQ</a>
+        <a href="#contact" onclick="closeDrawer()">Claim 72h Prototype</a>
       </div>
     </div>
   </nav>
@@ -1447,35 +1614,43 @@
           </div>
 
           <div id="activeDetails" style="display: none;">
-            <div style="margin-bottom: 24px;">
+            <div style="margin-bottom: 20px;">
               <div style="font-size: 0.85rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase;">Estimated Investment</div>
               <div style="font-size: 2.6rem; font-weight: 800; color: var(--gold-bright);" id="totalEstimatePrice">₹0</div>
             </div>
 
-            <div style="margin-bottom: 24px;">
+            <div style="margin-bottom: 20px;">
               <div style="font-size: 0.85rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase;">Estimated Timeline</div>
               <div style="font-size: 1.35rem; font-weight: 800; color: #FFFFFF;" id="totalEstimateTimeline">0 Working Days</div>
               <div style="font-size: 0.85rem; color: var(--gold-bright); margin-top: 4px;">Clickable prototype ready in <strong>72 Hours</strong></div>
             </div>
 
-            <div style="font-size: 0.9rem; color: var(--text-secondary); border-top: 1px solid var(--border-subtle); padding-top: 18px; margin-bottom: 24px;">
+            <div style="font-size: 0.88rem; color: var(--text-secondary); border-top: 1px solid var(--border-subtle); padding-top: 14px; margin-bottom: 18px;">
               <strong style="color: var(--gold-bright);">Included with this build:</strong>
-              <ul style="list-style: none; margin-top: 8px; display: flex; flex-direction: column; gap: 6px;">
+              <ul style="list-style: none; margin-top: 6px; display: flex; flex-direction: column; gap: 5px;">
                 <li>✓ 100% Full Source Code & IP Handover</li>
                 <li>✓ 15 Days Complimentary Hypercare</li>
                 <li>✓ Zero monthly per-user licensing penalties</li>
               </ul>
             </div>
 
-            <!-- Dual Action: Desktop Email Form Submission & WhatsApp Direct -->
-            <div style="display: flex; flex-direction: column; gap: 10px;">
-              <button class="btn-gold-action" style="width: 100%; justify-content: center;" onclick="prefillFormWithEstimate()">
-                ✉️ Lock In Scope via Email Form &darr;
-              </button>
-              <button class="btn-secondary-wire" style="width: 100%; justify-content: center;" onclick="sendEstimateViaWhatsApp()">
-                Chat on WhatsApp ↗
-              </button>
+            <!-- Dual Option Action: Form Navigation & WhatsApp Integration -->
+            <div class="cta-claim-box">
+              <div class="cta-claim-title">
+                🏛️ Lock In Scope & Claim Your 72-Hour Interactive Prototype
+              </div>
+              <div class="cta-claim-buttons">
+                <!-- Option 1: Form Pre-Fill and Smooth Scroll to #contact -->
+                <button class="btn-cta-form" onclick="prefillFormWithEstimate()">
+                  <span>✉️ Submit via Project Form &darr;</span>
+                </button>
+                <!-- Option 2: Direct WhatsApp Chat -->
+                <button class="btn-cta-whatsapp" onclick="sendEstimateViaWhatsApp()">
+                  <span>💬 Lock In via WhatsApp ↗</span>
+                </button>
+              </div>
             </div>
+
           </div>
         </div>
       </div>
@@ -1568,7 +1743,7 @@
     </div>
   </section>
   
-  <!-- Lead Intake Form (100% Fluid Width for Mobile & Clean Layout) -->
+  <!-- Lead Intake Form -->
   <section id="contact" style="padding: 90px 0;">
     <div class="container">
       <div class="form-wrapper">
@@ -1691,7 +1866,7 @@
         <div style="display: flex; gap: 22px;">
           <a href="#">Privacy Policy</a>
           <a href="#">Terms of Service</a>
-          <a href="#">Back to Top ↑</a>
+          <a href="#top">Back to Top ↑</a>
         </div>
       </div>
     </div>
@@ -1730,6 +1905,34 @@
       menuToggle.textContent = '☰';
     }
 
+    // Right-Side Quick-Nav ScrollSpy Observer
+    const navDots = document.querySelectorAll('.side-nav-dot');
+    const observedSections = ['top', 'capabilities', 'why-us', 'demos', 'estimator', 'faq', 'contact'];
+
+    window.addEventListener('scroll', () => {
+      let currentSectionId = 'top';
+      const scrollY = window.pageYOffset + 200;
+
+      observedSections.forEach(id => {
+        const el = document.getElementById(id);
+        if (el) {
+          const top = el.offsetTop;
+          const height = el.offsetHeight;
+          if (scrollY >= top && scrollY < top + height) {
+            currentSectionId = id;
+          }
+        }
+      });
+
+      navDots.forEach(dot => {
+        if (dot.getAttribute('data-section') === currentSectionId) {
+          dot.classList.add('active');
+        } else {
+          dot.classList.remove('active');
+        }
+      });
+    });
+
     // Live Builds Tab Controller (Desktop)
     const buildTabs = document.querySelectorAll('.build-tab-btn');
     const demoIframe = document.getElementById('demoIframe');
@@ -1742,7 +1945,6 @@
     const deviceFrame = document.getElementById('deviceFrame');
     const iframeLoader = document.getElementById('iframeLoader');
 
-    // Loading Skeleton Handlers
     function showDemoLoader() {
       if (iframeLoader) {
         iframeLoader.classList.add('active');
@@ -1911,7 +2113,7 @@
       document.getElementById('totalEstimateTimeline').textContent = `${minDays} – ${maxDays} Working Days`;
     }
 
-    // 1. Pre-fill Form with Estimator Data & Scroll to Contact
+    // Pre-fill Intake Form with Scope Breakdown and Scroll
     function prefillFormWithEstimate() {
       if (!selectedPlatform) return;
 
@@ -1945,7 +2147,7 @@
       selectedModules.forEach(mod => modulesList.push(PRICING_DATA[currentCurrency].modules[mod].label));
       const modulesString = modulesList.length > 0 ? modulesList.join(', ') : 'None';
 
-      const message = `Hi Sudhakar, I calculated a project estimate on JayTekton:\n\n• Platform: ${platformName}\n• Modules: ${modulesString}\n• Estimated Total: ${priceText}\n• Timeline: ${timelineText}\n\nLet's discuss our 72-hour prototype!`;
+      const message = `Hi Jayakar, I calculated a project estimate on JayTekton:\n\n• Platform: ${platformName}\n• Modules: ${modulesString}\n• Estimated Total: ${priceText}\n• Timeline: ${timelineText}\n\nLet's discuss our 72-hour prototype!`;
       window.open(`https://wa.me/919381217686?text=${encodeURIComponent(message)}`, '_blank');
     }
 
@@ -1954,7 +2156,7 @@
       questionEl.parentElement.classList.toggle('open');
     }
 
-    // 2. Dual-Route Lead Handler: Dispatches to contact@jaytekton.com with feedback
+    // Dual-Route Lead Handler
     async function handleLeadSubmit(e) {
       e.preventDefault();
       
@@ -1996,7 +2198,7 @@
           throw new Error('Fallback to WhatsApp');
         }
       } catch (err) {
-        const leadMessage = `Hi Sudhakar, here is my project scope for JayTekton:\n\n• Name: ${name}\n• Phone: ${phone}\n• Email: ${email}\n• Category: ${project}\n• Details:\n${details}`;
+        const leadMessage = `Hi Jayakar, here is my project scope for JayTekton:\n\n• Name: ${name}\n• Phone: ${phone}\n• Email: ${email}\n• Category: ${project}\n• Details:\n${details}`;
         window.open(`https://wa.me/919381217686?text=${encodeURIComponent(leadMessage)}`, '_blank');
         submitBtn.disabled = false;
         submitBtn.innerHTML = originalText;
